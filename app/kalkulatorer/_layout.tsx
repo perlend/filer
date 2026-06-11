@@ -9,7 +9,8 @@ export default function KalkulatorLayout() {
         headerTintColor: farger.tekst,
       }}
     >
-      <Stack.Screen name="index" options={{ title: "Kalkulatorer" }} />
+      <Stack.Screen name="index" options={{ title: "Verktøy" }} />
+      <Stack.Screen name="elnummer" options={{ title: "Elnummer" }} />
       <Stack.Screen name="ohm" options={{ title: "Ohms lov og effekt" }} />
       <Stack.Screen name="spenningsfall" options={{ title: "Spenningsfall" }} />
       <Stack.Screen name="kabel" options={{ title: "Kabeltverrsnitt" }} />

@@ -19,6 +19,11 @@ const KALKULATORER = [
     tittel: "🔌 Kabeltverrsnitt",
     tekst: "Veiledende minste tverrsnitt ut fra strøm og korreksjonsfaktor",
   },
+  {
+    rute: "/kalkulatorer/elnummer",
+    tittel: "🔢 Elnummer",
+    tekst: "Hovedgruppene, oppslag i EFObasen og din egen liste over mest brukte numre",
+  },
 ] as const;
 
 export default function KalkulatorListe() {
