@@ -1,0 +1,227 @@
+[
+  {
+    "id": "elsikkerhet-fse-001",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": ["arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"],
+    "type": "flervalg",
+    "sporsmal": "Hva er det FØRSTE du gjør når du skal etablere et frakoblet arbeidssted?",
+    "alternativer": [
+      "Frakoble anlegget fullstendig",
+      "Spenningsteste på arbeidsstedet",
+      "Jorde og kortslutte",
+      "Henge opp skilt på fordelingen"
+    ],
+    "riktig": 0,
+    "forklaring": "Sikkerhetstiltakene følger en fast rekkefølge, og alt starter med fullstendig frakobling. Spenningstesting og eventuell jording kommer senere i rekken – de gir ingen mening før anlegget faktisk er frakoblet.",
+    "kilde": "FSE § 14",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "elsikkerhet-fse-002",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": ["arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"],
+    "type": "flervalg",
+    "sporsmal": "Hvor ofte skal du ha opplæring i FSE og førstehjelp?",
+    "alternativer": [
+      "Minst én gang i året",
+      "Hvert tredje år",
+      "Bare når du begynner i ny bedrift",
+      "Kun før fagprøven"
+    ],
+    "riktig": 0,
+    "forklaring": "FSE krever at opplæringen gjentas ved behov, og DSB legger til grunn at det normalt ikke skal gå mer enn 12 måneder mellom hver gang. Det gjelder alle som jobber på eller nær elektriske anlegg – også lærlinger.",
+    "kilde": "FSE § 7 med veiledning",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "elsikkerhet-fse-003",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": ["arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"],
+    "type": "santusant",
+    "sporsmal": "Spenningstesteren skal kontrolleres mot kjent spenningskilde både før og etter at du spenningstester arbeidsstedet.",
+    "riktig": true,
+    "forklaring": "En defekt tester som viser «spenningsløst» på et spenningssatt anlegg er livsfarlig. Derfor verifiserer du at testeren virker FØR målingen – og ETTER, i tilfelle den sluttet å virke underveis.",
+    "kilde": "FSE § 14 med veiledning",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "elsikkerhet-fse-004",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": ["arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"],
+    "type": "flervalg",
+    "sporsmal": "Hva betyr det å «sikre mot innkobling»?",
+    "alternativer": [
+      "Låse eller blokkere betjeningsorganet og merke det med skilt",
+      "Spenningsteste arbeidsstedet",
+      "Si fra til kollegaene at de ikke må skru på kursen",
+      "Skru ut sikringene og legge dem i lomma"
+    ],
+    "riktig": 0,
+    "forklaring": "Muntlig beskjed er ikke en barriere – noen kan glemme det. Sikring mot innkobling skal være fysisk (lås, blokkering) og merket, slik at ingen utilsiktet kan koble inn mens du jobber. Å ta med sikringene kan være en del av tiltaket, men uten merking/avlåsing er det ikke tilstrekkelig.",
+    "kilde": "FSE § 14",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "elsikkerhet-fse-005",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": ["arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"],
+    "type": "flervalg",
+    "sporsmal": "Du har frakoblet og sikret mot innkobling. Hva er neste steg før du kan starte arbeidet?",
+    "alternativer": [
+      "Spenningsteste at arbeidsstedet er spenningsløst",
+      "Begynne å demontere utstyret",
+      "Måle isolasjonsresistansen",
+      "Koble til jordingsapparat med en gang"
+    ],
+    "riktig": 0,
+    "forklaring": "Du skal aldri stole på at frakoblingen var riktig kurs – det verifiseres alltid med spenningstesting på selve arbeidsstedet. Eventuell jording/kortslutning kommer etter at spenningsløshet er bekreftet.",
+    "kilde": "FSE § 14",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "elsikkerhet-forstehjelp-001",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": ["gi livreddende førstehjelp"],
+    "type": "santusant",
+    "sporsmal": "En kollega har fått strømgjennomgang, men føler seg helt fin. Da er det greit å jobbe videre uten å gjøre noe mer.",
+    "riktig": false,
+    "forklaring": "Strømgjennomgang kan gi hjerterytmeforstyrrelser flere timer etterpå, selv uten synlige skader. Hendelsen skal alltid meldes til arbeidsgiver, og personen skal vurderes av helsepersonell – særlig ved strøm gjennom overkroppen, ved vekselstrøm eller hvis personen var våt.",
+    "kilde": "FSE § 8 med veiledning, NEL/Arbeidstilsynets råd om strømulykker",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "elsikkerhet-forstehjelp-002",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": ["gi livreddende førstehjelp"],
+    "type": "flervalg",
+    "sporsmal": "En person henger fast i et spenningssatt anlegg. Hva gjør du FØRST?",
+    "alternativer": [
+      "Kobler ut strømmen eller frigjør personen med isolerende gjenstand",
+      "Drar personen løs med hendene",
+      "Starter hjerte-lunge-redning umiddelbart",
+      "Ringer 113 og venter på instruks"
+    ],
+    "riktig": 0,
+    "forklaring": "Tar du i en person som er spenningssatt, kan du selv bli skadet – da er dere to som trenger hjelp. Bryt strømmen først (eller bruk noe isolerende), deretter varsle 113 og start førstehjelp. Egen sikkerhet kommer alltid først.",
+    "kilde": "FSE § 8, grunnprinsipper for førstehjelp ved strømulykker",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "elsikkerhet-jfb-001",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": ["risikovurdere anlegg og utstyr med hensyn til beskyttelse mot elektrisk sjokk"],
+    "type": "flervalg",
+    "sporsmal": "Hvilken funksjon har en jordfeilbryter med merkeutløsestrøm 30 mA?",
+    "alternativer": [
+      "Tilleggsbeskyttelse mot elektrisk sjokk ved jordfeil",
+      "Beskyttelse mot overbelastning av kabelen",
+      "Beskyttelse mot kortslutning",
+      "Erstatning for jording av anlegget"
+    ],
+    "riktig": 0,
+    "forklaring": "Jordfeilbryteren registrerer differansestrøm (strøm på avveie mot jord) og kobler ut. Den beskytter ikke mot overbelastning eller kortslutning – det gjør vernet (sikringen). Og den erstatter aldri jordingsanlegget, den forutsetter det.",
+    "kilde": "NEK 400-415",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "elsikkerhet-jfb-002",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": ["risikovurdere anlegg og utstyr med hensyn til beskyttelse mot elektrisk sjokk"],
+    "type": "santusant",
+    "sporsmal": "En jordfeilbryter med merkeutløsestrøm 30 mA kan løse ut allerede ved en jordfeilstrøm på rundt 15–30 mA.",
+    "riktig": true,
+    "forklaring": "Produktnormen tillater at jordfeilbrytere løser ut mellom halvparten av merkeutløsestrømmen og merkeutløsestrømmen. En «30 mA-bryter» kan altså løse ut fra ca. 15 mA – derfor kan summen av små lekkasjestrømmer i et anlegg gi uønskede utkoblinger.",
+    "kilde": "NEK EN 61008/61009 (produktnorm for jordfeilbrytere)",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "elsikkerhet-strom-001",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": ["risikovurdere anlegg og utstyr med hensyn til beskyttelse mot elektrisk sjokk"],
+    "type": "santusant",
+    "sporsmal": "Vekselstrøm gjennom kroppen kan være livsfarlig allerede ved noen titalls milliampere.",
+    "riktig": true,
+    "forklaring": "Allerede rundt 30–50 mA vekselstrøm gjennom overkroppen kan gi hjerteflimmer, avhengig av varighet og strømvei. Det er derfor tilleggsbeskyttelsen med 30 mA jordfeilbryter er satt akkurat der – og derfor «bare 230 volt» aldri er ufarlig.",
+    "kilde": "IEC 60479 (virkninger av strøm på mennesker)",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "elsikkerhet-aus-001",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": ["arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"],
+    "type": "santusant",
+    "sporsmal": "Arbeid under spenning (AUS) krever særskilt opplæring, egnet verktøy og personlig verneutstyr.",
+    "riktig": true,
+    "forklaring": "AUS er bare tillatt når det brukes anerkjente metoder, isolert AUS-verktøy og verneutstyr, og når arbeidet ledes og utføres av personer med særskilt AUS-opplæring. En lærling skal aldri utføre AUS uten kvalifisert ansvarlig til stede.",
+    "kilde": "FSE § 16",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "elsikkerhet-roller-001",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": ["arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"],
+    "type": "flervalg",
+    "sporsmal": "Hva er oppgaven til leder for sikkerhet (LFS)?",
+    "alternativer": [
+      "Å etablere, lede og avvikle sikkerhetstiltakene på arbeidsstedet",
+      "Å skrive samsvarserklæringen for anlegget",
+      "Å godkjenne lærlingens timeliste",
+      "Å utføre alt arbeidet på anlegget selv"
+    ],
+    "riktig": 0,
+    "forklaring": "LFS utpekes for arbeidet og har ansvaret for at sikkerhetstiltakene (frakobling, sikring mot innkobling, spenningstesting osv.) etableres, opprettholdes og avvikles riktig. Samsvarserklæring hører til dokumentasjonen etter FEL, ikke til LFS-rollen.",
+    "kilde": "FSE § 12",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "elsikkerhet-pvu-001",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": ["velge egnet verktøy og verneutstyr for arbeidsoppdragene"],
+    "type": "flervalg",
+    "sporsmal": "Du skal spenningsteste i en fordeling der det er fare for lysbue. Hvilket verneutstyr er riktig?",
+    "alternativer": [
+      "Visir/vernebriller og egnede isolerende hansker",
+      "Bare vanlige arbeidshansker",
+      "Hørselvern og knebeskyttere",
+      "Ingen – måling tar bare et par sekunder"
+    ],
+    "riktig": 0,
+    "forklaring": "Lysbuer gir alvorlige brannskader i ansikt og på hender, og oppstår oftest nettopp ved arbeid og måling i fordelinger. «Det tar bare et sekund» er en klassisk farlig tankefeil – ulykken skjer i det sekundet.",
+    "kilde": "FSE §§ 10 og 14 med veiledning",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "elsikkerhet-ik-001",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til bedriftens internkontrollsystem"],
+    "type": "flervalg",
+    "sporsmal": "Du oppdager en alvorlig feil i et eksisterende anlegg hos kunden – utenfor oppdraget ditt. Hva gjør du?",
+    "alternativer": [
+      "Informerer anleggseier og bedriften min, og dokumenterer feilen",
+      "Ignorerer den – det er ikke min jobb",
+      "Reparerer den i smug uten å si fra til noen",
+      "Legger ut bilde av feilen på sosiale medier"
+    ],
+    "riktig": 0,
+    "forklaring": "Oppdager du feil som kan medføre fare, skal eier varsles slik at feilen kan rettes. Er faren akutt, må anleggsdelen sikres. Å rette feil uten avtale er også feil vei – arbeid skal være avtalt, planlagt og dokumentert.",
+    "kilde": "FEL § 9, internkontrollforskriften",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "elsikkerhet-fse-006",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": ["arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"],
+    "type": "flervalg",
+    "sporsmal": "Når kan sikkerhetstiltakene på et frakoblet arbeidssted avvikles?",
+    "alternativer": [
+      "Når arbeidet er avsluttet og alle er informert og borte fra anlegget",
+      "Når klokka er 15.30, uansett status",
+      "Når kunden spør om strømmen kan settes på igjen",
+      "Når én av montørene er ferdig med sin del"
+    ],
+    "riktig": 0,
+    "forklaring": "Innkobling kan først skje når LFS har forvisset seg om at arbeidet er avsluttet og at ingen lenger er i berøring med eller nær anleggsdelen. At én person er ferdig, eller at kunden maser, endrer ingenting – det er en kjent ulykkesårsak.",
+    "kilde": "FSE § 14",
+    "vanskelighetsgrad": 2
+  }
+]

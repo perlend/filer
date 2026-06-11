@@ -26,6 +26,33 @@ Dette repoet inneholder grunnlaget for appen:
 3. **Dokumentere** – logg over arbeidsoppdrag koblet mot kompetansemål (nyttig mot halvårsvurdering og fagprøve)
 4. **Bestå** – målrettet trening mot eksamen (Vg3-teori) og fagprøven
 
+## Kom i gang
+
+Appen er bygget med [Expo](https://expo.dev) (React Native + TypeScript) og kjører helt offline.
+
+```bash
+npm install
+npm start          # åpne i Expo Go på mobilen, eller trykk w for nettleser
+npm test           # enhetstester (vitest)
+npm run typecheck  # TypeScript
+npm run valider    # validerer faginnholdet i content/
+```
+
+## Struktur
+
+```
+app/               skjermer (expo-router): hjem, øvelse/quiz, leksjoner, kalkulatorer
+src/lib/calc/      beregningslogikk med tester (Ohms lov, spenningsfall, kabel)
+src/lib/           spaced repetition (SM-2), øktbygging, lagring (AsyncStorage)
+src/content/       innholdsmodell og innholdsindeks
+content/           faginnhold som data: quiz (JSON) og leksjoner (JSON)
+scripts/           innholdsvalidering
+```
+
 ## Status
 
-🟡 Planleggingsfase – se dokumentene over.
+🟢 MVP under utvikling: quizmotor med spaced repetition, 37 quizspørsmål og 5 mikroleksjoner
+(elsikkerhet/FSE, teori, måling), 3 kalkulatorer og fremdriftsvisning – alt offline.
+
+⚠️ **Faginnholdet er ikke kvalitetssikret av fagperson med fagbrev ennå.** Det skal gjøres før
+appen vises til lærlinger – se prosjektpolicyen i [docs/app-plan.md](docs/app-plan.md).

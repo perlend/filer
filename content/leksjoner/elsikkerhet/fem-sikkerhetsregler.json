@@ -1,0 +1,28 @@
+{
+  "id": "leksjon-elsikkerhet-fem-regler",
+  "tittel": "De fem sikkerhetsreglene – frakoblet arbeid",
+  "omrade": "elsikkerhet",
+  "kompetansemaal": ["arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"],
+  "nivaa": 1,
+  "lesetidMin": 4,
+  "seksjoner": [
+    {
+      "tittel": "Tenk først 🤔",
+      "tekst": "Du skal bytte en fordeling i en enebolig. Kollegaen din slår av hovedbryteren og sier «den er død, bare kjør på». Hva mangler før du faktisk kan begynne å jobbe?"
+    },
+    {
+      "tittel": "Teori",
+      "tekst": "Arbeid på frakoblet anlegg er den tryggeste arbeidsmetoden – men bare hvis frakoblingen er etablert riktig. Rekkefølgen er alltid den samme:\n\n1. Frakoble fullstendig – alle tilførsler, ikke bare den du tror gjelder.\n2. Sikre mot innkobling – lås eller blokker betjeningsorganet og merk det med skilt. En muntlig beskjed er ikke en barriere.\n3. Spenningsteste – kontroller at arbeidsstedet faktisk er spenningsløst. Testeren sjekkes mot kjent spenningskilde før og etter.\n4. Jorde og kortslutte – der det er fare for at anlegget kan bli spenningssatt (særlig høyspenning og store lavspenningsanlegg).\n5. Beskytte mot nærliggende spenningssatte deler – skjerm av det som fortsatt står under spenning i nærheten.\n\nDet er leder for sikkerhet (LFS) som har ansvaret for at tiltakene etableres, opprettholdes og avvikles. Se FSE § 14 med veiledning."
+    },
+    {
+      "tittel": "På jobben 🔧",
+      "tekst": "Svaret på caset: kollegaen har bare gjort steg 1 – og kanskje ikke engang fullstendig (er det solceller eller UPS i huset?). Det mangler sikring mot innkobling og spenningstesting på selve arbeidsstedet. «Den er død» er ikke målt, det er ment. De sekundene det tar å teste, er forskjellen på rutine og russisk rulett – feil kurs i fordelingen er en klassisk ulykkesårsak."
+    }
+  ],
+  "huskepunkter": [
+    "Rekkefølgen er fast: frakoble → sikre → teste → (jorde) → skjerme",
+    "Spenningstesteren kontrolleres mot kjent kilde før og etter bruk",
+    "Muntlig beskjed er aldri sikring mot innkobling",
+    "Tenk på alle tilførsler: solceller, UPS og aggregat kan holde anlegget i live"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "leksjon-teori-it-og-tn",
+  "tittel": "IT og TN – de to nettene du møter i Norge",
+  "omrade": "teori",
+  "kompetansemaal": ["installere og sette i drift ulike fordelingssystemer"],
+  "nivaa": 2,
+  "lesetidMin": 5,
+  "seksjoner": [
+    {
+      "tittel": "Tenk først 🤔",
+      "tekst": "I et hus måler du 230 V mellom alle tre fasene, og finner ingen nøytralleder i inntaket. I et annet hus måler du 400 V mellom fasene og 230 V fra fase til N. Hvilke systemer er dette?"
+    },
+    {
+      "tittel": "Teori",
+      "tekst": "Norge er spesielt: det gamle 230 V IT-nettet dominerer fortsatt i boliger, mens nyere felt bygges med 400 V TN.\n\nIT-system (230 V):\n– Transformatorens nøytralpunkt er isolert fra jord (eller jordet via impedans).\n– 230 V mellom fasene, ingen distribuert nøytralleder.\n– Første jordfeil gir liten feilstrøm og normalt ikke utkobling – men feilen skal lokaliseres og rettes snarest, for jordfeil nummer to kan bli farlig.\n\nTN-system (400/230 V):\n– Nøytralpunktet er direkte jordet, og N-leder distribueres.\n– 400 V mellom faser, 230 V fase–N.\n– En jordfeil blir i praksis en kortslutning som kobler ut vernet raskt.\n\nI TN-S er PE og N adskilt hele veien; i TN-C-S er de kombinert (PEN) frem til et punkt, og deretter adskilt. Se NEK 400-312 om systemjording."
+    },
+    {
+      "tittel": "På jobben 🔧",
+      "tekst": "Caset: det første huset er IT, det andre TN. Det får praktiske konsekvenser: i IT kobles 230 V-utstyr fase–fase (to-polte vern!), i TN kobles det fase–N. Vern, jordfeilovervåking og målemetoder er forskjellige – sjekk alltid hvilket system du står i FØR du planlegger kursen. Ved nyinstallasjon og rehabilitering er det også ofte aktuelt å bestille omlegging til 400 V TN fra netteier."
+    }
+  ],
+  "huskepunkter": [
+    "IT: isolert nøytralpunkt, 230 V mellom faser, første jordfeil varsles – ikke utkobles",
+    "TN: jordet nøytralpunkt, 400 V fase–fase og 230 V fase–N, jordfeil kobles ut raskt",
+    "I IT-nett brukes to-polte vern fordi begge ledere er faser",
+    "Sjekk nettsystemet før du planlegger – det styrer vern og kobling"
+  ]
+}

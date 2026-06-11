@@ -1,0 +1,28 @@
+{
+  "id": "leksjon-elsikkerhet-jordfeilbryter",
+  "tittel": "Jordfeilbryteren – slik virker den",
+  "omrade": "elsikkerhet",
+  "kompetansemaal": ["installere og sette i drift fordelingssystemer med tilhørende jordfeilvern"],
+  "nivaa": 1,
+  "lesetidMin": 4,
+  "seksjoner": [
+    {
+      "tittel": "Tenk først 🤔",
+      "tekst": "En kunde klager på at «jordfeilbryteren slår ut når det regner». Hva forteller det deg om hva bryteren egentlig måler?"
+    },
+    {
+      "tittel": "Teori",
+      "tekst": "Jordfeilbryteren sammenligner strømmen som går UT på kursen med strømmen som kommer TILBAKE. I en frisk krets er de like. Forsvinner noe av strømmen en annen vei – gjennom en fuktig koblingsboks, et skadet varmekabelelement eller i verste fall et menneske – oppstår en differansestrøm, og bryteren kobler ut.\n\nEn bryter med merkeutløsestrøm 30 mA brukes som tilleggsbeskyttelse mot elektrisk sjokk. Den kan løse ut allerede fra ca. 15 mA (produktnormen tillater utløsning mellom halv og hel merkeutløsestrøm).\n\nViktige begrensninger:\n– Den beskytter ikke mot overbelastning eller kortslutning. Det er vernet (sikringen) sin jobb.\n– Den erstatter ikke jording – den forutsetter et riktig jordingsanlegg.\n– Den ser bare strøm på avveie, ikke farlig berøring mellom fase og nøytral.\n\nSe NEK 400-415 om tilleggsbeskyttelse."
+    },
+    {
+      "tittel": "På jobben 🔧",
+      "tekst": "Svaret på caset: bryteren måler differansestrøm – og regnvær gir fukt, som gir lekkasjestrøm i en utett installasjon utendørs. Bryteren er ikke «defekt», den gjør jobben sin og varsler om en reell feil. Feilsøkingen starter med å dele opp kursen og måle isolasjonsresistans del for del, typisk mot utelys, stikk på vegg eller varmekabel."
+    }
+  ],
+  "huskepunkter": [
+    "Jordfeilbryteren måler differansen mellom ut- og returstrøm",
+    "30 mA = tilleggsbeskyttelse mot sjokk; kan løse ut fra ca. 15 mA",
+    "Den beskytter IKKE mot overbelastning eller kortslutning",
+    "Hyppige utkoblinger er et symptom på feil i anlegget – ikke på bryteren"
+  ]
+}

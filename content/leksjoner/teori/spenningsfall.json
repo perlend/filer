@@ -1,0 +1,28 @@
+{
+  "id": "leksjon-teori-spenningsfall",
+  "tittel": "Spenningsfall – hvorfor lange kurser er et problem",
+  "omrade": "teori",
+  "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag og begrunne valgene som er gjort"],
+  "nivaa": 2,
+  "lesetidMin": 5,
+  "seksjoner": [
+    {
+      "tittel": "Tenk først 🤔",
+      "tekst": "Du skal legge en 60 m lang kurs til en garasje med en 16 A elbillader. Kollegaen foreslår 2,5 mm². Har du en magefølelse på at det blir for tynt? Regn etter!"
+    },
+    {
+      "tittel": "Teori",
+      "tekst": "Kabelen har resistans, og når det går strøm gjennom den, «spises» noe av spenningen opp på veien. Det som er igjen hos belastningen, er systemspenningen minus spenningsfallet.\n\nFor enfase (tur + retur, derfor faktor 2):\nΔU = 2 · ρ · L · I / A\n\nFor trefase:\nΔU = √3 · ρ · L · I / A\n\nder ρ for kobber er 0,0175 Ω·mm²/m (ved 20 °C), L er lengden i meter én vei, I er strømmen i ampere og A er tverrsnittet i mm².\n\nNEK 400 anbefaler maksimalt 4 % spenningsfall fra inntak til belastning (se NEK 400-5-52). For mye fall gir svakere effekt, varmgang og utstyr som oppfører seg rart."
+    },
+    {
+      "tittel": "På jobben 🔧",
+      "tekst": "Caset: ΔU = 2 · 0,0175 · 60 · 16 / 2,5 = 13,4 V. Det er 5,8 % av 230 V – over anbefalingen. Med 4 mm² blir fallet 8,4 V (3,7 %) – innenfor. Magefølelsen stemte: lange kurser med høy strøm trenger større tverrsnitt enn strømføringsevnen alene tilsier. Det er ofte spenningsfallet, ikke strømføringsevnen, som bestemmer tverrsnittet på hytte-, garasje- og landbrukskurser."
+    }
+  ],
+  "huskepunkter": [
+    "Enfase: ΔU = 2·ρ·L·I/A – husk faktoren 2 for tur og retur",
+    "Trefase: bytt 2 med √3",
+    "Anbefalt maks 4 % fall fra inntak til belastning (NEK 400-5-52)",
+    "På lange kurser bestemmer spenningsfallet ofte tverrsnittet"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "leksjon-maaling-sluttkontroll",
+  "tittel": "Sluttkontroll – rekkefølgen som sitter på fagprøven",
+  "omrade": "maaling",
+  "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+  "nivaa": 2,
+  "lesetidMin": 5,
+  "seksjoner": [
+    {
+      "tittel": "Tenk først 🤔",
+      "tekst": "Du er ferdig med å montere en ny kurs til et bad. Hvilke kontroller og målinger må gjøres – og i hvilken rekkefølge – før kunden kan bruke anlegget?"
+    },
+    {
+      "tittel": "Teori",
+      "tekst": "All ny installasjon skal verifiseres før den settes i drift (se NEK 400-6). Rekkefølgen er logisk: du sjekker det du kan SE før du måler, og du måler på dødt anlegg før du setter spenning på.\n\n1. Visuell inspeksjon: riktig utstyr for området (IP-grad på badet!), riktig montert, merking, tverrsnitt, berøringsbeskyttelse.\n2. Kontinuitet i beskyttelsesleder: er PE sammenhengende ut til alle punkter? Lav, forventbar resistans.\n3. Isolasjonsresistans: måles med 500 V DC på frakoblet kurs – minst 1 MΩ, i praksis langt mer. Koble fra elektronikk først!\n4. Spenningssetting, deretter funksjonstester: jordfeilbryter med instrument (utløsestrøm og -tid) i tillegg til testknapp, faserekkefølge der det er relevant, og funksjon på utstyret.\n5. Dokumentere: måleverdiene føres i sluttkontrollskjema som hører til samsvarserklæringen."
+    },
+    {
+      "tittel": "På jobben 🔧",
+      "tekst": "På fagprøven er sluttkontrollen ofte der kandidater skiller seg: prøvenemnda ser etter at du måler i riktig rekkefølge, vet hva du FORVENTER å måle, og fører verdiene skriftlig. En kandidat som måler kontinuitet etter at anlegget er spenningssatt, eller «tester» jordfeilbryteren bare med knappen, avslører hull. Lag deg en fast rutine nå – så sitter den når det gjelder."
+    }
+  ],
+  "huskepunkter": [
+    "Inspeksjon først, deretter måling på dødt anlegg, til slutt funksjonstest med spenning",
+    "Kontinuitet PE → isolasjonsresistans (≥ 1 MΩ ved 500 V DC) → spenningssetting → jordfeilbryter med instrument",
+    "Vit hva du forventer å måle før du måler",
+    "Udokumentert kontroll er i praksis ingen kontroll – før verdiene i skjema"
+  ]
+}

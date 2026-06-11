@@ -1,0 +1,151 @@
+[
+  {
+    "id": "maaling-slutt-001",
+    "omrade": "maaling",
+    "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+    "type": "flervalg",
+    "sporsmal": "Hva er FØRSTE del av sluttkontrollen av en ny installasjon?",
+    "alternativer": [
+      "Visuell inspeksjon av hele installasjonen",
+      "Isolasjonsresistansmåling",
+      "Test av jordfeilbryter",
+      "Spenningsmåling på alle kurser"
+    ],
+    "riktig": 0,
+    "forklaring": "Sluttkontrollen starter alltid med inspeksjon: riktig utstyr, riktig montert, merking, ledertverrsnitt, beskyttelse mot berøring. Målingene kommer etterpå – det er ingen vits i å måle på en installasjon som har synlige feil.",
+    "kilde": "NEK 400-6 (verifikasjon)",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "maaling-kontinuitet-001",
+    "omrade": "maaling",
+    "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+    "type": "flervalg",
+    "sporsmal": "Hvorfor måler du kontinuitet i beskyttelseslederen (PE)?",
+    "alternativer": [
+      "For å bekrefte at PE er sammenhengende fra fordelingen til alle utsatte deler",
+      "For å finne ut hvor mye strøm kursen tåler",
+      "For å måle spenningen på PE-lederen",
+      "For å teste at jordfeilbryteren virker"
+    ],
+    "riktig": 0,
+    "forklaring": "Beskyttelsen mot elektrisk sjokk ved feil avhenger av at feilstrømmen har en hel, lavohmig vei tilbake. Et brudd i PE er usynlig i daglig drift – anlegget virker helt fint – men livsfarlig den dagen en feil oppstår. Derfor måles kontinuiteten på alle PE-forbindelser.",
+    "kilde": "NEK 400-6 (verifikasjon)",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "maaling-kontinuitet-002",
+    "omrade": "maaling",
+    "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+    "type": "numerisk",
+    "sporsmal": "Du måler kontinuitet på en 50 m lang PE-leder med tverrsnitt 2,5 mm² (kobber, ρ = 0,0175 Ω·mm²/m). Hvilken resistans forventer du? (Svar i ohm, ±0,05.)",
+    "svar": 0.35,
+    "toleranse": 0.05,
+    "enhet": "Ω",
+    "forklaring": "R = ρ · L / A = 0,0175 · 50 / 2,5 = 0,35 Ω. Å vite hva du FORVENTER å måle er halve jobben – måler du 5 Ω her, er det en dårlig forbindelse et sted, selv om instrumentet «piper».",
+    "kilde": "Resistansformelen",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "maaling-isolasjon-001",
+    "omrade": "maaling",
+    "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+    "type": "flervalg",
+    "sporsmal": "Hva er minste akseptable isolasjonsresistans ved måling med 500 V DC i en vanlig 230/400 V-installasjon?",
+    "alternativer": ["1 MΩ", "0,5 Ω", "100 Ω", "50 MΩ"],
+    "riktig": 0,
+    "forklaring": "For kretser opp til 500 V måles det med 500 V likespenning, og verdien skal være minst 1 MΩ. I praksis skal en ny, tørr installasjon ligge langt over dette – verdier nær grensen bør få deg til å lete etter årsaken.",
+    "kilde": "NEK 400-6 (verifikasjon, isolasjonsresistans)",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "maaling-isolasjon-002",
+    "omrade": "maaling",
+    "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+    "type": "flervalg",
+    "sporsmal": "Hva må du gjøre FØR du isolasjonsmåler en kurs med 500 V DC?",
+    "alternativer": [
+      "Frakoble kursen og koble fra/skjerme utstyr som kan skades av prøvespenningen",
+      "Slå på alt utstyret så det også blir testet",
+      "Sette på jordfeilbryteren",
+      "Øke prøvespenningen til 1000 V for sikkerhets skyld"
+    ],
+    "riktig": 0,
+    "forklaring": "Isolasjonsmåling skjer på frakoblet anlegg, og elektronikk (dimmere, varmestyring, ladere) kan ødelegges av 500 V prøvespenning – den må kobles fra eller forbikobles. Å «teste» utstyret med megger er en klassisk og dyr lærlingfeil.",
+    "kilde": "NEK 400-6, instrumentleverandørenes brukerveiledninger",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "maaling-jfb-001",
+    "omrade": "maaling",
+    "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+    "type": "santusant",
+    "sporsmal": "Ved sluttkontroll er det nok å trykke på testknappen for å verifisere jordfeilbryteren.",
+    "riktig": false,
+    "forklaring": "Testknappen sjekker bare at utløsemekanikken virker – den sier ingenting om utløsestrøm eller utløsetid. Ved sluttkontroll måles jordfeilbryteren med instrument, i tillegg til funksjonstest med knappen. (Knappen er derimot fin som periodisk egenkontroll for kunden.)",
+    "kilde": "NEK 400-6 (verifikasjon)",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "maaling-instrument-001",
+    "omrade": "maaling",
+    "kompetansemaal": ["utføre feilsøking og måling med relevante instrumenter"],
+    "type": "flervalg",
+    "sporsmal": "Hva er fordelen med et tangamperemeter?",
+    "alternativer": [
+      "Du kan måle strøm uten å bryte kretsen",
+      "Det måler mer nøyaktig enn alle andre instrumenter",
+      "Det kan måle isolasjonsresistans",
+      "Det viser automatisk hvilken kurs som har jordfeil"
+    ],
+    "riktig": 0,
+    "forklaring": "Tanga måler magnetfeltet rundt lederen, så du slipper å koble instrumentet i serie. Husk: mål rundt ÉN leder – legger du tanga rundt hele kabelen, opphever fasene hverandre og du måler ca. null (med mindre du nettopp leter etter differansestrøm/jordfeil!).",
+    "kilde": "Måleteknikk, instrumentlære",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "maaling-feilsoking-001",
+    "omrade": "maaling",
+    "kompetansemaal": ["utføre feilsøking og måling med relevante instrumenter"],
+    "type": "flervalg",
+    "sporsmal": "En kurs slår ut jordfeilbryteren med ujevne mellomrom. Hva er en fornuftig systematisk fremgangsmåte?",
+    "alternativer": [
+      "Dele opp kursen og måle isolasjonsresistans og lekkasjestrøm del for del",
+      "Bytte jordfeilbryteren med en gang – den er sikkert defekt",
+      "Koble jordfeilbryteren forbi til feilen gir seg",
+      "Skru av kursen permanent"
+    ],
+    "riktig": 0,
+    "forklaring": "Systematisk feilsøking betyr å snevre inn: del opp kursen, mål hver del, finn hvor lekkasjen er. Å bytte bryteren kan være riktig TIL SLUTT, men er gjetting som første steg. Å forbikoble jordfeilbryteren fjerner beskyttelsen og er aldri akseptabelt.",
+    "kilde": "Feilsøkingsmetodikk; NEK 400-415",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "maaling-rotasjon-001",
+    "omrade": "maaling",
+    "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+    "type": "santusant",
+    "sporsmal": "Ved nye trefaseinstallasjoner bør faserekkefølgen kontrolleres med instrument før motorlast tilkobles.",
+    "riktig": true,
+    "forklaring": "Feil faserekkefølge gir feil dreieretning – og en pumpe, vifte eller kompressor som går baklengs kan bli ødelagt eller skade annet utstyr. Et faserekkefølgeinstrument tar sekunder å bruke og er en del av en ordentlig sluttkontroll.",
+    "kilde": "NEK 400-6 (funksjonstesting)",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "maaling-dok-001",
+    "omrade": "maaling",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+    "type": "flervalg",
+    "sporsmal": "Hvorfor skal måleresultatene fra sluttkontrollen dokumenteres skriftlig?",
+    "alternativer": [
+      "De er en del av anleggsdokumentasjonen og beviser at anlegget var i orden ved overlevering",
+      "Fordi kunden synes det er hyggelig med papirer",
+      "Det er bare nødvendig på anlegg over 100 m²",
+      "Dokumentasjon trengs kun hvis noe går galt senere"
+    ],
+    "riktig": 0,
+    "forklaring": "Sluttkontrollskjema med måleverdier hører til dokumentasjonen som overleveres med samsvarserklæringen. Den beskytter også DEG og bedriften: oppstår det feil senere, viser dokumentasjonen at anlegget var verifisert i orden ved overlevering.",
+    "kilde": "FEL § 12, NEK 400-6",
+    "vanskelighetsgrad": 1
+  }
+]

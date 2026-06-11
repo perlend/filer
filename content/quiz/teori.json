@@ -1,0 +1,170 @@
+[
+  {
+    "id": "teori-ohm-001",
+    "omrade": "teori",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag og begrunne valgene som er gjort"],
+    "type": "numerisk",
+    "sporsmal": "En varmeovn på 2000 W er koblet til 230 V. Hvor stor strøm trekker den? (Svar i ampere, én desimal.)",
+    "svar": 8.7,
+    "toleranse": 0.1,
+    "enhet": "A",
+    "forklaring": "I = P / U = 2000 W / 230 V = 8,7 A. Dette er regnestykket du gjør hver gang du vurderer om en kurs tåler en ny belastning.",
+    "kilde": "Effektformelen P = U · I",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "teori-ohm-002",
+    "omrade": "teori",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag og begrunne valgene som er gjort"],
+    "type": "flervalg",
+    "sporsmal": "Spenningen over en fast resistans halveres. Hva skjer med strømmen?",
+    "alternativer": ["Den halveres", "Den dobles", "Den er uendret", "Den firedobles"],
+    "riktig": 0,
+    "forklaring": "Ohms lov: I = U / R. Med konstant R er strømmen proporsjonal med spenningen – halv spenning gir halv strøm. (Effekten blir derimot en fjerdedel, siden P = U²/R.)",
+    "kilde": "Ohms lov",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "teori-motstand-001",
+    "omrade": "teori",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag og begrunne valgene som er gjort"],
+    "type": "numerisk",
+    "sporsmal": "To resistanser på 10 Ω og 10 Ω er parallellkoblet. Hva er den resulterende resistansen? (Svar i ohm.)",
+    "svar": 5,
+    "toleranse": 0.01,
+    "enhet": "Ω",
+    "forklaring": "To like resistanser i parallell gir halvparten: R = (10 · 10) / (10 + 10) = 5 Ω. Husk: parallellkobling gir alltid MINDRE resistans enn den minste av grenene.",
+    "kilde": "Formel for parallellkobling",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "teori-nett-001",
+    "omrade": "teori",
+    "kompetansemaal": ["installere og sette i drift ulike fordelingssystemer"],
+    "type": "flervalg",
+    "sporsmal": "Hva kjennetegner et IT-system (230 V), som er vanlig i norske boliger?",
+    "alternativer": [
+      "Nøytralpunktet er isolert fra jord, og det er 230 V mellom fasene",
+      "Nøytralpunktet er direkte jordet, og det er 400 V mellom fasene",
+      "Det har alltid bare én fase inn til boligen",
+      "PE- og N-leder er kombinert i hele systemet"
+    ],
+    "riktig": 0,
+    "forklaring": "I IT-systemet er transformatorens nøytralpunkt isolert fra jord (eller jordet via impedans), og linjespenningen er 230 V. Direkte jordet nøytralpunkt med 400 V mellom fasene beskriver TN-systemet. Kombinert PEN-leder hører til TN-C.",
+    "kilde": "NEK 400-312 (systemjording)",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "teori-nett-002",
+    "omrade": "teori",
+    "kompetansemaal": ["installere og sette i drift ulike fordelingssystemer"],
+    "type": "flervalg",
+    "sporsmal": "I et 400 V TN-S-system: hva er spenningen mellom én fase og nøytralleder?",
+    "alternativer": ["230 V", "400 V", "115 V", "690 V"],
+    "riktig": 0,
+    "forklaring": "Fasespenningen er linjespenningen delt på √3: 400 / 1,73 = 230 V. Derfor kan vanlig 230 V-utstyr kobles fase–N i TN-nett, mens det i IT-nett kobles fase–fase.",
+    "kilde": "Trefaseteori, NEK 400-312",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "teori-trefase-001",
+    "omrade": "teori",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag og begrunne valgene som er gjort"],
+    "type": "numerisk",
+    "sporsmal": "En trefaselast trekker 10 A ved 400 V med cos φ = 0,8. Hva er den aktive effekten? (Svar i watt, ±20 W.)",
+    "svar": 5543,
+    "toleranse": 20,
+    "enhet": "W",
+    "forklaring": "P = √3 · U · I · cos φ = 1,732 · 400 · 10 · 0,8 ≈ 5543 W. Husk √3 i alle trefaseberegninger med linjeverdier – å glemme den er den vanligste feilen til eksamen.",
+    "kilde": "Trefase effektformel",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "teori-cosfi-001",
+    "omrade": "teori",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag og begrunne valgene som er gjort"],
+    "type": "flervalg",
+    "sporsmal": "Hva uttrykker cos φ (effektfaktoren)?",
+    "alternativer": [
+      "Forholdet mellom aktiv og tilsynelatende effekt",
+      "Forholdet mellom spenning og strøm",
+      "Virkningsgraden til en motor",
+      "Forholdet mellom fase- og linjespenning"
+    ],
+    "riktig": 0,
+    "forklaring": "cos φ = P / S – hvor stor del av den tilsynelatende effekten (VA) som er aktiv effekt (W). Lav cos φ betyr mye reaktiv effekt og høyere strøm for samme nytteeffekt. Virkningsgrad (η) er noe annet: forholdet mellom avgitt og tilført effekt.",
+    "kilde": "Vekselstrømsteori",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "teori-spfall-001",
+    "omrade": "teori",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag og begrunne valgene som er gjort"],
+    "type": "numerisk",
+    "sporsmal": "En enfasekurs (230 V) har 25 m kabel med 1,5 mm² kobberledere og belastes med 10 A. Hvor stort er spenningsfallet? Bruk ρ = 0,0175 Ω·mm²/m. (Svar i volt, ±0,1 V.)",
+    "svar": 5.83,
+    "toleranse": 0.1,
+    "enhet": "V",
+    "forklaring": "ΔU = 2 · ρ · L · I / A = 2 · 0,0175 · 25 · 10 / 1,5 = 5,83 V. Faktoren 2 er der fordi strømmen går gjennom både tur- og returleder. 5,83 V av 230 V er 2,5 % – innenfor anbefalingen på 4 %.",
+    "kilde": "Spenningsfallformelen; anbefaling i NEK 400-5-52",
+    "vanskelighetsgrad": 3
+  },
+  {
+    "id": "teori-motor-001",
+    "omrade": "teori",
+    "kompetansemaal": ["utføre arbeid på elektriske maskiner"],
+    "type": "flervalg",
+    "sporsmal": "Hvordan endrer du dreieretningen på en trefase asynkronmotor?",
+    "alternativer": [
+      "Bytter om to av fasene",
+      "Bytter om alle tre fasene",
+      "Senker spenningen",
+      "Kobler om fra stjerne til trekant"
+    ],
+    "riktig": 0,
+    "forklaring": "Dreiefeltet snur når to faser bytter plass. Bytter du alle tre, roterer feltet samme vei som før. Stjerne/trekant endrer startstrøm og moment – ikke retningen.",
+    "kilde": "Motorlære, asynkronmotoren",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "teori-motor-002",
+    "omrade": "teori",
+    "kompetansemaal": ["utføre arbeid på elektriske maskiner"],
+    "type": "numerisk",
+    "sporsmal": "En trefasemotor avgir 4000 W ved 400 V, cos φ = 0,85 og virkningsgrad 0,9. Hvor stor strøm trekker den fra nettet? (Svar i ampere, ±0,1 A.)",
+    "svar": 7.5,
+    "toleranse": 0.1,
+    "enhet": "A",
+    "forklaring": "Tilført effekt = 4000 / 0,9 = 4444 W. I = P / (√3 · U · cos φ) = 4444 / (1,732 · 400 · 0,85) ≈ 7,5 A. Husk at motorens merkeeffekt er AVGITT effekt – du må dele på virkningsgraden for å finne det nettet leverer.",
+    "kilde": "Trefase effektformel med virkningsgrad",
+    "vanskelighetsgrad": 3
+  },
+  {
+    "id": "teori-vern-001",
+    "omrade": "teori",
+    "kompetansemaal": ["risikovurdere anlegg og utstyr med hensyn til beskyttelse mot overstrøm"],
+    "type": "flervalg",
+    "sporsmal": "Hva er forskjellen på overbelastning og kortslutning?",
+    "alternativer": [
+      "Overbelastning er for høy strøm i en ellers feilfri krets, kortslutning er strøm i en utilsiktet forbindelse med svært lav impedans",
+      "De er det samme, bare ulike ord",
+      "Kortslutning gir alltid lavere strøm enn overbelastning",
+      "Overbelastning skjer bare i TN-nett"
+    ],
+    "riktig": 0,
+    "forklaring": "Overbelastning: kretsen er hel, men belastes over det den er dimensjonert for (f.eks. for mange ovner på én kurs). Kortslutning: feil gir en nesten impedansfri strømvei og ekstremt høye strømmer. Vernet må håndtere begge – det er derfor det har både termisk og elektromagnetisk utløsning.",
+    "kilde": "NEK 400-43 (beskyttelse mot overstrøm)",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "teori-santusant-001",
+    "omrade": "teori",
+    "kompetansemaal": ["installere og sette i drift ulike fordelingssystemer"],
+    "type": "santusant",
+    "sporsmal": "I et IT-system gir første jordfeil normalt ikke utkobling, men feilen skal lokaliseres og rettes snarest.",
+    "riktig": true,
+    "forklaring": "Siden nøytralpunktet er isolert fra jord, gir én jordfeil liten feilstrøm, og anlegget kan driftes videre. Men ved jordfeil nummer to kan det oppstå farlige spenninger og store strømmer – derfor varsles første feil (isolasjonsovervåking i nettet) og skal rettes raskt.",
+    "kilde": "NEK 400-411, systemjording IT",
+    "vanskelighetsgrad": 3
+  }
+]
