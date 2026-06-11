@@ -10,6 +10,8 @@ Dette repoet inneholder grunnlaget for appen:
 |---|---|
 | [docs/ferdigheter.md](docs/ferdigheter.md) | Hvilke ferdigheter en elektrikerlærling må mestre – basert på læreplanen (ELE03-03), FSE, NEK 400 og kravene til fagprøven |
 | [docs/app-plan.md](docs/app-plan.md) | Hva som trengs for å lage en god læringsapp: funksjoner, pedagogikk, teknologivalg og veikart (MVP → ferdig app) |
+| [docs/prosjekt-skills.md](docs/prosjekt-skills.md) | Kompetansen som trengs for å gjennomføre prosjektet – og hvordan et lite team kan dekke den |
+| [.claude/skills/](.claude/skills/) | Claude Code-skills for prosjektet: `quiz-innhold`, `leksjon`, `kalkulator` og `fagsjekk` |
 
 ## Målgruppe
 
