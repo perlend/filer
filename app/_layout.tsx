@@ -34,6 +34,10 @@ export default function RotLayout() {
         name="kalkulatorer"
         options={{ title: "Kalkulatorer", headerShown: false, tabBarIcon: fane("🧮") }}
       />
+      <Tabs.Screen
+        name="foto"
+        options={{ title: "Foto", headerShown: false, tabBarIcon: fane("📷") }}
+      />
     </Tabs>
   );
 }

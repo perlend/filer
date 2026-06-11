@@ -1,0 +1,28 @@
+{
+  "id": "leksjon-regelverk-samsvar",
+  "tittel": "Samsvarserklæring – papiret som beviser jobben",
+  "omrade": "regelverk",
+  "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+  "nivaa": 1,
+  "lesetidMin": 4,
+  "seksjoner": [
+    {
+      "tittel": "Tenk først 🤔",
+      "tekst": "Du har montert tre nye kurser i et tilbygg. Kunden spør: «Trenger jeg noe papirer på dette?» Hva skal kunden ha – og hvorfor er det like viktig for deg som for kunden?"
+    },
+    {
+      "tittel": "Teori",
+      "tekst": "All installasjon og endring som omfattes av FEL skal dokumenteres med en samsvarserklæring – en erklæring fra foretaket om at anlegget er utført etter forskriften.\n\nErklæringen står aldri alene. Under den ligger:\n– Risikovurdering av anlegget\n– Beskrivelse av hva som er gjort (kursfortegnelse, eventuelt tegninger)\n– Rapport fra sluttkontroll med faktiske måleverdier\n\nEieren skal ha dokumentasjonen og oppbevare den så lenge anlegget eksisterer – den følger boligen ved salg. Bedriften beholder kopi. Husk også FDV-dokumentasjon (forvaltning, drift, vedlikehold) der det er relevant."
+    },
+    {
+      "tittel": "På jobben 🔧",
+      "tekst": "Svaret til kunden: «Ja, du får samsvarserklæring med sluttkontrollrapport fra oss – ta vare på den, takstmannen spør etter den når du selger.» For deg er dokumentasjonen også et forsvar: får anlegget en feil om tre år, viser måleverdiene dine at det var i orden ved overlevering. Udokumentert arbeid er en gjenganger i DLE-tilsyn og forsikringssaker."
+    }
+  ],
+  "huskepunkter": [
+    "Alt FEL-arbeid skal ha samsvarserklæring – også «bare én kurs»",
+    "Erklæringen bygger på risikovurdering + sluttkontrollrapport med måleverdier",
+    "Eieren skal ha dokumentasjonen og beholde den så lenge anlegget finnes",
+    "Dokumentasjonen beskytter også deg og bedriften"
+  ]
+}

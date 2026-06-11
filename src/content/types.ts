@@ -1,4 +1,4 @@
-export type Omrade = "elsikkerhet" | "teori" | "maaling";
+export type Omrade = "elsikkerhet" | "teori" | "maaling" | "installasjon" | "regelverk";
 
 export interface SporsmalFelles {
   id: string;

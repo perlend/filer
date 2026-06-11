@@ -1,0 +1,28 @@
+{
+  "id": "leksjon-elsikkerhet-strom",
+  "tittel": "Hva strømmen gjør med kroppen",
+  "omrade": "elsikkerhet",
+  "kompetansemaal": ["risikovurdere anlegg og utstyr med hensyn til beskyttelse mot elektrisk sjokk"],
+  "nivaa": 1,
+  "lesetidMin": 4,
+  "seksjoner": [
+    {
+      "tittel": "Tenk først 🤔",
+      "tekst": "Hvorfor kan et bilbatteri på 12 V levere 600 A uten å være berøringsfarlig, mens 230 V med en 10 A-sikring kan drepe?"
+    },
+    {
+      "tittel": "Teori",
+      "tekst": "Det er strømmen GJENNOM KROPPEN som skader – ikke spenningen i seg selv, og ikke hvor mye strøm kilden kan levere. Strømmen gjennom deg bestemmes av Ohms lov: I = U / R, der R er kroppens resistans (typisk noen tusen ohm tørr, noen hundre ohm våt).\n\nOmtrentlige virkninger av vekselstrøm (50 Hz) gjennom overkroppen:\n– 0,5–2 mA: kjennes som kribling\n– ca. 10 mA: muskelkramper – du kan bli «hengende fast»\n– 30–50 mA: fare for hjerteflimmer, økende med varigheten\n– over 1 A: forbrenninger, hjertestans\n\nTre faktorer avgjør: strømstyrke, varighet og strømvei (hånd-til-hånd og hånd-til-fot går gjennom hjertet). Det er derfor tilleggsbeskyttelsen er satt til 30 mA og rask utkobling – og derfor likestrøm og høyfrekvens har andre grenser."
+    },
+    {
+      "tittel": "På jobben 🔧",
+      "tekst": "Svaret på caset: 12 V over kroppens resistans gir bare noen få milliampere – ufarlig uansett hvor mye batteriet KAN levere. 230 V over våt hud kan gi godt over 100 mA – langt over flimmergrensen – og sikringen på 10 A merker ingenting (du er en altfor liten last!). Det er derfor jordfeilbryteren finnes: den ser de små strømmene på avveie som sikringen aldri ser."
+    }
+  ],
+  "huskepunkter": [
+    "Strøm gjennom kroppen skader – I = U / R med kroppens resistans",
+    "30–50 mA AC kan gi hjerteflimmer; våt hud senker R dramatisk",
+    "Strømvei gjennom hjertet er verst; varighet teller",
+    "Sikringen beskytter kabelen – jordfeilbryteren beskytter deg"
+  ]
+}

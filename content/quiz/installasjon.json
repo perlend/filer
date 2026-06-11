@@ -1,0 +1,307 @@
+[
+  {
+    "id": "installasjon-bad-001",
+    "omrade": "installasjon",
+    "kompetansemaal": ["installere elektriske installasjoner i ulike typer bygninger"],
+    "type": "flervalg",
+    "sporsmal": "Hvilken kapslingsgrad kreves normalt for utstyr montert i sone 1 og 2 på et bad?",
+    "alternativer": ["Minst IPX4", "IP20 holder", "Minst IP67", "Kapslingsgrad har ingen betydning på bad"],
+    "riktig": 0,
+    "forklaring": "I sone 1 og 2 kreves normalt minst IPX4 (sprutsikkert) – og IPX5 der det kan brukes vannstråle, f.eks. ved rengjøring. IP20 er vanlig tørrkrav, IP67 (nedsenkbart) er strengere enn nødvendig. Sjekk alltid sonekartet før du plasserer utstyr på bad.",
+    "kilde": "NEK 400-701 (områder med badekar eller dusj)",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "installasjon-bad-002",
+    "omrade": "installasjon",
+    "kompetansemaal": ["installere elektriske installasjoner i ulike typer bygninger"],
+    "type": "santusant",
+    "sporsmal": "Alle forbrukerkurser i et baderom skal ha tilleggsbeskyttelse med 30 mA jordfeilbryter.",
+    "riktig": true,
+    "forklaring": "Bad er definert som et område med økt risiko – fuktig hud og jordet omgivelse gjør elektrisk sjokk farligere. Derfor kreves strømstyrt jordfeilvern (maks 30 mA) som tilleggsbeskyttelse for kursene i rommet.",
+    "kilde": "NEK 400-701",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "installasjon-bad-003",
+    "omrade": "installasjon",
+    "kompetansemaal": ["installere varmeanlegg i bygninger"],
+    "type": "flervalg",
+    "sporsmal": "Hva er viktigst ved montering av varmekabel i baderomsgulv?",
+    "alternativer": [
+      "30 mA jordfeilvern, kabel med jordet skjerm og montering nøyaktig etter produsentens anvisning",
+      "At kabelen krysser seg selv for å spare plass",
+      "Å kappe kabelen til riktig lengde hvis den er for lang",
+      "At termostatføleren støpes inn sammen med selve kabelen, uten rør"
+    ],
+    "riktig": 0,
+    "forklaring": "Varmekabel skal ha jordet skjerm og 30 mA jordfeilvern, og produsentens anvisning er bindende: aldri kappe (resistansen og dermed effekten endres), aldri krysse kabelen (lokal overoppheting), og føleren skal i trekkerør så den kan byttes. Mål resistans og isolasjon før, under og etter støp – og dokumenter.",
+    "kilde": "NEK 400-753 (varmekabler), produsentanvisninger",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "installasjon-elbil-001",
+    "omrade": "installasjon",
+    "kompetansemaal": ["installere og sette i drift lavspenningsinstallasjoner med tilhørende utstyr"],
+    "type": "flervalg",
+    "sporsmal": "Hva kjennetegner Mode 3-lading av elbil?",
+    "alternativer": [
+      "Fast montert ladestasjon med styring/kommunikasjon mot bilen, typisk Type 2-kontakt",
+      "Lading fra vanlig stikkontakt med reisekabel",
+      "Hurtiglading med likestrøm",
+      "Induktiv lading uten kabel"
+    ],
+    "riktig": 0,
+    "forklaring": "Mode 3 er den anbefalte hjemmeløsningen: en dedikert ladestasjon som kommuniserer med bilen og frigir strøm først når alt er i orden. Mode 2 (vanlig stikkontakt + boksen på kabelen) er kun en nødløsning over tid, og Mode 4 er DC-hurtiglading.",
+    "kilde": "NEK 400-722, NEK EN 61851",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "installasjon-elbil-002",
+    "omrade": "installasjon",
+    "kompetansemaal": ["installere og sette i drift lavspenningsinstallasjoner med tilhørende utstyr"],
+    "type": "santusant",
+    "sporsmal": "Hvert ladepunkt for elbil skal forsynes av en egen kurs med eget vern.",
+    "riktig": true,
+    "forklaring": "Elbillading er langvarig last på full strøm – derfor kreves dedikert kurs per ladepunkt, dimensjonert for kontinuerlig belastning. Å «ta laderen fra garasjekursen» sammen med fryser og lys oppfyller ikke kravet.",
+    "kilde": "NEK 400-722",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "installasjon-elbil-003",
+    "omrade": "installasjon",
+    "kompetansemaal": ["installere og sette i drift lavspenningsinstallasjoner med tilhørende utstyr"],
+    "type": "flervalg",
+    "sporsmal": "Hvilket jordfeilvern kreves for en elbillader?",
+    "alternativer": [
+      "Type B – eller type A i kombinasjon med utstyr som detekterer DC-feilstrøm over 6 mA",
+      "Vanlig type AC er alltid nok",
+      "Jordfeilvern er ikke nødvendig når laderen er fast montert",
+      "Bare overspenningsvern"
+    ],
+    "riktig": 0,
+    "forklaring": "Bilens lader kan gi likestrøms-feilstrøm som «blinder» en vanlig type A/AC-jordfeilbryter. Derfor kreves type B, eller type A sammen med DC-deteksjon (≥ 6 mA) – den finnes ofte innebygd i ladestasjonen; sjekk dokumentasjonen før du velger vern i tavlen.",
+    "kilde": "NEK 400-722",
+    "vanskelighetsgrad": 3
+  },
+  {
+    "id": "installasjon-fordeling-001",
+    "omrade": "installasjon",
+    "kompetansemaal": ["bygge og koble fordelinger"],
+    "type": "flervalg",
+    "sporsmal": "Hva skal kursfortegnelsen i en fordeling vise?",
+    "alternativer": [
+      "Hver kurs med vernstørrelse/karakteristikk og hva kursen forsyner",
+      "Bare antall sikringer",
+      "Kun navnet på montøren",
+      "Prisen på anlegget"
+    ],
+    "riktig": 0,
+    "forklaring": "Kursfortegnelsen er anleggets kart: kursnummer, vern (f.eks. 16 A C), kabeltype/tverrsnitt og hva kursen forsyner. Uten den blir feilsøking og senere utvidelser gjettverk – og den skal henge oppdatert i fordelingen.",
+    "kilde": "NEK 400-514 (merking og dokumentasjon)",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "installasjon-fordeling-002",
+    "omrade": "installasjon",
+    "kompetansemaal": ["bygge og koble fordelinger"],
+    "type": "flervalg",
+    "sporsmal": "Hva gjør et overspenningsvern (SPD) i boligfordelingen?",
+    "alternativer": [
+      "Leder transiente overspenninger (f.eks. fra lyn) til jord før de skader utstyret",
+      "Beskytter mot overbelastning av kursene",
+      "Hindrer jordfeil",
+      "Stabiliserer nettspenningen ved spenningsfall"
+    ],
+    "riktig": 0,
+    "forklaring": "Overspenningsvernet kortslutter kortvarige spenningstopper til jord og beskytter elektronikken i huset. Det kreves i nye boliginstallasjoner og erstatter verken overstrømsvern eller jordfeilbryter – de tre beskytter mot helt ulike ting.",
+    "kilde": "NEK 400-443 og 400-534",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "installasjon-forlegning-001",
+    "omrade": "installasjon",
+    "kompetansemaal": ["velge forlegningsmetoder og forlegge kabel"],
+    "type": "flervalg",
+    "sporsmal": "Hva skjer med kabelens strømføringsevne når den forlegges i termisk isolert vegg i stedet for åpent på vegg?",
+    "alternativer": [
+      "Den reduseres, fordi varmen ikke ledes bort like godt",
+      "Den økes, fordi kabelen ligger beskyttet",
+      "Den er uendret – kabel er kabel",
+      "Den dobles"
+    ],
+    "riktig": 0,
+    "forklaring": "Strømføringsevnen handler om å bli kvitt varmen. Isolasjon rundt kabelen stenger varmen inne, så samme kabel tåler mindre strøm i isolert vegg (referansemetode A) enn åpent på vegg (metode C). Det er derfor forlegningsmetoden alltid er med i dimensjoneringen.",
+    "kilde": "NEK 400-5-52",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "installasjon-forlegning-002",
+    "omrade": "installasjon",
+    "kompetansemaal": ["velge forlegningsmetoder og forlegge kabel"],
+    "type": "santusant",
+    "sporsmal": "Skjulte kabler i vegg skal forlegges i definerte installasjonssoner eller ha mekanisk beskyttelse.",
+    "riktig": true,
+    "forklaring": "Sonene (typisk vannrett/loddrett fra bokser, ved tak, gulv og hjørner) gjør at den som senere borer i veggen, kan forutsi hvor kabler ligger. Utenfor sonene kreves mekanisk beskyttelse eller jordet skjerm + jordfeilvern. Tenk på neste håndverker – eller deg selv om fem år.",
+    "kilde": "NEK 400-5-52 (forlegning i vegg)",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "installasjon-koblinger-001",
+    "omrade": "installasjon",
+    "kompetansemaal": ["installere belysningsanlegg og styringssystemer"],
+    "type": "flervalg",
+    "sporsmal": "Du skal styre samme lampe fra to brytere (f.eks. oppe og nede i trappen). Hva bruker du?",
+    "alternativer": [
+      "To vekselbrytere (trappebrytere) med korrespondanseledninger mellom",
+      "To vanlige énpolede brytere i serie",
+      "To énpolede brytere i parallell",
+      "En dimmer og en vanlig bryter"
+    ],
+    "riktig": 0,
+    "forklaring": "Trappekobling = to vekselbrytere der to korrespondanseledninger veksler strømveien. Énpolede brytere i serie gir lys bare når begge er på, i parallell bare når begge er av – klassiske feilkoblinger som «nesten» virker. Skal du styre fra tre steder, settes en krysskobler i midten.",
+    "kilde": "Koblingslære, installasjonspraksis",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "installasjon-koblinger-002",
+    "omrade": "installasjon",
+    "kompetansemaal": ["installere og sette i drift lavspenningsinstallasjoner med tilhørende utstyr"],
+    "type": "flervalg",
+    "sporsmal": "Hvorfor brukes topolte brytere og vern i 230 V IT-nett?",
+    "alternativer": [
+      "Fordi begge tilførselslederne er faser – begge må kunne brytes",
+      "Fordi det ser ryddigere ut i tavlen",
+      "Fordi enpolte brytere ikke tåler 230 V",
+      "Det er ikke noe poeng – enpolt er alltid nok"
+    ],
+    "riktig": 0,
+    "forklaring": "I IT-nettet er det ingen nøytralleder – utstyret kobles fase–fase. Bryter du bare én pol, står den andre fasen fortsatt spenningssatt inn i apparatet. Derfor brukes topolte brytere og vern, i motsetning til TN-nett der énpolt bryting av fasen er vanlig.",
+    "kilde": "NEK 400, praksis for IT-nett",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "installasjon-kabel-001",
+    "omrade": "installasjon",
+    "kompetansemaal": ["velge kabeltyper og ledningstyper"],
+    "type": "flervalg",
+    "sporsmal": "Hva er forskjellen i bruk mellom PN-ledning og PFXP-kabel?",
+    "alternativer": [
+      "PN er enleder uten kappe og skal forlegges i rør/kanal; PFXP har kappe og kan forlegges åpent",
+      "De kan brukes om hverandre",
+      "PFXP er bare for utendørs bruk",
+      "PN tåler høyere temperatur enn PFXP"
+    ],
+    "riktig": 0,
+    "forklaring": "PN er en installasjonsledning med bare lederisolasjon – den trenger den mekaniske beskyttelsen et rør eller en kanal gir. PFXP er en kabel med ytre kappe og kan klamres åpent på vegg, i grøft (med beskyttelse) osv. Å legge PN åpent er en typisk feil i gamle «hjemmefikser»-anlegg.",
+    "kilde": "Kabellære, NEK 400-5-52",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "installasjon-kabel-002",
+    "omrade": "installasjon",
+    "kompetansemaal": ["velge kabeltyper og ledningstyper"],
+    "type": "santusant",
+    "sporsmal": "Gul/grønn leder kan brukes som faseleder hvis du merker den tydelig i begge ender.",
+    "riktig": false,
+    "forklaring": "Gul/grønn er reservert beskyttelsesleder – alltid og uten unntak. Ingen merking kan oppheve det, for fargen er selve sikkerhetsmerkingen alle stoler på. (Motsatt vei gjelder også: PE skal være gul/grønn, ikke en sort leder med tape.)",
+    "kilde": "NEK 400-514.3 (identifikasjon av ledere)",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "installasjon-tilkobling-001",
+    "omrade": "installasjon",
+    "kompetansemaal": ["utføre koblinger og tilkoblinger"],
+    "type": "flervalg",
+    "sporsmal": "Hvor mange ledere kan du sette i én fjærklemme (f.eks. Wago)?",
+    "alternativer": [
+      "Én leder per klemmeplass, og bare ledertyper/tverrsnitt klemmen er spesifisert for",
+      "Så mange som får plass hvis du tvinner dem først",
+      "To, hvis de er like tynne",
+      "Det spiller ingen rolle"
+    ],
+    "riktig": 0,
+    "forklaring": "Én leder per plass – og produsentens spesifikasjon styrer hvilke tverrsnitt og om flertrådet leder krever endehylse. Å presse to ledere i samme plass eller tvinne dem gir dårlig kontakt, varmgang og i verste fall brann. Tilkoblinger er den vanligste feilkilden i anlegg.",
+    "kilde": "Produsentens spesifikasjoner, NEK 400-526 (tilkoblinger)",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "installasjon-ekom-001",
+    "omrade": "installasjon",
+    "kompetansemaal": ["installere elektronisk kommunikasjonsnett"],
+    "type": "flervalg",
+    "sporsmal": "Hvorfor bør ekom-kabler (nettverk) holdes adskilt fra sterkstrømskabler over lengre parallelle strekk?",
+    "alternativer": [
+      "For å unngå elektromagnetisk støy som forstyrrer signalene",
+      "Fordi nettverkskabler kan smelte av varmen",
+      "Det er kun av estetiske hensyn",
+      "Fordi sterkstrøm «lekker» over og gir farlig spenning i nettverket"
+    ],
+    "riktig": 0,
+    "forklaring": "Vekselstrøm i sterkstrømskabler induserer støy i parallelle signalkabler og kan gi feil i nettverket. Hold avstand eller kryss i 90° – og følg skjerming/avstandskravene i NEK 700-serien. Egne kabelbroer eller skillevegg i kanal er god praksis.",
+    "kilde": "NEK 700-serien (ekom), EMC-prinsipper",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "installasjon-belysning-001",
+    "omrade": "installasjon",
+    "kompetansemaal": ["installere belysningsanlegg og styringssystemer"],
+    "type": "santusant",
+    "sporsmal": "DALI er et digitalt bussystem for styring av belysning, der hver armatur kan adresseres individuelt.",
+    "riktig": true,
+    "forklaring": "DALI (Digital Addressable Lighting Interface) styrer armaturer over en topolet busslinje – dimming, scenarier og statusmelding per armatur. I motsetning til 1–10 V-styring er DALI digital og toveis. Vanlig i næringsbygg, og stadig mer i bolig.",
+    "kilde": "NEK EN 62386 (DALI)",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "installasjon-varme-001",
+    "omrade": "installasjon",
+    "kompetansemaal": ["installere varmeanlegg i bygninger"],
+    "type": "flervalg",
+    "sporsmal": "Hva er hovedkravene ved installasjon av varmekabel for snøsmelting utendørs?",
+    "alternativer": [
+      "Kabel med jordet skjerm, 30 mA jordfeilvern og effekt/forlegning etter produsentens anvisning",
+      "Vanlig PN-ledning i bakken fungerer fint",
+      "Ingen spesielle krav utendørs",
+      "Kun overspenningsvern"
+    ],
+    "riktig": 0,
+    "forklaring": "Utendørs varmeanlegg er utsatt for fukt og mekanisk skade – derfor jordet skjerm og 30 mA jordfeilvern. Effekt per m² og forlegningsdybde følger produsentens anvisning. Mål og dokumenter resistans og isolasjonsresistans før og etter støp/asfaltering.",
+    "kilde": "NEK 400-753, produsentanvisninger",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "installasjon-inntak-001",
+    "omrade": "installasjon",
+    "kompetansemaal": ["installere og sette i drift fordelingssystemer fra inntak til belastning"],
+    "type": "flervalg",
+    "sporsmal": "Hva er funksjonen til inntakssikringen (OV) i en bolig?",
+    "alternativer": [
+      "Den beskytter inntakskabelen og fordelingen mot overbelastning og kortslutning",
+      "Den er bare en bryter for å slå av hele huset",
+      "Den beskytter mot jordfeil",
+      "Den begrenser strømregningen"
+    ],
+    "riktig": 0,
+    "forklaring": "Overbelastningsvernet ved inntaket beskytter selve inntakskabelen og tavlen. Størrelsen samsvarer med abonnementet/inntakskabelens tverrsnitt. Den fungerer riktignok også som hovedbryter i mange tavler, men beskyttelsen er hovedfunksjonen.",
+    "kilde": "NEK 400-43, netteiers retningslinjer",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "installasjon-dok-001",
+    "omrade": "installasjon",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+    "type": "flervalg",
+    "sporsmal": "Du har lagt til en ny kurs i en eksisterende fordeling. Hva må du gjøre med dokumentasjonen?",
+    "alternativer": [
+      "Oppdatere kursfortegnelsen og utstede samsvarserklæring med rapport fra sluttkontroll for endringen",
+      "Ingenting – det var jo bare én kurs",
+      "Bare si fra muntlig til kunden",
+      "Vente til neste gang noen skal gjøre noe i tavlen"
+    ],
+    "riktig": 0,
+    "forklaring": "Enhver endring eller utvidelse er et anleggsarbeid som skal dokumenteres: kursfortegnelsen skal stemme med virkeligheten, og endringen skal ha samsvarserklæring og sluttkontroll. Udokumenterte kurser er en gjenganger ved tilsyn – og en felle for nestemann.",
+    "kilde": "FEL §§ 12–13, NEK 400-514",
+    "vanskelighetsgrad": 1
+  }
+]

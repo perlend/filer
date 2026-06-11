@@ -1,0 +1,28 @@
+{
+  "id": "leksjon-regelverk-pyramiden",
+  "tittel": "Regelverkpyramiden – lov, forskrift og norm",
+  "omrade": "regelverk",
+  "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+  "nivaa": 1,
+  "lesetidMin": 4,
+  "seksjoner": [
+    {
+      "tittel": "Tenk først 🤔",
+      "tekst": "En kunde sier: «NEK 400 er vel bare en anbefaling – det er ikke ulovlig å la være?» Hva svarer du?"
+    },
+    {
+      "tittel": "Teori",
+      "tekst": "Regelverket er bygget som en pyramide:\n\n1. Øverst: el-tilsynsloven – gir myndighetene (DSB) rett til å stille krav og føre tilsyn.\n2. Forskrifter – juridisk bindende: FEL (krav til anleggene), FEK (krav til foretak og kvalifikasjoner), FSE (krav til sikker jobbing).\n3. Normer – NEK 400 m.fl.: den anerkjente METODEN for å oppfylle forskriftens krav.\n\nForskriftene sier HVA som skal oppnås («anlegget skal være sikkert»), normen sier HVORDAN («slik dimensjonerer du, slik beskytter du»). FEL § 10 peker på normen: følger du NEK 400 fullt ut, anses kravene oppfylt. Velger du en annen løsning, må du selv dokumentere minst samme sikkerhetsnivå – en svært høy terskel."
+    },
+    {
+      "tittel": "På jobben 🔧",
+      "tekst": "Svaret til kunden: «NEK 400 er formelt en norm, men forskriften krever at jeg dokumenterer samme sikkerhetsnivå hvis jeg fraviker den – så i praksis er den fasiten jeg jobber etter.» På fagprøven er dette en klassiker: vis at du vet at FEL er kravet og NEK 400 er metoden, og at FSE styrer hvordan du jobber trygt mens du gjør det."
+    }
+  ],
+  "huskepunkter": [
+    "Lov → forskrift (FEL, FEK, FSE) → norm (NEK 400)",
+    "Forskrift = HVA (bindende krav), norm = HVORDAN (metoden)",
+    "Følger du NEK 400, oppfyller du normalt FEL (FEL § 10)",
+    "FEK regulerer hvem som får gjøre jobben, FSE hvordan du jobber trygt"
+  ]
+}

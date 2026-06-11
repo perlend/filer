@@ -1,0 +1,28 @@
+{
+  "id": "leksjon-maaling-isolasjon",
+  "tittel": "Isolasjonsmåling i praksis",
+  "omrade": "maaling",
+  "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+  "nivaa": 2,
+  "lesetidMin": 5,
+  "seksjoner": [
+    {
+      "tittel": "Tenk først 🤔",
+      "tekst": "Du isolasjonsmåler en hel leilighet samlet og får 0,8 MΩ. Grensen er 1 MΩ. Hva gjør du nå – og hvorfor kan samlemålingen lure deg begge veier?"
+    },
+    {
+      "tittel": "Teori",
+      "tekst": "Isolasjonsmåling verifiserer at isolasjonen holder strømmen der den skal være. Måleren (meggeren) legger 500 V DC mellom lederne og jord og måler lekkasjestrømmen som resistans.\n\nFremgangsmåte:\n1. Frakoble anlegget og bekreft spenningsløshet\n2. Koble fra eller forbikoble elektronikk som kan skades (dimmere, styringer, ladere) – og trekk ut plugger\n3. Mål mellom alle ledere samlet og jord (og ved behov mellom ledere)\n4. Krav: minst 1 MΩ ved 500 V DC for vanlige 230/400 V-anlegg – en frisk, tørr installasjon ligger normalt langt høyere\n\nViktig felle: isolasjonsresistanser ligger i PARALLELL. Ti kurser med 10 MΩ hver måler 1 MΩ samlet – «akkurat godkjent» uten at noe er galt. Motsatt kan én dårlig kurs på 0,5 MΩ gjemme seg bak ni gode. Lav samleverdi = del opp og mål kursvis."
+    },
+    {
+      "tittel": "På jobben 🔧",
+      "tekst": "Caset: 0,8 MΩ samlet er under kravet – men du vet ikke ennå om det er én råtten kurs eller bare mange friske i parallell. Del opp: mål kurs for kurs til du finner synderen (ofte utelys, varmekabel eller et fuktig koblingspunkt). Og den klassiske lærlingfeilen: å megge en kurs med dimmere eller varmestyring tilkoblet – 500 V tar livet av elektronikken. Koble fra først!"
+    }
+  ],
+  "huskepunkter": [
+    "500 V DC, krav ≥ 1 MΩ – men friske anlegg ligger langt over",
+    "Frakoble og beskytt elektronikk FØR måling",
+    "Isolasjonsresistanser står i parallell – samlemåling kan lure deg",
+    "Lav verdi: del opp kursvis og finn den faktiske feilen"
+  ]
+}

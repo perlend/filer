@@ -41,8 +41,9 @@ npm run valider    # validerer faginnholdet i content/
 ## Struktur
 
 ```
-app/               skjermer (expo-router): hjem, øvelse/quiz, leksjoner, kalkulatorer
+app/               skjermer (expo-router): hjem, øvelse/quiz, leksjoner, kalkulatorer, foto-hjelp
 src/lib/calc/      beregningslogikk med tester (Ohms lov, spenningsfall, kabel)
+src/lib/ai/        foto-analyse med Claude (claude-opus-4-8) + sikker nøkkellagring
 src/lib/           spaced repetition (SM-2), øktbygging, lagring (AsyncStorage)
 src/content/       innholdsmodell og innholdsindeks
 content/           faginnhold som data: quiz (JSON) og leksjoner (JSON)
@@ -51,8 +52,10 @@ scripts/           innholdsvalidering
 
 ## Status
 
-🟢 MVP under utvikling: quizmotor med spaced repetition, 37 quizspørsmål og 5 mikroleksjoner
-(elsikkerhet/FSE, teori, måling), 3 kalkulatorer og fremdriftsvisning – alt offline.
+🟢 MVP under utvikling: quizmotor med spaced repetition, **113 quizspørsmål og 12 mikroleksjoner**
+fordelt på fem områder (elsikkerhet/FSE, teori, praktisk installasjon, måling, regelverk),
+3 kalkulatorer, fremdriftsvisning – og **Foto-hjelp**: ta bilde av en installasjon og få den
+forklart opp mot NEK 400 (krever egen Anthropic API-nøkkel, kun for personlig bruk).
 
 ⚠️ **Faginnholdet er ikke kvalitetssikret av fagperson med fagbrev ennå.** Det skal gjøres før
 appen vises til lærlinger – se prosjektpolicyen i [docs/app-plan.md](docs/app-plan.md).

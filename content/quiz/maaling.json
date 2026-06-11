@@ -2,7 +2,9 @@
   {
     "id": "maaling-slutt-001",
     "omrade": "maaling",
-    "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+    "kompetansemaal": [
+      "utføre sluttkontroll med måling og funksjonstesting"
+    ],
     "type": "flervalg",
     "sporsmal": "Hva er FØRSTE del av sluttkontrollen av en ny installasjon?",
     "alternativer": [
@@ -19,7 +21,9 @@
   {
     "id": "maaling-kontinuitet-001",
     "omrade": "maaling",
-    "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+    "kompetansemaal": [
+      "utføre sluttkontroll med måling og funksjonstesting"
+    ],
     "type": "flervalg",
     "sporsmal": "Hvorfor måler du kontinuitet i beskyttelseslederen (PE)?",
     "alternativer": [
@@ -36,7 +40,9 @@
   {
     "id": "maaling-kontinuitet-002",
     "omrade": "maaling",
-    "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+    "kompetansemaal": [
+      "utføre sluttkontroll med måling og funksjonstesting"
+    ],
     "type": "numerisk",
     "sporsmal": "Du måler kontinuitet på en 50 m lang PE-leder med tverrsnitt 2,5 mm² (kobber, ρ = 0,0175 Ω·mm²/m). Hvilken resistans forventer du? (Svar i ohm, ±0,05.)",
     "svar": 0.35,
@@ -49,10 +55,17 @@
   {
     "id": "maaling-isolasjon-001",
     "omrade": "maaling",
-    "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+    "kompetansemaal": [
+      "utføre sluttkontroll med måling og funksjonstesting"
+    ],
     "type": "flervalg",
     "sporsmal": "Hva er minste akseptable isolasjonsresistans ved måling med 500 V DC i en vanlig 230/400 V-installasjon?",
-    "alternativer": ["1 MΩ", "0,5 Ω", "100 Ω", "50 MΩ"],
+    "alternativer": [
+      "1 MΩ",
+      "0,5 Ω",
+      "100 Ω",
+      "50 MΩ"
+    ],
     "riktig": 0,
     "forklaring": "For kretser opp til 500 V måles det med 500 V likespenning, og verdien skal være minst 1 MΩ. I praksis skal en ny, tørr installasjon ligge langt over dette – verdier nær grensen bør få deg til å lete etter årsaken.",
     "kilde": "NEK 400-6 (verifikasjon, isolasjonsresistans)",
@@ -61,7 +74,9 @@
   {
     "id": "maaling-isolasjon-002",
     "omrade": "maaling",
-    "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+    "kompetansemaal": [
+      "utføre sluttkontroll med måling og funksjonstesting"
+    ],
     "type": "flervalg",
     "sporsmal": "Hva må du gjøre FØR du isolasjonsmåler en kurs med 500 V DC?",
     "alternativer": [
@@ -78,7 +93,9 @@
   {
     "id": "maaling-jfb-001",
     "omrade": "maaling",
-    "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+    "kompetansemaal": [
+      "utføre sluttkontroll med måling og funksjonstesting"
+    ],
     "type": "santusant",
     "sporsmal": "Ved sluttkontroll er det nok å trykke på testknappen for å verifisere jordfeilbryteren.",
     "riktig": false,
@@ -89,7 +106,9 @@
   {
     "id": "maaling-instrument-001",
     "omrade": "maaling",
-    "kompetansemaal": ["utføre feilsøking og måling med relevante instrumenter"],
+    "kompetansemaal": [
+      "utføre feilsøking og måling med relevante instrumenter"
+    ],
     "type": "flervalg",
     "sporsmal": "Hva er fordelen med et tangamperemeter?",
     "alternativer": [
@@ -106,7 +125,9 @@
   {
     "id": "maaling-feilsoking-001",
     "omrade": "maaling",
-    "kompetansemaal": ["utføre feilsøking og måling med relevante instrumenter"],
+    "kompetansemaal": [
+      "utføre feilsøking og måling med relevante instrumenter"
+    ],
     "type": "flervalg",
     "sporsmal": "En kurs slår ut jordfeilbryteren med ujevne mellomrom. Hva er en fornuftig systematisk fremgangsmåte?",
     "alternativer": [
@@ -123,7 +144,9 @@
   {
     "id": "maaling-rotasjon-001",
     "omrade": "maaling",
-    "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+    "kompetansemaal": [
+      "utføre sluttkontroll med måling og funksjonstesting"
+    ],
     "type": "santusant",
     "sporsmal": "Ved nye trefaseinstallasjoner bør faserekkefølgen kontrolleres med instrument før motorlast tilkobles.",
     "riktig": true,
@@ -134,7 +157,9 @@
   {
     "id": "maaling-dok-001",
     "omrade": "maaling",
-    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+    "kompetansemaal": [
+      "planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"
+    ],
     "type": "flervalg",
     "sporsmal": "Hvorfor skal måleresultatene fra sluttkontrollen dokumenteres skriftlig?",
     "alternativer": [
@@ -146,6 +171,176 @@
     "riktig": 0,
     "forklaring": "Sluttkontrollskjema med måleverdier hører til dokumentasjonen som overleveres med samsvarserklæringen. Den beskytter også DEG og bedriften: oppstår det feil senere, viser dokumentasjonen at anlegget var verifisert i orden ved overlevering.",
     "kilde": "FEL § 12, NEK 400-6",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "maaling-spenning-001",
+    "omrade": "maaling",
+    "kompetansemaal": [
+      "utføre feilsøking og måling med relevante instrumenter"
+    ],
+    "type": "flervalg",
+    "sporsmal": "I et friskt 230 V IT-anlegg måler du ofte rundt 133 V mellom én fase og jord. Hvorfor?",
+    "alternativer": [
+      "Spenningen mot jord er ikke fast definert i IT-nett – ca. 133 V (230/√3) oppstår via nettets kapasitanser",
+      "Anlegget har jordfeil",
+      "Måleinstrumentet er defekt",
+      "Det er alltid nøyaktig halvparten av 230 V mot jord"
+    ],
+    "riktig": 0,
+    "forklaring": "I IT-nettet er ingen leder direkte jordet, så fase–jord-spenningen «flyter» og settes av kapasitive koblinger – typisk rundt 230/√3 ≈ 133 V i et symmetrisk anlegg. Avviker verdiene mye mellom fasene, kan det derimot tyde på jordfeil i nettet.",
+    "kilde": "IT-systemets egenskaper, NEK 400-312",
+    "vanskelighetsgrad": 3
+  },
+  {
+    "id": "maaling-kontinuitet-003",
+    "omrade": "maaling",
+    "kompetansemaal": [
+      "utføre sluttkontroll med måling og funksjonstesting"
+    ],
+    "type": "flervalg",
+    "sporsmal": "Hvilket instrument og innstilling er riktig for kontinuitetsmåling av beskyttelsesleder ved sluttkontroll?",
+    "alternativer": [
+      "Installasjonstester med lavohm-funksjon og prøvestrøm på minst 200 mA",
+      "Multimeterets pipefunksjon – pip betyr godkjent",
+      "Tangamperemeter",
+      "Megger på 500 V"
+    ],
+    "riktig": 0,
+    "forklaring": "Pipefunksjonen sier bare at resistansen er under noen hundre ohm – den kan «godkjenne» en forbindelse som er altfor dårlig. Sluttkontroll krever lavohmsmåling med reell prøvestrøm (≥ 200 mA) som avslører dårlige tilkoblinger. Megger på PE måler isolasjon, ikke kontinuitet.",
+    "kilde": "NEK 400-6, krav til måleinstrumenter (NEK EN 61557)",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "maaling-isolasjon-003",
+    "omrade": "maaling",
+    "kompetansemaal": [
+      "utføre sluttkontroll med måling og funksjonstesting"
+    ],
+    "type": "numerisk",
+    "sporsmal": "To kurser måles samlet til isolasjonsresistans. Hver kurs har 2 MΩ mot jord. Hva viser instrumentet? (Svar i MΩ.)",
+    "svar": 1,
+    "toleranse": 0.05,
+    "enhet": "MΩ",
+    "forklaring": "Isolasjonsresistanser mot jord ligger i parallell: (2·2)/(2+2) = 1 MΩ. Derfor kan en samlemåling på hele anlegget se «grei» ut selv om én kurs er dårlig – måler du lavt samlet, må du dele opp og måle kursvis.",
+    "kilde": "Parallellkobling; NEK 400-6",
+    "vanskelighetsgrad": 3
+  },
+  {
+    "id": "maaling-jfb-003",
+    "omrade": "maaling",
+    "kompetansemaal": [
+      "utføre sluttkontroll med måling og funksjonstesting"
+    ],
+    "type": "flervalg",
+    "sporsmal": "Hva måler instrumentet når du tester en jordfeilbryter ved sluttkontroll?",
+    "alternativer": [
+      "Utløsestrøm og utløsetid",
+      "Isolasjonsresistansen i bryteren",
+      "Spenningsfallet over bryteren",
+      "Kontaktresistansen i testknappen"
+    ],
+    "riktig": 0,
+    "forklaring": "Installasjonstesteren trapper opp en kunstig jordfeilstrøm og registrerer ved hvilken strøm bryteren løser ut (skal være mellom 50 % og 100 % av merkeutløsestrøm) og hvor raskt. Begge verdier føres i sluttkontrollskjemaet.",
+    "kilde": "NEK 400-6 (verifikasjon)",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "maaling-sloyfe-001",
+    "omrade": "maaling",
+    "kompetansemaal": [
+      "utføre sluttkontroll med måling og funksjonstesting"
+    ],
+    "type": "flervalg",
+    "sporsmal": "Hvorfor måles sløyfeimpedans i TN-anlegg?",
+    "alternativer": [
+      "For å verifisere at kortslutningsstrømmen ved jordfeil blir stor nok til at vernet løser ut raskt nok",
+      "For å finne kabelens lengde",
+      "For å kontrollere cos φ på kursen",
+      "For å måle hvor mye anlegget kan belastes"
+    ],
+    "riktig": 0,
+    "forklaring": "I TN gir en jordfeil i praksis en kortslutning fase–PE. Vernet skal koble ut innen kravtiden, og det krever at feilstrømmen (U/Zs) er stor nok. Måler du for høy sløyfeimpedans, løser ikke vernet ut i tide – og det er en alvorlig feil.",
+    "kilde": "NEK 400-411, automatisk utkobling",
+    "vanskelighetsgrad": 3
+  },
+  {
+    "id": "maaling-sloyfe-002",
+    "omrade": "maaling",
+    "kompetansemaal": [
+      "utføre sluttkontroll med måling og funksjonstesting"
+    ],
+    "type": "numerisk",
+    "sporsmal": "Sløyfeimpedansen ytterst på en 230 V-kurs måles til 0,46 Ω. Hvor stor blir feilstrømmen ved en stiv jordfeil der? (Svar i ampere, ±5.)",
+    "svar": 500,
+    "toleranse": 5,
+    "enhet": "A",
+    "forklaring": "Ik = U / Zs = 230 / 0,46 = 500 A. Den verdien sammenligner du med vernets utløsekarakteristikk – en 16 A C-automat trenger typisk 5–10 ganger merkestrøm (80–160 A) for momentan utløsning, så 500 A er god margin.",
+    "kilde": "Ohms lov på feilsløyfa; NEK 400-411",
+    "vanskelighetsgrad": 3
+  },
+  {
+    "id": "maaling-instrument-002",
+    "omrade": "maaling",
+    "kompetansemaal": [
+      "utføre feilsøking og måling med relevante instrumenter"
+    ],
+    "type": "santusant",
+    "sporsmal": "CAT-merkingen (f.eks. CAT III 600 V) på et måleinstrument angir hvor i anlegget instrumentet trygt kan brukes.",
+    "riktig": true,
+    "forklaring": "Kategorien beskriver hvilke transientspenninger instrumentet tåler: CAT II er typisk stikkontaktnivå, CAT III faste installasjoner og fordelinger, CAT IV inntak/utendørs. Å bruke et CAT II-multimeter i en hovedfordeling er en kjent årsak til alvorlige lysbueulykker.",
+    "kilde": "NEK EN 61010 (sikkerhetskrav til måleinstrumenter)",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "maaling-feilsoking-002",
+    "omrade": "maaling",
+    "kompetansemaal": [
+      "utføre feilsøking og måling med relevante instrumenter"
+    ],
+    "type": "flervalg",
+    "sporsmal": "En automatsikring løser ut i samme øyeblikk som du kobler inn kursen. Hva tyder det på?",
+    "alternativer": [
+      "Kortslutning eller jordfeil med lav impedans på kursen",
+      "Overbelastning – for mange apparater på kursen",
+      "At sikringen er for stor",
+      "Normal oppførsel for nye sikringer"
+    ],
+    "riktig": 0,
+    "forklaring": "Momentan utløsning betyr at den elektromagnetiske delen av vernet har sett en stor strøm – altså kortslutning (eller solid jordfeil i TN). Overbelastning gir derimot termisk utløsning som tar sekunder til minutter. Symptomet forteller deg hvor du skal lete.",
+    "kilde": "Vernkarakteristikker; feilsøkingsmetodikk",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "maaling-termo-001",
+    "omrade": "maaling",
+    "kompetansemaal": [
+      "utføre feilsøking og måling med relevante instrumenter"
+    ],
+    "type": "santusant",
+    "sporsmal": "Termografering kan avsløre dårlige tilkoblinger i en fordeling før de blir til branntilløp.",
+    "riktig": true,
+    "forklaring": "En løs tilkobling har høy overgangsresistans, og P = R·I² gjør at den blir varm under last. Et termokamera ser varmgangen lenge før det lukter svidd. Husk at anlegget må være belastet under termograferingen for at feilen skal synes.",
+    "kilde": "El-kontroll og termografi (NEK 405-serien)",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "maaling-dok-002",
+    "omrade": "maaling",
+    "kompetansemaal": [
+      "planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"
+    ],
+    "type": "flervalg",
+    "sporsmal": "Hvilke måleresultater hører hjemme i rapporten fra sluttkontrollen?",
+    "alternativer": [
+      "Alle: kontinuitet, isolasjonsresistans, jordfeilbryter-test og eventuell sløyfeimpedans",
+      "Bare de som var dårlige",
+      "Bare isolasjonsmålingen",
+      "Ingen – det holder å krysse av «OK»"
+    ],
+    "riktig": 0,
+    "forklaring": "Måleverdiene – ikke bare «OK» – skal føres, med referanse til hvilken kurs de gjelder. Tallene er beviset på at anlegget var i orden ved overlevering, og referansen neste gang noen skal feilsøke eller utvide anlegget.",
+    "kilde": "NEK 400-6, FEL § 12",
     "vanskelighetsgrad": 1
   }
 ]

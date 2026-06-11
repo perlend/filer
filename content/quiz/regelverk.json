@@ -1,0 +1,267 @@
+[
+  {
+    "id": "regelverk-fel-001",
+    "omrade": "regelverk",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+    "type": "flervalg",
+    "sporsmal": "Hva er forholdet mellom FEL (forskrift) og NEK 400 (norm)?",
+    "alternativer": [
+      "FEL stiller de juridiske kravene; NEK 400 beskriver en måte å oppfylle dem på",
+      "NEK 400 er loven, FEL er bare en veiledning",
+      "De er to navn på samme dokument",
+      "FEL gjelder bolig, NEK 400 gjelder næringsbygg"
+    ],
+    "riktig": 0,
+    "forklaring": "Forskriften (FEL) er rettslig bindende, men funksjonsbasert – den sier HVA som skal oppnås. Normen (NEK 400) er den anerkjente metoden for HVORDAN. Du kan i prinsippet velge andre løsninger, men da må du selv dokumentere samme sikkerhetsnivå – i praksis følger bransjen NEK 400.",
+    "kilde": "FEL § 10 med veiledning",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "regelverk-fel-002",
+    "omrade": "regelverk",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+    "type": "santusant",
+    "sporsmal": "Følger du NEK 400 fullt ut, anses sikkerhetskravene i FEL normalt som oppfylt.",
+    "riktig": true,
+    "forklaring": "FEL henviser til normen som metode: oppfyller du NEK 400, har du dokumentert samsvar med forskriftens sikkerhetskrav. Avviker du fra normen, må du dokumentere at løsningen din er minst like sikker – en høy terskel i praksis.",
+    "kilde": "FEL § 10",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "regelverk-samsvar-001",
+    "omrade": "regelverk",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+    "type": "flervalg",
+    "sporsmal": "Hvem skal ha samsvarserklæringen etter utført installasjonsarbeid?",
+    "alternativer": [
+      "Eieren av anlegget",
+      "DSB",
+      "Netteieren",
+      "Den blir liggende i bedriftens arkiv – ingen andre trenger den"
+    ],
+    "riktig": 0,
+    "forklaring": "Samsvarserklæringen utstedes til anleggets eier, som skal oppbevare den så lenge anlegget eksisterer – den følger boligen ved salg. Bedriften beholder en kopi, men plikten er å gi den til eieren. Manglende samsvarserklæring er et vanlig funn ved DLE-tilsyn og boligsalg.",
+    "kilde": "FEL §§ 12–13",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "regelverk-samsvar-002",
+    "omrade": "regelverk",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+    "type": "flervalg",
+    "sporsmal": "Når skal det utstedes samsvarserklæring?",
+    "alternativer": [
+      "Ved nye anlegg og ved endringer/utvidelser av eksisterende anlegg",
+      "Bare ved helt nye bolighus",
+      "Bare når kunden ber om det",
+      "Bare på anlegg over en viss størrelse"
+    ],
+    "riktig": 0,
+    "forklaring": "Alt arbeid som omfattes av FEL – også å legge til én kurs eller flytte noen punkter – skal ha samsvarserklæring. Ren service/reparasjon (bytte like komponenter) håndteres ofte som vedlikehold, men ved tvil: dokumentér. Det beskytter både eier og deg.",
+    "kilde": "FEL § 12",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "regelverk-samsvar-003",
+    "omrade": "regelverk",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+    "type": "santusant",
+    "sporsmal": "En samsvarserklæring er gyldig dokumentasjon alene, uten underliggende rapport fra risikovurdering og sluttkontroll.",
+    "riktig": false,
+    "forklaring": "Erklæringen skal bygge på dokumentasjon: risikovurdering, beskrivelse av anlegget og rapport fra sluttkontroll med måleverdier. En signatur uten underlag er i praksis verdiløs – det er underlagene som beviser at jobben er kontrollert.",
+    "kilde": "FEL §§ 12–13 med veiledning",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "regelverk-fek-001",
+    "omrade": "regelverk",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+    "type": "flervalg",
+    "sporsmal": "Hva regulerer FEK (forskrift om elektroforetak og kvalifikasjonskrav)?",
+    "alternativer": [
+      "Hvem som kan utføre og være ansvarlig for elektroarbeid – krav til foretak, faglig ansvarlig og utførende",
+      "Hvordan kabler skal dimensjoneres",
+      "Prisene på elektrikertjenester",
+      "Kun krav til høyspenningsanlegg"
+    ],
+    "riktig": 0,
+    "forklaring": "FEL/NEK 400 handler om anlegget – FEK handler om menneskene og foretakene: registreringsplikt i Elvirksomhetsregisteret, krav til faglig ansvarlig (installatør) og krav om at utførende er elektrofagarbeider. Det er FEK som gjør at du må ha fagbrev for å jobbe selvstendig.",
+    "kilde": "FEK §§ 3–7",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "regelverk-fek-002",
+    "omrade": "regelverk",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+    "type": "santusant",
+    "sporsmal": "Som lærling kan du utføre elektroarbeid helt selvstendig, så lenge du snart skal opp til fagprøven.",
+    "riktig": false,
+    "forklaring": "Lærlinger arbeider under faglig ledelse og tilsyn av en elektrofagarbeider – graden av selvstendighet øker utover i læretiden, men det formelle ansvaret ligger hos fagarbeideren/bedriften helt til du har fagbrev. «Snart ferdig» er ikke en kvalifikasjon.",
+    "kilde": "FEK § 6 med veiledning",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "regelverk-dle-001",
+    "omrade": "regelverk",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+    "type": "flervalg",
+    "sporsmal": "Hva er DLE?",
+    "alternativer": [
+      "Det lokale eltilsyn – fører tilsyn med elanlegg og elektroforetak på vegne av DSB",
+      "En frivillig bransjeorganisasjon",
+      "Elektrikernes fagforening",
+      "Netteierens kundeservice"
+    ],
+    "riktig": 0,
+    "forklaring": "DLE er en del av netteieren, men utfører myndighetsoppgaver på vegne av DSB: tilsyn med boliganlegg, verifikasjon av nyanlegg og oppfølging av elektroforetak. Får kunden tilsynsrapport med avvik på noe du har gjort, går saken til bedriften din – dokumentasjonen din er forsvaret.",
+    "kilde": "El-tilsynsloven, DSBs instruks for DLE",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "regelverk-nek-001",
+    "omrade": "regelverk",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+    "type": "flervalg",
+    "sporsmal": "Hvor ofte kommer det normalt ny utgave av NEK 400?",
+    "alternativer": ["Hvert 4. år", "Hvert år", "Hvert 10. år", "Den er aldri revidert"],
+    "riktig": 0,
+    "forklaring": "NEK 400 revideres i en fast 4-årssyklus (2018, 2022, …). Nye anlegg prosjekteres etter gjeldende utgave – derfor må både du og appens innhold holdes oppdatert når ny utgave kommer. Eksisterende anlegg trenger ikke oppgraderes til ny norm med tilbakevirkende kraft.",
+    "kilde": "NEK (Norsk Elektroteknisk Komite)",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "regelverk-nek-002",
+    "omrade": "regelverk",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+    "type": "flervalg",
+    "sporsmal": "Hvilket område dekker NEK 400-8-823?",
+    "alternativer": [
+      "Elektriske installasjoner i boliger",
+      "Marinaer og båthavner",
+      "Medisinske områder",
+      "Landbruksbygninger"
+    ],
+    "riktig": 0,
+    "forklaring": "Del 823 er «boligdelen» av NEK 400 og samler særkravene for bolig: krav til antall kurser, plassering av utstyr, overspenningsvern, tilleggsbeskyttelse m.m. De andre alternativene har egne deler (f.eks. 709 marinaer, 710 medisinske områder, 705 landbruk) – det er verdt å kunne strukturen.",
+    "kilde": "NEK 400-8-823",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "regelverk-fdv-001",
+    "omrade": "regelverk",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+    "type": "flervalg",
+    "sporsmal": "Hva står FDV for i «FDV-dokumentasjon»?",
+    "alternativer": [
+      "Forvaltning, drift og vedlikehold",
+      "Ferdigstillelse, dokumentasjon og verifikasjon",
+      "Fordeling, vern og dimensjonering",
+      "Forskrift, direktiv og veiledning"
+    ],
+    "riktig": 0,
+    "forklaring": "FDV-dokumentasjonen gir eieren det som trengs for å forvalte, drifte og vedlikeholde anlegget: produktdatablader, brukerveiledninger, tegninger og vedlikeholdsintervaller. Den overleveres sammen med samsvarserklæringen – særlig viktig i næringsbygg.",
+    "kilde": "FEL § 12, byggteknisk forskrift (TEK)",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "regelverk-sja-001",
+    "omrade": "regelverk",
+    "kompetansemaal": ["risikovurdere arbeidsoppdrag og velge arbeidsmetode"],
+    "type": "flervalg",
+    "sporsmal": "Når skal en sikker jobb-analyse (SJA) gjennomføres?",
+    "alternativer": [
+      "Før arbeidet starter, når jobben innebærer risiko som ikke dekkes av faste rutiner",
+      "Etter at jobben er ferdig, som dokumentasjon",
+      "Bare ved arbeid på høyspenningsanlegg",
+      "Bare når byggherren krever det skriftlig"
+    ],
+    "riktig": 0,
+    "forklaring": "SJA er en systematisk gjennomgang av farene FØR jobben: hva kan gå galt, hva gjør vi for å hindre det, hvem gjør hva. Den brukes når oppdraget avviker fra rutinejobber – og den skal dokumenteres og gjennomgås med alle som deltar.",
+    "kilde": "Internkontrollforskriften, bransjepraksis (SJA)",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "regelverk-lekfolk-001",
+    "omrade": "regelverk",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+    "type": "santusant",
+    "sporsmal": "Privatpersoner uten fagbrev har lov til å utføre enkelte små elektroarbeider hjemme, som å bytte deksel på brytere og stikkontakter.",
+    "riktig": true,
+    "forklaring": "Noen definerte småjobber er tillatt for ufaglærte i egen bolig: bytte deksler, montere/reparere plugg og apparatkontakt på bevegelig ledning, koble til lampe i takboks med støpsel o.l. Alt fast installasjonsarbeid krever registrert foretak. Som fagperson bør du kunne fortelle kunden hvor grensen går.",
+    "kilde": "FEK § 6 med veiledning (DSBs liste over tillatte arbeider)",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "regelverk-melding-001",
+    "omrade": "regelverk",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+    "type": "flervalg",
+    "sporsmal": "Hvilke arbeider skal meldes til netteier/DLE før de utføres?",
+    "alternativer": [
+      "Nyanlegg og vesentlige endringer, f.eks. nytt inntak eller utvidelse av hovedfordeling",
+      "Absolutt alt arbeid, inkludert bytte av en bryter",
+      "Ingenting – melding er frivillig",
+      "Bare arbeid i næringsbygg"
+    ],
+    "riktig": 0,
+    "forklaring": "Forhåndsmelding (i praksis via Elsmart e.l.) gjelder nyanlegg og større endringer – netteier skal vite hva som kobles til nettet, og DLE bruker meldingene til å plukke ut anlegg for verifikasjon. Mindre arbeid dokumenteres med samsvarserklæring uten melding. Bedriften din har rutiner for hva som meldes.",
+    "kilde": "FEL § 14, netteiernes retningslinjer",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "regelverk-ekom-001",
+    "omrade": "regelverk",
+    "kompetansemaal": ["installere elektronisk kommunikasjonsnett"],
+    "type": "santusant",
+    "sporsmal": "Foretak som installerer ekomnett (f.eks. spredenett for data) må være registrert hos Nkom.",
+    "riktig": true,
+    "forklaring": "Installasjon og vedlikehold av ekomnett krever at foretaket er registrert som ekomnettinstallatør hos Nasjonal kommunikasjonsmyndighet (Nkom), med kvalifisert person ansvarlig. Det er et eget løp ved siden av DSB/Elvirksomhetsregisteret for sterkstrøm.",
+    "kilde": "Ekomforskriften, autorisasjonsforskriften (Nkom)",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "regelverk-ansvar-001",
+    "omrade": "regelverk",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+    "type": "flervalg",
+    "sporsmal": "Hvem har det overordnede faglige ansvaret for at et installasjonsoppdrag utføres etter regelverket?",
+    "alternativer": [
+      "Foretakets faglig ansvarlige (installatøren) – men utførende fagarbeider har også ansvar for eget arbeid",
+      "Kunden som bestilte jobben",
+      "Lærlingen som gjorde mest av jobben",
+      "Grossisten som leverte materiellet"
+    ],
+    "riktig": 0,
+    "forklaring": "FEK legger det faglige ansvaret på foretaket og dets faglig ansvarlige. Samtidig har den som utfører, et selvstendig ansvar for å arbeide fagmessig og si fra om feil. Ansvar smitter ikke over på lærlingen – men gode vaner med dokumentasjon og varsling bygges nå.",
+    "kilde": "FEK §§ 5–7",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "regelverk-avvik-001",
+    "omrade": "regelverk",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+    "type": "flervalg",
+    "sporsmal": "Basen ber deg gjøre en løsning du mener er i strid med NEK 400. Hva gjør du?",
+    "alternativer": [
+      "Sier fra om hva du mener er feil, og løfter saken til faglig ansvarlig hvis dere er uenige",
+      "Gjør det du får beskjed om – basen bestemmer",
+      "Gjør jobben, men skriver ikke navnet ditt på noe",
+      "Nekter og går hjem uten å si noe"
+    ],
+    "riktig": 0,
+    "forklaring": "Du har plikt til å varsle når du mener noe er faglig feil – og faglig ansvarlig skal avgjøre. Kanskje tar du feil (og lærer noe), kanskje hindrer du en farlig løsning. Å utføre i stillhet eller «gjemme» navnet sitt løser ingenting; anlegget blir like farlig.",
+    "kilde": "FEK, internkontrollforskriften, arbeidsmiljøloven § 2-3",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "regelverk-tilsyn-001",
+    "omrade": "regelverk",
+    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+    "type": "santusant",
+    "sporsmal": "DLE kan kreve at bedriften din retter feil på et anlegg dere har levert.",
+    "riktig": true,
+    "forklaring": "Finner DLE avvik ved verifikasjon av et nyanlegg, pålegges foretaket å rette – og gjentatte funn kan meldes videre til DSB med reaksjoner mot foretaket. God egenkontroll og ærlig dokumentasjon er billigere enn tilsynssaker.",
+    "kilde": "El-tilsynsloven, DSBs instruks for DLE",
+    "vanskelighetsgrad": 1
+  }
+]

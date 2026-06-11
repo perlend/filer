@@ -7,7 +7,7 @@ const rot = new URL("..", import.meta.url).pathname;
 const feil = [];
 const ids = new Set();
 
-const GYLDIGE_OMRADER = ["elsikkerhet", "teori", "maaling"];
+const GYLDIGE_OMRADER = ["elsikkerhet", "teori", "maaling", "installasjon", "regelverk"];
 
 function sjekkFelles(fil, e) {
   if (!e.id) feil.push(`${fil}: mangler id`);
@@ -36,7 +36,7 @@ for (const fil of readdirSync(join(rot, "content/quiz"))) {
     } else if (s.type === "santusant") {
       if (typeof s.riktig !== "boolean") feil.push(`${fil}: ${s.id} mangler boolsk fasit`);
     } else if (s.type === "numerisk") {
-      if (typeof s.svar !== "number" || typeof s.toleranse !== "number" || !s.enhet)
+      if (typeof s.svar !== "number" || typeof s.toleranse !== "number" || typeof s.enhet !== "string")
         feil.push(`${fil}: ${s.id} mangler svar/toleranse/enhet`);
     } else {
       feil.push(`${fil}: ${s.id} har ukjent type «${s.type}»`);

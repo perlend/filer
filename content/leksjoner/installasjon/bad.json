@@ -1,0 +1,28 @@
+{
+  "id": "leksjon-installasjon-bad",
+  "tittel": "Bad og dusjrom – soner, IP-grad og jordfeilvern",
+  "omrade": "installasjon",
+  "kompetansemaal": ["installere elektriske installasjoner i ulike typer bygninger"],
+  "nivaa": 2,
+  "lesetidMin": 5,
+  "seksjoner": [
+    {
+      "tittel": "Tenk først 🤔",
+      "tekst": "Kunden vil ha en stikkontakt rett ved siden av servanten og en spot i taket over dusjen. Hva må du sjekke før du sier ja til plasseringene?"
+    },
+    {
+      "tittel": "Teori",
+      "tekst": "Bad er et område med økt fare: våt hud (lav kroppsresistans) og jordede omgivelser. NEK 400-701 deler derfor rommet i soner:\n\n– Sone 0: inne i badekaret/dusjbunnen. Kun utstyr spesielt beregnet for det (SELV, lav spenning).\n– Sone 1: over badekar/dusj opp til 2,25 m. Kun utstyr egnet for sonen, normalt minst IPX4.\n– Sone 2: 60 cm ut fra sone 1. Minst IPX4.\n– Utenfor sonene: vanlige krav, men hele rommet skal ha tilleggsbeskyttelse.\n\nViktige krav å huske:\n– Alle kurser i rommet: 30 mA jordfeilvern\n– Utstyr velges etter sone og IP-grad (IPX5 hvis spyling kan forekomme)\n– Varmekabler: jordet skjerm, montering etter produsentens anvisning\n\nSe NEK 400-701 for sonemål og detaljer – og husk at dusj uten kabinett gir soner ut fra dusjhodet."
+    },
+    {
+      "tittel": "På jobben 🔧",
+      "tekst": "Caset: stikkontakten ved servanten er normalt greit hvis den havner utenfor sone 2 og kursen har 30 mA jordfeilvern. Spotten over dusjen står i sone 1 – den må være godkjent for sonen med minst IPX4, og lavvoltsanlegg må ha driveren plassert utenfor sonene. Tegn sonene før du borer – å flytte en boks etter flisleggeren har vært der, er en dyr lærepenge."
+    }
+  ],
+  "huskepunkter": [
+    "Sone 0/1/2 bestemmer hvilket utstyr som er lov – sjekk sonekartet først",
+    "Minst IPX4 i sone 1 og 2 (IPX5 ved spyling)",
+    "Alle kurser på badet skal ha 30 mA jordfeilvern",
+    "Varmekabel: jordet skjerm + produsentens anvisning er bindende"
+  ]
+}

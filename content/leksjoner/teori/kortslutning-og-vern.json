@@ -1,0 +1,28 @@
+{
+  "id": "leksjon-teori-kortslutning",
+  "tittel": "Kortslutningsstrøm, bryteevne og selektivitet",
+  "omrade": "teori",
+  "kompetansemaal": ["risikovurdere anlegg og utstyr med hensyn til beskyttelse mot overstrøm"],
+  "nivaa": 3,
+  "lesetidMin": 6,
+  "seksjoner": [
+    {
+      "tittel": "Tenk først 🤔",
+      "tekst": "I en tavle står det automater merket 6 kA. Beregnet kortslutningsstrøm ved tavlen er 8 kA. Er det et problem – og hvorfor regner vi egentlig ut både største og minste kortslutningsstrøm?"
+    },
+    {
+      "tittel": "Teori",
+      "tekst": "Ved kortslutning begrenses strømmen bare av impedansen i sløyfa (trafo + kabler). To verdier er viktige:\n\n– Ik maks (ved tavlen, der impedansen er minst): Vernet må ha BRYTEEVNE minst like stor – et vern som ikke klarer å bryte strømmen, kan havarere voldsomt. Bryteevnen står på vernet (6 kA, 10 kA …).\n\n– Ik min (ytterst på kursen, der impedansen er størst): Strømmen må fortsatt være stor nok til at vernet løser ut MOMENTANT (magnetisk). For en C-karakteristikk automat skjer det ved 5–10 × merkestrøm. Er kursen for lang/tynn, blir Ik min for liten – og en kortslutning ytterst blir stående og koke i stedet for å kobles ut.\n\nSELEKTIVITET: vern i serie skal graderes slik at vernet nærmest feilen løser ut først. Da mister ikke hele huset strømmen fordi én kurs feiler. Det oppnås med forskjell i størrelse og karakteristikk – og må vurderes både termisk og magnetisk."
+    },
+    {
+      "tittel": "På jobben 🔧",
+      "tekst": "Caset: ja, det er et problem – 6 kA bryteevne med 8 kA tilgjengelig kortslutningsstrøm er ulovlig (med mindre et foranstående vern gir dokumentert backup-beskyttelse). Løsningen er vern med 10 kA bryteevne, eller dokumentert kaskadering. Dette sjekkes ved prosjektering: netteier oppgir kortslutningsytelsen ved inntaket, og du regner deg utover i anlegget. På fagprøven: vis at du kjenner BÅDE Ik maks (bryteevne) og Ik min (utløsekrav)."
+    }
+  ],
+  "huskepunkter": [
+    "Ik maks ved tavlen → vernets bryteevne må være større",
+    "Ik min ytterst → må være stor nok for momentan utløsning (C: 5–10 × In)",
+    "Lange/tynne kurser er problemet for Ik min – regn, ikke gjett",
+    "Selektivitet: vernet nærmest feilen skal løse ut først"
+  ]
+}

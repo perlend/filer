@@ -1,0 +1,28 @@
+{
+  "id": "leksjon-installasjon-elbil",
+  "tittel": "Elbillading hjemme – dedikert kurs og riktig vern",
+  "omrade": "installasjon",
+  "kompetansemaal": ["installere og sette i drift lavspenningsinstallasjoner med tilhørende utstyr"],
+  "nivaa": 2,
+  "lesetidMin": 5,
+  "seksjoner": [
+    {
+      "tittel": "Tenk først 🤔",
+      "tekst": "En kunde har ladet elbilen fra den vanlige stikkontakten i garasjen i to år, og nå har kontakten smeltet. Hva gikk galt – og hva er riktig løsning?"
+    },
+    {
+      "tittel": "Teori",
+      "tekst": "Elbillading er ekstrembelastning: mange timer i strekk på maksimal strøm. En vanlig stikkontakt er ikke konstruert for 10–16 A kontinuerlig, døgn etter døgn – overgangsresistans i kontakten gir varmgang over tid.\n\nKravene for ladeanlegg (NEK 400-722):\n– Dedikert kurs per ladepunkt, dimensjonert for kontinuerlig last\n– Mode 3 ladestasjon (fast montert, kommuniserer med bilen) er anbefalt løsning\n– Jordfeilvern type B – eller type A kombinert med DC-deteksjon ≥ 6 mA (ofte innebygd i laderen; sjekk dokumentasjonen)\n– Overspenningsvern og mekanisk solid montasje\n\nLastbalansering er aktuelt der inntaket er begrenset: laderen reduserer ladestrømmen når resten av huset bruker mye."
+    },
+    {
+      "tittel": "På jobben 🔧",
+      "tekst": "Caset: kontakten smeltet av langvarig kontinuerlig last – klassisk Mode 2-skade. Riktig løsning er en Mode 3-ladestasjon på egen kurs: sjekk inntakets kapasitet, velg kabel etter kontinuerlig last og spenningsfall (garasjer ligger ofte langt fra tavlen!), og verifiser om laderen har innebygd DC-deteksjon før du velger jordfeilvern i tavlen. Dokumentér og lever samsvarserklæring – ladeanlegg er typisk DLE-kontrollobjekt."
+    }
+  ],
+  "huskepunkter": [
+    "Egen kurs per ladepunkt – aldri dele med andre forbrukere",
+    "Mode 3-ladestasjon er standardløsningen hjemme",
+    "Jordfeilvern type B, eller type A + 6 mA DC-deteksjon (ofte i laderen)",
+    "Sjekk spenningsfall på lange garasjekurser, og husk dokumentasjon"
+  ]
+}

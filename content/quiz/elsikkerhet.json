@@ -2,7 +2,9 @@
   {
     "id": "elsikkerhet-fse-001",
     "omrade": "elsikkerhet",
-    "kompetansemaal": ["arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"],
+    "kompetansemaal": [
+      "arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"
+    ],
     "type": "flervalg",
     "sporsmal": "Hva er det FØRSTE du gjør når du skal etablere et frakoblet arbeidssted?",
     "alternativer": [
@@ -19,7 +21,9 @@
   {
     "id": "elsikkerhet-fse-002",
     "omrade": "elsikkerhet",
-    "kompetansemaal": ["arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"],
+    "kompetansemaal": [
+      "arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"
+    ],
     "type": "flervalg",
     "sporsmal": "Hvor ofte skal du ha opplæring i FSE og førstehjelp?",
     "alternativer": [
@@ -36,7 +40,9 @@
   {
     "id": "elsikkerhet-fse-003",
     "omrade": "elsikkerhet",
-    "kompetansemaal": ["arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"],
+    "kompetansemaal": [
+      "arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"
+    ],
     "type": "santusant",
     "sporsmal": "Spenningstesteren skal kontrolleres mot kjent spenningskilde både før og etter at du spenningstester arbeidsstedet.",
     "riktig": true,
@@ -47,7 +53,9 @@
   {
     "id": "elsikkerhet-fse-004",
     "omrade": "elsikkerhet",
-    "kompetansemaal": ["arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"],
+    "kompetansemaal": [
+      "arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"
+    ],
     "type": "flervalg",
     "sporsmal": "Hva betyr det å «sikre mot innkobling»?",
     "alternativer": [
@@ -64,7 +72,9 @@
   {
     "id": "elsikkerhet-fse-005",
     "omrade": "elsikkerhet",
-    "kompetansemaal": ["arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"],
+    "kompetansemaal": [
+      "arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"
+    ],
     "type": "flervalg",
     "sporsmal": "Du har frakoblet og sikret mot innkobling. Hva er neste steg før du kan starte arbeidet?",
     "alternativer": [
@@ -81,7 +91,9 @@
   {
     "id": "elsikkerhet-forstehjelp-001",
     "omrade": "elsikkerhet",
-    "kompetansemaal": ["gi livreddende førstehjelp"],
+    "kompetansemaal": [
+      "gi livreddende førstehjelp"
+    ],
     "type": "santusant",
     "sporsmal": "En kollega har fått strømgjennomgang, men føler seg helt fin. Da er det greit å jobbe videre uten å gjøre noe mer.",
     "riktig": false,
@@ -92,7 +104,9 @@
   {
     "id": "elsikkerhet-forstehjelp-002",
     "omrade": "elsikkerhet",
-    "kompetansemaal": ["gi livreddende førstehjelp"],
+    "kompetansemaal": [
+      "gi livreddende førstehjelp"
+    ],
     "type": "flervalg",
     "sporsmal": "En person henger fast i et spenningssatt anlegg. Hva gjør du FØRST?",
     "alternativer": [
@@ -109,7 +123,9 @@
   {
     "id": "elsikkerhet-jfb-001",
     "omrade": "elsikkerhet",
-    "kompetansemaal": ["risikovurdere anlegg og utstyr med hensyn til beskyttelse mot elektrisk sjokk"],
+    "kompetansemaal": [
+      "risikovurdere anlegg og utstyr med hensyn til beskyttelse mot elektrisk sjokk"
+    ],
     "type": "flervalg",
     "sporsmal": "Hvilken funksjon har en jordfeilbryter med merkeutløsestrøm 30 mA?",
     "alternativer": [
@@ -126,7 +142,9 @@
   {
     "id": "elsikkerhet-jfb-002",
     "omrade": "elsikkerhet",
-    "kompetansemaal": ["risikovurdere anlegg og utstyr med hensyn til beskyttelse mot elektrisk sjokk"],
+    "kompetansemaal": [
+      "risikovurdere anlegg og utstyr med hensyn til beskyttelse mot elektrisk sjokk"
+    ],
     "type": "santusant",
     "sporsmal": "En jordfeilbryter med merkeutløsestrøm 30 mA kan løse ut allerede ved en jordfeilstrøm på rundt 15–30 mA.",
     "riktig": true,
@@ -137,7 +155,9 @@
   {
     "id": "elsikkerhet-strom-001",
     "omrade": "elsikkerhet",
-    "kompetansemaal": ["risikovurdere anlegg og utstyr med hensyn til beskyttelse mot elektrisk sjokk"],
+    "kompetansemaal": [
+      "risikovurdere anlegg og utstyr med hensyn til beskyttelse mot elektrisk sjokk"
+    ],
     "type": "santusant",
     "sporsmal": "Vekselstrøm gjennom kroppen kan være livsfarlig allerede ved noen titalls milliampere.",
     "riktig": true,
@@ -148,7 +168,9 @@
   {
     "id": "elsikkerhet-aus-001",
     "omrade": "elsikkerhet",
-    "kompetansemaal": ["arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"],
+    "kompetansemaal": [
+      "arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"
+    ],
     "type": "santusant",
     "sporsmal": "Arbeid under spenning (AUS) krever særskilt opplæring, egnet verktøy og personlig verneutstyr.",
     "riktig": true,
@@ -159,7 +181,9 @@
   {
     "id": "elsikkerhet-roller-001",
     "omrade": "elsikkerhet",
-    "kompetansemaal": ["arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"],
+    "kompetansemaal": [
+      "arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"
+    ],
     "type": "flervalg",
     "sporsmal": "Hva er oppgaven til leder for sikkerhet (LFS)?",
     "alternativer": [
@@ -176,7 +200,9 @@
   {
     "id": "elsikkerhet-pvu-001",
     "omrade": "elsikkerhet",
-    "kompetansemaal": ["velge egnet verktøy og verneutstyr for arbeidsoppdragene"],
+    "kompetansemaal": [
+      "velge egnet verktøy og verneutstyr for arbeidsoppdragene"
+    ],
     "type": "flervalg",
     "sporsmal": "Du skal spenningsteste i en fordeling der det er fare for lysbue. Hvilket verneutstyr er riktig?",
     "alternativer": [
@@ -193,7 +219,9 @@
   {
     "id": "elsikkerhet-ik-001",
     "omrade": "elsikkerhet",
-    "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til bedriftens internkontrollsystem"],
+    "kompetansemaal": [
+      "planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til bedriftens internkontrollsystem"
+    ],
     "type": "flervalg",
     "sporsmal": "Du oppdager en alvorlig feil i et eksisterende anlegg hos kunden – utenfor oppdraget ditt. Hva gjør du?",
     "alternativer": [
@@ -210,7 +238,9 @@
   {
     "id": "elsikkerhet-fse-006",
     "omrade": "elsikkerhet",
-    "kompetansemaal": ["arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"],
+    "kompetansemaal": [
+      "arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"
+    ],
     "type": "flervalg",
     "sporsmal": "Når kan sikkerhetstiltakene på et frakoblet arbeidssted avvikles?",
     "alternativer": [
@@ -222,6 +252,267 @@
     "riktig": 0,
     "forklaring": "Innkobling kan først skje når LFS har forvisset seg om at arbeidet er avsluttet og at ingen lenger er i berøring med eller nær anleggsdelen. At én person er ferdig, eller at kunden maser, endrer ingenting – det er en kjent ulykkesårsak.",
     "kilde": "FSE § 14",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "elsikkerhet-strom-002",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": [
+      "risikovurdere anlegg og utstyr med hensyn til beskyttelse mot elektrisk sjokk"
+    ],
+    "type": "flervalg",
+    "sporsmal": "Hvilke faktorer avgjør hvor farlig en strømgjennomgang er?",
+    "alternativer": [
+      "Strømstyrke, varighet og strømveien gjennom kroppen",
+      "Bare spenningen på anlegget",
+      "Bare hvor lenge strømmen står på",
+      "Om anlegget har overspenningsvern"
+    ],
+    "riktig": 0,
+    "forklaring": "Det er strømmen gjennom kroppen som skader – og faren bestemmes av hvor stor den er, hvor lenge den varer og hvilken vei den tar (hånd-til-hånd over brystet er verst). Spenningen er bare det som driver strømmen; med våt hud kan lav spenning gi farlig strøm.",
+    "kilde": "IEC 60479 (virkninger av strøm på mennesker)",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "elsikkerhet-strom-003",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": [
+      "risikovurdere anlegg og utstyr med hensyn til beskyttelse mot elektrisk sjokk"
+    ],
+    "type": "santusant",
+    "sporsmal": "Fuktig hud senker kroppens overgangsresistans og gjør strømgjennomgang farligere.",
+    "riktig": true,
+    "forklaring": "Tørr hud kan ha resistans på flere tusen ohm, våt hud en brøkdel av det. Samme spenning gir da mye større strøm gjennom kroppen. Derfor er bad, utearbeid i regn og svette hender reelle risikofaktorer.",
+    "kilde": "IEC 60479",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "elsikkerhet-fse-007",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": [
+      "arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"
+    ],
+    "type": "flervalg",
+    "sporsmal": "Hvem gjelder FSE for?",
+    "alternativer": [
+      "Alle som arbeider på eller nær elektriske anlegg – også lærlinger",
+      "Bare montører med fagbrev",
+      "Bare installatøren (faglig ansvarlig)",
+      "Bare de som jobber på høyspenningsanlegg"
+    ],
+    "riktig": 0,
+    "forklaring": "FSE gjelder alle som jobber slik at de kan bli utsatt for elektrisk fare – montører, lærlinger, hjelpearbeidere og driftspersonell, på både lav- og høyspenningsanlegg. Derfor skal også du som lærling ha årlig FSE-opplæring fra dag én.",
+    "kilde": "FSE § 2 (virkeområde)",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "elsikkerhet-fse-008",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": [
+      "arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"
+    ],
+    "type": "flervalg",
+    "sporsmal": "Hva kreves ved arbeid NÆR spenningssatte deler (uten å berøre dem)?",
+    "alternativer": [
+      "Avskjerming/barrierer eller betryggende avstand, og en utpekt ansvarlig for sikkerheten",
+      "Ingenting, så lenge du ikke tar borti noe",
+      "Bare vanlige arbeidshansker",
+      "At du jobber raskt så eksponeringen blir kort"
+    ],
+    "riktig": 0,
+    "forklaring": "Arbeid nær ved er en egen arbeidsmetode i FSE: de spenningssatte delene skal skjermes av, eller du skal holde sikker avstand, og sikkerheten skal ledes. «Jeg skal bare...» uten tiltak er årsaken til mange lysbueulykker.",
+    "kilde": "FSE § 15",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "elsikkerhet-fse-009",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": [
+      "arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"
+    ],
+    "type": "santusant",
+    "sporsmal": "Du kan koble inn en kurs som en kollega har sikret mot innkobling, så lenge du er ganske sikker på at han er ferdig.",
+    "riktig": false,
+    "forklaring": "Aldri. Bare den som etablerte sikringen (eller LFS) kan oppheve den, etter å ha forvisset seg om at alle er ute av anlegget. Å fjerne andres lås eller skilt er noe av det farligste du kan gjøre på en arbeidsplass.",
+    "kilde": "FSE § 14",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "elsikkerhet-fse-010",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": [
+      "arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"
+    ],
+    "type": "flervalg",
+    "sporsmal": "Hvor lenge skal du behandle en anleggsdel som spenningssatt?",
+    "alternativer": [
+      "Til spenningsløshet er bekreftet med spenningstesting",
+      "Til noen sier at kursen er avslått",
+      "Til hovedbryteren ser ut til å stå i AV-stilling",
+      "Til lyset i rommet slukker"
+    ],
+    "riktig": 0,
+    "forklaring": "Brytere kan være feilmerket, kurser kan være feilkoblet, og anlegg kan ha flere tilførsler. Det eneste som beviser spenningsløshet, er måling med kontrollert spenningstester på selve arbeidsstedet.",
+    "kilde": "FSE § 14",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "elsikkerhet-forstehjelp-003",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": [
+      "gi livreddende førstehjelp"
+    ],
+    "type": "flervalg",
+    "sporsmal": "Hvilket forhold mellom brystkompresjoner og innblåsinger gjelder ved HLR på voksne?",
+    "alternativer": [
+      "30 kompresjoner og 2 innblåsinger",
+      "15 kompresjoner og 2 innblåsinger",
+      "5 kompresjoner og 1 innblåsing",
+      "50 kompresjoner og 5 innblåsinger"
+    ],
+    "riktig": 0,
+    "forklaring": "Standard HLR for voksne er 30:2 med kompresjonstakt på 100–120 i minuttet. Ring 113 først (eller få noen til å gjøre det), og hent hjertestarter hvis tilgjengelig. Dette skal sitte i ryggmargen – ved strømulykker kan hjertet stanse.",
+    "kilde": "Norsk Resuscitasjonsråd, retningslinjer for HLR",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "elsikkerhet-forstehjelp-004",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": [
+      "gi livreddende førstehjelp"
+    ],
+    "type": "flervalg",
+    "sporsmal": "En kollega får brannskade i ansiktet av en lysbue. Hva er riktig førstehjelp?",
+    "alternativer": [
+      "Kjøl ned med lunkent rennende vann og varsle 113 ved alvorlig skade",
+      "Smør på fet krem med en gang",
+      "Riv av klær som har brent seg fast i huden",
+      "Vent og se om det går over"
+    ],
+    "riktig": 0,
+    "forklaring": "Brannskader kjøles med temperert vann (ca. 20 °C) i rundt 20 minutter – ikke iskaldt, det kan gi nedkjøling. Fastbrente klær skal ikke rives av, og kremer hører ikke hjemme i akuttfasen. Lysbuer gir ofte dypere skader enn de ser ut til – lav terskel for lege.",
+    "kilde": "Norsk førstehjelpsråd, behandling av brannskader",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "elsikkerhet-verktoy-001",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": [
+      "velge egnet verktøy og verneutstyr for arbeidsoppdragene"
+    ],
+    "type": "santusant",
+    "sporsmal": "Isolert håndverktøy til bruk på eller nær spenningssatte deler skal være merket med 1000 V.",
+    "riktig": true,
+    "forklaring": "Verktøy etter IEC 60900 er testet for 1000 V AC og merket med spenning og symbol (dobbel trekant). Vanlig verktøy med plasthåndtak er IKKE isolert verktøy – isolasjonen er ikke testet og kan ha usynlige skader.",
+    "kilde": "IEC 60900, FSE § 10",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "elsikkerhet-verktoy-002",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": [
+      "velge egnet verktøy og verneutstyr for arbeidsoppdragene"
+    ],
+    "type": "flervalg",
+    "sporsmal": "Hva sjekker du før du bruker elektrisk håndverktøy eller skjøteledning på byggeplass?",
+    "alternativer": [
+      "Synlige skader på kabel, plugg og hus – og at utstyret er egnet for stedet",
+      "Bare at det virker når du skrur det på",
+      "Fargen på kabelen",
+      "Ingenting – det er bedriftens ansvar, ikke mitt"
+    ],
+    "riktig": 0,
+    "forklaring": "Visuell kontroll før bruk er ditt ansvar som bruker: knekte plugger, kappskader og løse vern er typiske byggeplasskader som gir berøringsfare. At det «virker» beviser ingenting om sikkerheten – en skadet PE-leder merkes ikke i drift.",
+    "kilde": "FSE § 10, internkontrollforskriften",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "elsikkerhet-jording-001",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": [
+      "installere og sette i drift fordelingssystemer med tilhørende jordingssystemer"
+    ],
+    "type": "flervalg",
+    "sporsmal": "Hva er hensikten med utjevningsforbindelser?",
+    "alternativer": [
+      "Å redusere farlig spenningsforskjell mellom ledende deler som kan berøres samtidig",
+      "Å øke strømføringsevnen i anlegget",
+      "Å erstatte jordfeilbryteren",
+      "Å redusere spenningsfallet på kursene"
+    ],
+    "riktig": 0,
+    "forklaring": "Hovedutjevling knytter vannrør, armering, ventilasjon og andre ledende deler til jordingsanlegget, slik at alt får tilnærmet samme potensial ved feil. Da blir det ingen farlig berøringsspenning mellom f.eks. dusjbatteriet og varmtvannsberederen.",
+    "kilde": "NEK 400-411 og 400-544",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "elsikkerhet-melding-001",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": [
+      "planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til bedriftens internkontrollsystem"
+    ],
+    "type": "flervalg",
+    "sporsmal": "Det har skjedd en elulykke med personskade på arbeidsplassen. Hvem skal varsles?",
+    "alternativer": [
+      "Arbeidsgiver, og ulykken skal meldes til DSB (og ved alvorlig skade også Arbeidstilsynet)",
+      "Bare verneombudet, uformelt",
+      "Ingen, hvis personen føler seg OK etterpå",
+      "Kun kunden"
+    ],
+    "riktig": 0,
+    "forklaring": "Elulykker med personskade skal meldes til DSB, og arbeidsgiver har egne varslingsplikter mot Arbeidstilsynet ved alvorlige hendelser. Melding handler ikke om skyld – den gjør at årsaken kan fjernes før neste person rammes.",
+    "kilde": "FSE § 8 med veiledning, arbeidsmiljøloven § 5-2",
+    "vanskelighetsgrad": 2
+  },
+  {
+    "id": "elsikkerhet-ik-002",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": [
+      "planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til bedriftens internkontrollsystem"
+    ],
+    "type": "santusant",
+    "sporsmal": "Avvik skal meldes i bedriftens internkontrollsystem selv om feilen ble rettet på stedet.",
+    "riktig": true,
+    "forklaring": "Et rettet avvik er fortsatt et avvik – meldingen gjør at bedriften ser mønstre (samme feil flere ganger?) og kan forbedre rutiner og opplæring. Et avvikssystem ingen melder i, beskytter ingen.",
+    "kilde": "Internkontrollforskriften § 5",
+    "vanskelighetsgrad": 1
+  },
+  {
+    "id": "elsikkerhet-pvu-002",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": [
+      "velge egnet verktøy og verneutstyr for arbeidsoppdragene"
+    ],
+    "type": "flervalg",
+    "sporsmal": "Du skal arbeide i en stor hovedfordeling med høy kortslutningsenergi. Hvilket verneutstyr er aktuelt utover det vanlige?",
+    "alternativer": [
+      "Lysbuehemmende (flammehemmende) bekledning og visir/hjelm med buevern",
+      "Hørselvern og støvmaske",
+      "Refleksvest",
+      "Ingen tillegg – fordelinger er alltid trygge når dekslene er på"
+    ],
+    "riktig": 0,
+    "forklaring": "Jo større kortslutningsytelse, desto kraftigere blir en eventuell lysbue. Lysbuehemmende tøy og ansiktsbeskyttelse begrenser brannskadene dramatisk. Bedriftens risikovurdering skal styre valget – spør hvis du er i tvil.",
+    "kilde": "FSE § 10 med veiledning",
+    "vanskelighetsgrad": 3
+  },
+  {
+    "id": "elsikkerhet-aus-002",
+    "omrade": "elsikkerhet",
+    "kompetansemaal": [
+      "arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"
+    ],
+    "type": "flervalg",
+    "sporsmal": "Hva regnes som arbeid under spenning (AUS)?",
+    "alternativer": [
+      "Arbeid der du berører eller arbeider på spenningssatte deler med egnet metode og verktøy",
+      "Alt arbeid i nærheten av en fordeling",
+      "Å se på et spenningssatt anlegg",
+      "Arbeid på frakoblet anlegg som ikke er jordet"
+    ],
+    "riktig": 0,
+    "forklaring": "AUS er en definert arbeidsmetode der man bevisst arbeider på spenningssatte deler – med AUS-opplæring, isolert verktøy og verneutstyr. Det er noe annet enn arbeid NÆR spenningssatte deler (egen metode) og noe helt annet enn slurv uten frakobling, som bare er forbudt.",
+    "kilde": "FSE §§ 14–16",
     "vanskelighetsgrad": 2
   }
 ]
