@@ -1,0 +1,30 @@
+{
+  "expo": {
+    "name": "Romviz",
+    "slug": "romviz",
+    "version": "0.1.0",
+    "scheme": "romviz",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Appen trenger tilgang til bildene dine for å velge bilder av rommet."
+        }
+      ]
+    ]
+  }
+}
