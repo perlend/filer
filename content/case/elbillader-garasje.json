@@ -1,0 +1,188 @@
+{
+  "id": "case-elbillader-garasje",
+  "tittel": "Elbillader i frittstående garasje",
+  "ikon": "🚗",
+  "ingress": "Kunden har kjøpt en 3,7 kW Mode 3-ladestasjon og vil ha den montert i garasjen, ca. 35 meter fra boligens fordeling (230 V IT). Du får oppdraget – fra befaring til overlevering. Jobb deg gjennom fasene slik du ville gjort på fagprøven.",
+  "steg": [
+    {
+      "tittel": "1 · Planlegging og befaring",
+      "intro": "Du starter med befaring og planlegging. Prøvenemnda vil se at du henter inn riktig informasjon FØR du bestiller materiell.",
+      "sporsmal": [
+        {
+          "id": "case-elbil-001",
+          "omrade": "installasjon",
+          "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag og begrunne valgene som er gjort"],
+          "type": "flervalg",
+          "sporsmal": "Hva er viktigst å avklare på befaringen?",
+          "alternativer": [
+            "Ledig kapasitet i fordelingen, kabelvei/lengde til garasjen og laderens krav (effekt, jordfeilvern)",
+            "Hvilken farge kunden vil ha på laderen",
+            "Om naboen også vil ha lader",
+            "Været på monteringsdagen"
+          ],
+          "riktig": 0,
+          "forklaring": "Planleggingen står og faller på tre ting: tåler inntaket og fordelingen den nye lasten (kontinuerlig!), hvor og hvor langt skal kabelen gå (spenningsfall, forlegningsmetode), og hva krever laderprodusenten (vern-type, DC-deteksjon innebygd?). Dette er begrunnelsene prøvenemnda spør etter.",
+          "kilde": "NEK 400-722, planleggingspraksis",
+          "vanskelighetsgrad": 1
+        },
+        {
+          "id": "case-elbil-002",
+          "omrade": "teori",
+          "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag og begrunne valgene som er gjort"],
+          "type": "numerisk",
+          "sporsmal": "Laderen yter 3,68 kW på 230 V enfase. Hvilken strøm tilsvarer det? (Svar i ampere.)",
+          "svar": 16,
+          "toleranse": 0.2,
+          "enhet": "A",
+          "forklaring": "I = P / U = 3680 / 230 = 16 A. Det er denne kontinuerlige strømmen kurs, kabel og vern skal dimensjoneres for – ikke et «vanlig» 16 A-uttak som bare belastes i korte perioder.",
+          "kilde": "Effektformelen P = U · I",
+          "vanskelighetsgrad": 1
+        },
+        {
+          "id": "case-elbil-003",
+          "omrade": "installasjon",
+          "kompetansemaal": ["installere og sette i drift lavspenningsinstallasjoner med tilhørende utstyr"],
+          "type": "santusant",
+          "sporsmal": "Ladepunktet kan deles på samme kurs som garasjens lys og fryser, så lenge vernet økes.",
+          "riktig": false,
+          "forklaring": "Hvert ladepunkt skal ha egen, dedikert kurs. Elbillading er langvarig last på full strøm – å «øke vernet» på en delt kurs løser ingenting og setter kabelen i fare. Egen kurs er også begrunnelsen du gir i dokumentasjonen.",
+          "kilde": "NEK 400-722",
+          "vanskelighetsgrad": 1
+        }
+      ]
+    },
+    {
+      "tittel": "2 · Valg av materiell og vern",
+      "intro": "Du skal nå velge kabel og vern. Husk: på fagprøven må du kunne BEGRUNNE valgene med beregning og normhenvisning.",
+      "sporsmal": [
+        {
+          "id": "case-elbil-004",
+          "omrade": "teori",
+          "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag og begrunne valgene som er gjort"],
+          "type": "santusant",
+          "sporsmal": "Med 35 m kabel, 16 A last og 2,5 mm² kobber blir spenningsfallet ca. 7,8 V (3,4 %) – innenfor anbefalingen på 4 %.",
+          "riktig": true,
+          "forklaring": "ΔU = 2 · 0,0175 · 35 · 16 / 2,5 = 7,84 V, som er 3,4 % av 230 V. Det er innenfor – men med liten margin: hadde garasjen ligget 45 m unna, måtte du opp til 4 mm². Vis alltid denne beregningen i dokumentasjonen.",
+          "kilde": "Spenningsfallformelen; NEK 400-5-52",
+          "vanskelighetsgrad": 2
+        },
+        {
+          "id": "case-elbil-005",
+          "omrade": "installasjon",
+          "kompetansemaal": ["installere og sette i drift lavspenningsinstallasjoner med tilhørende utstyr"],
+          "type": "flervalg",
+          "sporsmal": "Laderens dokumentasjon sier «innebygd DC-feilstrømsdeteksjon 6 mA». Hvilket jordfeilvern velger du i tavlen?",
+          "alternativer": [
+            "Jordfeilbryter type A – laderens DC-deteksjon dekker resten",
+            "Type B er alltid påkrevd uansett",
+            "Ingen jordfeilbryter – laderen ordner alt",
+            "Vanlig type AC"
+          ],
+          "riktig": 0,
+          "forklaring": "Kravet er type B ELLER type A kombinert med DC-deteksjon ≥ 6 mA. Når laderen har deteksjonen innebygd (vanlig på moderne ladere), holder type A i tavlen – og du sparer kunden for en dyr type B. Dette er en klassisk «begrunn valget»-situasjon: vis til laderens dokumentasjon.",
+          "kilde": "NEK 400-722, produsentens dokumentasjon",
+          "vanskelighetsgrad": 3
+        },
+        {
+          "id": "case-elbil-006",
+          "omrade": "installasjon",
+          "kompetansemaal": ["velge kabeltyper og ledningstyper"],
+          "type": "flervalg",
+          "sporsmal": "Kabelen skal graves ned mellom bolig og garasje. Hva må du huske?",
+          "alternativer": [
+            "Kabel egnet for jordforlegning, riktig dybde med dekkbord/merkebånd etter norm og netteiers krav",
+            "Vanlig PFXP rett i bakken går fint",
+            "PN-ledning i et tynt plastrør",
+            "Dybden er likegyldig så lenge kabelen er hel"
+          ],
+          "riktig": 0,
+          "forklaring": "Jordkabel skal være egnet for formålet (f.eks. TFXP), forlegges på riktig dybde med beskyttelse/merking, og krysninger med andre føringer skal håndteres. Sjekk NEK 400-5-52 for forlegning i jord – og husk at gravearbeid også skal risikovurderes (kabelpåvisning!).",
+          "kilde": "NEK 400-5-52 (forlegning i jord)",
+          "vanskelighetsgrad": 2
+        }
+      ]
+    },
+    {
+      "tittel": "3 · Sikker utførelse",
+      "intro": "Montasjedagen. Du skal koble ny kurs i en spenningssatt fordeling.",
+      "sporsmal": [
+        {
+          "id": "case-elbil-007",
+          "omrade": "elsikkerhet",
+          "kompetansemaal": ["arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg"],
+          "type": "flervalg",
+          "sporsmal": "Før du jobber i fordelingen: hvilken rekkefølge er riktig?",
+          "alternativer": [
+            "Frakoble → sikre mot innkobling → spenningsteste → arbeide",
+            "Spenningsteste → frakoble → arbeide",
+            "Slå av hovedbryteren og stole på den",
+            "Jobbe forsiktig med spenning på – det er bare én kurs"
+          ],
+          "riktig": 0,
+          "forklaring": "Frakoblet arbeid følger alltid samme rekkefølge, og spenningsløshet bekreftes med testing på arbeidsstedet – også når «det bare er en liten jobb». På fagprøven blir du vurdert på at dette sitter som rutine, ikke bare som teori.",
+          "kilde": "FSE § 14",
+          "vanskelighetsgrad": 1
+        }
+      ]
+    },
+    {
+      "tittel": "4 · Sluttkontroll",
+      "intro": "Anlegget er montert. Nå skal det verifiseres før spenningssetting og overlevering.",
+      "sporsmal": [
+        {
+          "id": "case-elbil-008",
+          "omrade": "maaling",
+          "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+          "type": "numerisk",
+          "sporsmal": "Du kontinuitetsmåler PE ut til laderen: 35 m, 2,5 mm² kobber (ρ = 0,0175). Hvilken verdi forventer du? (Svar i ohm, ±0,05.)",
+          "svar": 0.245,
+          "toleranse": 0.05,
+          "enhet": "Ω",
+          "forklaring": "R = ρ · L / A = 0,0175 · 35 / 2,5 = 0,245 Ω. Måler du i nærheten av dette, er PE-forbindelsen god. Måler du f.eks. 2 Ω, har du en dårlig tilkobling – finn den FØR du spenningssetter.",
+          "kilde": "Resistansformelen; NEK 400-6",
+          "vanskelighetsgrad": 2
+        },
+        {
+          "id": "case-elbil-009",
+          "omrade": "maaling",
+          "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+          "type": "flervalg",
+          "sporsmal": "Hvilke kontroller hører med før overlevering av ladeanlegget?",
+          "alternativer": [
+            "Visuell kontroll, kontinuitet PE, isolasjonsmåling, test av jordfeilvern med instrument og funksjonstest av laderen",
+            "Bare å se at laderen lyser grønt",
+            "Kun isolasjonsmåling",
+            "Testknappen på jordfeilbryteren holder"
+          ],
+          "riktig": 0,
+          "forklaring": "Full sluttkontroll etter NEK 400-6 – og husk å koble FRA laderen ved isolasjonsmålingen (elektronikk tåler ikke 500 V DC). Jordfeilvernet måles med instrument; funksjonstest til slutt med bil eller testboks der det er mulig.",
+          "kilde": "NEK 400-6",
+          "vanskelighetsgrad": 2
+        }
+      ]
+    },
+    {
+      "tittel": "5 · Dokumentasjon og overlevering",
+      "intro": "Siste fase – den mange undervurderer, og der fagprøvekandidater taper poeng.",
+      "sporsmal": [
+        {
+          "id": "case-elbil-010",
+          "omrade": "regelverk",
+          "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+          "type": "flervalg",
+          "sporsmal": "Hva skal kunden ha ved overlevering?",
+          "alternativer": [
+            "Samsvarserklæring med rapport fra risikovurdering og sluttkontroll, oppdatert kursfortegnelse og brukerveiledning for laderen",
+            "Bare regningen",
+            "Et muntlig «alt er i orden»",
+            "Kvittering fra grossisten"
+          ],
+          "riktig": 0,
+          "forklaring": "Samsvarserklæringen med underlag er lovpålagt (FEL §§ 12–13), kursfortegnelsen skal stemme med den nye kursen, og FDV/brukerveiledning hører med. På fagprøven: legg dokumentasjonen i en ryddig mappe – det er forskjellen på «utført» og «levert».",
+          "kilde": "FEL §§ 12–13, NEK 400-514",
+          "vanskelighetsgrad": 1
+        }
+      ]
+    }
+  ]
+}

@@ -20,6 +20,11 @@ const KALKULATORER = [
     tekst: "Veiledende minste tverrsnitt ut fra strøm og korreksjonsfaktor",
   },
   {
+    rute: "/kalkulatorer/formler",
+    tittel: "📖 Formelsamling",
+    tekst: "Alle formlene med forklaring av størrelser og når du bruker dem",
+  },
+  {
     rute: "/kalkulatorer/elnummer",
     tittel: "🔢 Elnummer",
     tekst: "Hovedgruppene, oppslag i EFObasen og din egen liste over mest brukte numre",

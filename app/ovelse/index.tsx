@@ -16,6 +16,33 @@ export default function OvelseOversikt() {
         </Kort>
       </Pressable>
 
+      <Pressable onPress={() => router.push("/ovelse/prove")}>
+        <Kort style={stiler.valg}>
+          <Text style={stiler.valgTittel}>🎓 Prøvemodus</Text>
+          <Text style={stiler.valgTekst}>
+            20 spørsmål på 25 minutter uten fasit underveis – med karakterestimat til slutt
+          </Text>
+        </Kort>
+      </Pressable>
+
+      <Pressable onPress={() => router.push("/ovelse/case")}>
+        <Kort style={stiler.valg}>
+          <Text style={stiler.valgTittel}>🧰 Fagprøve-case</Text>
+          <Text style={stiler.valgTekst}>
+            Hele oppdrag fra planlegging til overlevering – slik fagprøven er bygget opp
+          </Text>
+        </Kort>
+      </Pressable>
+
+      <Pressable onPress={() => router.push("/ovelse/statistikk")}>
+        <Kort style={stiler.valg}>
+          <Text style={stiler.valgTittel}>📊 Statistikk</Text>
+          <Text style={stiler.valgTekst}>
+            Treffprosent per område og trening på spørsmålene du sliter mest med
+          </Text>
+        </Kort>
+      </Pressable>
+
       {OMRADER.map((omrade) => (
         <Pressable
           key={omrade.id}

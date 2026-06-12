@@ -54,7 +54,7 @@ scripts/           innholdsvalidering
 
 🟢 MVP under utvikling: quizmotor med spaced repetition, **113 quizspørsmål og 12 mikroleksjoner**
 fordelt på fem områder (elsikkerhet/FSE, teori, praktisk installasjon, måling, regelverk),
-3 kalkulatorer, fremdriftsvisning – og **Foto-hjelp**: ta bilde av en installasjon og få den
+prøvemodus med karakterestimat, 2 fagprøve-case, statistikk med «tren på svake», formelsamling, 3 kalkulatorer, fremdriftsvisning – og **Foto-hjelp**: ta bilde av en installasjon og få den
 forklart opp mot NEK 400 (krever egen Anthropic API-nøkkel, kun for personlig bruk).
 
 ⚠️ **Faginnholdet er ikke kvalitetssikret av fagperson med fagbrev ennå.** Det skal gjøres før

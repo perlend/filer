@@ -1,10 +1,12 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import type { SrsKort } from "./srs";
+import type { Svarlogg } from "./statistikk";
 import { beregnNyStreak, datoNokkel } from "./okt";
 
 const NOKKEL_KORT = "laerling.srsKort.v1";
 const NOKKEL_STATISTIKK = "laerling.statistikk.v1";
 const NOKKEL_LESTE = "laerling.lesteLeksjoner.v1";
+const NOKKEL_SVARLOGG = "laerling.svarlogg.v1";
 
 export interface Statistikk {
   streak: number;
@@ -56,6 +58,14 @@ export async function registrerOkt(
   };
   await AsyncStorage.setItem(NOKKEL_STATISTIKK, JSON.stringify(ny));
   return ny;
+}
+
+export function hentSvarlogg(): Promise<Svarlogg> {
+  return hentJson<Svarlogg>(NOKKEL_SVARLOGG, {});
+}
+
+export async function lagreSvarlogg(logg: Svarlogg): Promise<void> {
+  await AsyncStorage.setItem(NOKKEL_SVARLOGG, JSON.stringify(logg));
 }
 
 export function hentLesteLeksjoner(): Promise<string[]> {

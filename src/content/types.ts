@@ -55,3 +55,18 @@ export interface OmradeInfo {
   ikon: string;
   beskrivelse: string;
 }
+
+export interface CaseSteg {
+  tittel: string;
+  intro: string;
+  sporsmal: QuizSporsmal[];
+}
+
+/** Et sammenhengende oppdrag som øver fagprøvens faser. */
+export interface FagproveCase {
+  id: string;
+  tittel: string;
+  ikon: string;
+  ingress: string;
+  steg: CaseSteg[];
+}

@@ -11,6 +11,10 @@ export default function OvelseLayout() {
     >
       <Stack.Screen name="index" options={{ title: "Øvelse" }} />
       <Stack.Screen name="quiz" options={{ title: "Quiz" }} />
+      <Stack.Screen name="prove" options={{ title: "Prøvemodus" }} />
+      <Stack.Screen name="statistikk" options={{ title: "Statistikk" }} />
+      <Stack.Screen name="case/index" options={{ title: "Fagprøve-case" }} />
+      <Stack.Screen name="case/[id]" options={{ title: "Case" }} />
     </Stack>
   );
 }

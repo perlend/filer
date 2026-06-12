@@ -1,0 +1,146 @@
+{
+  "id": "case-bad-rehabilitering",
+  "tittel": "Rehabilitering av bad",
+  "ikon": "🛁",
+  "ingress": "Et bad fra 90-tallet skal totalrenoveres. Du skal levere nytt elektrisk anlegg: varmekabel i gulvet, downlights, stikk ved servant og ny kurs fra fordelingen (230 V IT). Rørlegger og flislegger er også inne – koordinering er en del av jobben.",
+  "steg": [
+    {
+      "tittel": "1 · Planlegging og soner",
+      "intro": "Før du tegner punktene inn, må sonene på plass.",
+      "sporsmal": [
+        {
+          "id": "case-bad-001",
+          "omrade": "installasjon",
+          "kompetansemaal": ["installere elektriske installasjoner i ulike typer bygninger"],
+          "type": "flervalg",
+          "sporsmal": "Kunden ønsker stikkontakt rett ved dusjen. Hva styrer om det er lov?",
+          "alternativer": [
+            "Soneinndelingen i NEK 400-701 – utstyret må stå utenfor sone 2 (og hele rommet ha 30 mA jordfeilvern)",
+            "Om kunden signerer på at det er greit",
+            "Avstanden til vinduet",
+            "Det er fritt frem så lenge stikket har lokk"
+          ],
+          "riktig": 0,
+          "forklaring": "Sonene rundt badekar/dusj bestemmer hva som kan plasseres hvor. Vanlige stikkontakter hører hjemme utenfor sone 2. Kundens ønske endrer aldri normkravet – men du kan ofte løse behovet med en annen plassering. Tegn sonekartet i planleggingen.",
+          "kilde": "NEK 400-701",
+          "vanskelighetsgrad": 2
+        },
+        {
+          "id": "case-bad-002",
+          "omrade": "teori",
+          "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag og begrunne valgene som er gjort"],
+          "type": "numerisk",
+          "sporsmal": "Gulvet er 8 m² og skal ha varmekabel med 150 W/m². Hvilken strøm trekker gulvvarmen på 230 V? (Svar i ampere, ±0,1.)",
+          "svar": 5.2,
+          "toleranse": 0.1,
+          "enhet": "A",
+          "forklaring": "P = 8 · 150 = 1200 W. I = 1200 / 230 = 5,2 A. Med lys og stikk i tillegg er en egen 16 A-kurs til badet romslig – men regnestykket skal med i planleggingen din.",
+          "kilde": "Effektformelen; produsentens effekttabeller",
+          "vanskelighetsgrad": 2
+        },
+        {
+          "id": "case-bad-003",
+          "omrade": "installasjon",
+          "kompetansemaal": ["installere varmeanlegg i bygninger"],
+          "type": "santusant",
+          "sporsmal": "Hvis varmekabelen er litt for lang for rommet, kan du kappe den og isolere enden.",
+          "riktig": false,
+          "forklaring": "Varmekabel skal ALDRI kappes – resistansen (og dermed effekten per meter) er fabrikkbestemt for hele lengden. Er den for lang, legges den tettere (innenfor produsentens minste c/c-avstand) eller du velger annen lengde. Kapping er en gjenganger bak varmekabelhavarier.",
+          "kilde": "NEK 400-753, produsentens anvisning",
+          "vanskelighetsgrad": 1
+        }
+      ]
+    },
+    {
+      "tittel": "2 · Utførelse og koordinering",
+      "intro": "Varmekabelen skal i støpen, og downlightsene i himlingen. Andre fag jobber i samme rom.",
+      "sporsmal": [
+        {
+          "id": "case-bad-004",
+          "omrade": "installasjon",
+          "kompetansemaal": ["installere varmeanlegg i bygninger"],
+          "type": "flervalg",
+          "sporsmal": "Hva gjør du med termostatføleren til gulvvarmen?",
+          "alternativer": [
+            "Legger den i eget trekkerør mellom to kabelslynger, så den kan byttes senere",
+            "Støper den inn direkte sammen med kabelen",
+            "Fester den utenpå flisene etterpå",
+            "Dropper føler – termostaten klarer seg med romføler"
+          ],
+          "riktig": 0,
+          "forklaring": "Føleren i trekkerør er forskjellen på en 20-minutters jobb og full oppgraving den dagen den ryker. Plasseringen mellom slyngene gir riktig regulering. Gulvføler er også et krav for begrensning av gulvtemperatur i de fleste løsninger – sjekk produsentens anvisning.",
+          "kilde": "NEK 400-753, produsentens anvisning",
+          "vanskelighetsgrad": 1
+        },
+        {
+          "id": "case-bad-005",
+          "omrade": "maaling",
+          "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+          "type": "flervalg",
+          "sporsmal": "Når skal du måle på varmekabelen?",
+          "alternativer": [
+            "Resistans og isolasjonsresistans FØR støp, etter støp og ved sluttkontroll – alt dokumentert",
+            "Bare ved sluttkontrollen til slutt",
+            "Bare hvis gulvet ikke blir varmt",
+            "Måling er unødvendig på ny kabel"
+          ],
+          "riktig": 0,
+          "forklaring": "Måler du bare til slutt og kabelen er skadet, vet ingen om det var flisleggerens sparkel eller din montasje. Måling før/etter hvert kritiske trinn (med verdiene ført i skjema) beskytter både kunden, deg og forholdet til de andre fagene.",
+          "kilde": "NEK 400-753, produsentens garantivilkår",
+          "vanskelighetsgrad": 2
+        },
+        {
+          "id": "case-bad-006",
+          "omrade": "installasjon",
+          "kompetansemaal": ["installere belysningsanlegg og styringssystemer"],
+          "type": "flervalg",
+          "sporsmal": "Downlights i himlingen over dusjsonen – hva må du sjekke?",
+          "alternativer": [
+            "At armaturen er godkjent for sonen (IP-grad) og at driver/trafo plasseres tilgjengelig utenfor sonene",
+            "Bare at de gir nok lys",
+            "At de er samme merke som varmekabelen",
+            "Ingenting spesielt – tak er alltid utenfor sonene"
+          ],
+          "riktig": 0,
+          "forklaring": "Sone 1 går opp til 2,25 m over gulvet – lav himling over dusjen kan havne i sonen, og da gjelder IP-krav. Driveren skal dessuten kunne byttes uten å rive himlingen. Og husk: isolasjon/dampsperre rundt innfelte downlights følger armaturens monteringsanvisning (brannsikkerhet).",
+          "kilde": "NEK 400-701, produsentens anvisning",
+          "vanskelighetsgrad": 2
+        }
+      ]
+    },
+    {
+      "tittel": "3 · Sluttkontroll og dokumentasjon",
+      "intro": "Flisene er lagt, anlegget er ferdig. Siste fase før kunden tar badet i bruk.",
+      "sporsmal": [
+        {
+          "id": "case-bad-007",
+          "omrade": "maaling",
+          "kompetansemaal": ["utføre sluttkontroll med måling og funksjonstesting"],
+          "type": "flervalg",
+          "sporsmal": "Hvilken rekkefølge har sluttkontrollen?",
+          "alternativer": [
+            "Visuell inspeksjon → kontinuitet PE → isolasjonsmåling → spenningssetting → test av jordfeilvern og funksjon",
+            "Spenningssetting først, så målinger",
+            "Bare jordfeilbryter-test",
+            "Rekkefølgen er likegyldig"
+          ],
+          "riktig": 0,
+          "forklaring": "Se det du kan se, mål på dødt anlegg, sett spenning, funksjonstest. På bad er den visuelle delen ekstra viktig: riktig IP i sonene, utjevning på plass, og varmekabelens måleskjema komplett.",
+          "kilde": "NEK 400-6",
+          "vanskelighetsgrad": 1
+        },
+        {
+          "id": "case-bad-008",
+          "omrade": "regelverk",
+          "kompetansemaal": ["planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk"],
+          "type": "santusant",
+          "sporsmal": "Siden dette er rehabilitering og ikke nybygg, trengs ingen samsvarserklæring.",
+          "riktig": false,
+          "forklaring": "Rehabiliteringen er en endring/utvidelse av anlegget – full dokumentasjonsplikt: samsvarserklæring, sluttkontrollrapport med måleverdier (inkludert varmekabelskjemaet) og oppdatert kursfortegnelse. Bad er dessuten et yndet DLE-kontrollobjekt.",
+          "kilde": "FEL §§ 12–13",
+          "vanskelighetsgrad": 1
+        }
+      ]
+    }
+  ]
+}

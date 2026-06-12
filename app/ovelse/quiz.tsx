@@ -6,9 +6,16 @@ import { Knapp } from "@/components/Knapp";
 import { Inndatafelt, tilTall } from "@/components/Inndatafelt";
 import { ALLE_SPORSMAL, sporsmalForOmrade } from "@/content";
 import type { QuizSporsmal } from "@/content/types";
-import { hentSrsKort, lagreSrsKort, registrerOkt } from "@/lib/lagring";
+import {
+  hentSrsKort,
+  hentSvarlogg,
+  lagreSrsKort,
+  lagreSvarlogg,
+  registrerOkt,
+} from "@/lib/lagring";
 import { erNumeriskRiktig, velgSporsmalTilOkt } from "@/lib/okt";
 import { nyttKort, vurderKort, type SrsKort } from "@/lib/srs";
+import { registrerISvarlogg, velgSvakeSporsmal, type Svarlogg } from "@/lib/statistikk";
 import { avstand, farger } from "@/theme";
 
 const MAKS_PER_OKT = 10;
@@ -20,10 +27,11 @@ interface Svar {
 }
 
 export default function Quiz() {
-  const { omrade } = useLocalSearchParams<{ omrade?: string }>();
+  const { omrade, modus } = useLocalSearchParams<{ omrade?: string; modus?: string }>();
 
   const [okt, setOkt] = useState<QuizSporsmal[] | null>(null);
   const [kortMap, setKortMap] = useState<Record<string, SrsKort>>({});
+  const [svarlogg, setSvarlogg] = useState<Svarlogg>({});
   const [indeks, setIndeks] = useState(0);
   const [svar, setSvar] = useState<Svar | null>(null);
   const [antallRiktige, setAntallRiktige] = useState(0);
@@ -32,20 +40,27 @@ export default function Quiz() {
 
   useEffect(() => {
     (async () => {
-      const kort = await hentSrsKort();
-      const utvalg = omrade ? sporsmalForOmrade(omrade) : ALLE_SPORSMAL;
+      const [kort, logg] = await Promise.all([hentSrsKort(), hentSvarlogg()]);
       setKortMap(kort);
-      setOkt(velgSporsmalTilOkt(utvalg, kort, MAKS_PER_OKT));
+      setSvarlogg(logg);
+      if (modus === "svake") {
+        setOkt(velgSvakeSporsmal(ALLE_SPORSMAL, logg, MAKS_PER_OKT));
+      } else {
+        const utvalg = omrade ? sporsmalForOmrade(omrade) : ALLE_SPORSMAL;
+        setOkt(velgSporsmalTilOkt(utvalg, kort, MAKS_PER_OKT));
+      }
     })();
-  }, [omrade]);
+  }, [omrade, modus]);
 
   // Lagre resultatet når økten er gjennomført
   useEffect(() => {
     if (okt && okt.length > 0 && indeks >= okt.length && !lagret) {
       setLagret(true);
-      void lagreSrsKort(kortMap).then(() => registrerOkt(okt.length, antallRiktige));
+      void Promise.all([lagreSrsKort(kortMap), lagreSvarlogg(svarlogg)]).then(() =>
+        registrerOkt(okt.length, antallRiktige)
+      );
     }
-  }, [okt, indeks, lagret, kortMap, antallRiktige]);
+  }, [okt, indeks, lagret, kortMap, svarlogg, antallRiktige]);
 
   if (okt === null) {
     return (
@@ -94,6 +109,7 @@ export default function Quiz() {
   function besvar(riktig: boolean, ekstra: Omit<Svar, "riktig"> = {}) {
     const kort = kortMap[sporsmal.id] ?? nyttKort(sporsmal.id);
     setKortMap({ ...kortMap, [sporsmal.id]: vurderKort(kort, riktig) });
+    setSvarlogg(registrerISvarlogg(svarlogg, sporsmal.id, riktig));
     if (riktig) setAntallRiktige((n) => n + 1);
     setSvar({ riktig, ...ekstra });
   }

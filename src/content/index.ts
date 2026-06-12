@@ -1,4 +1,7 @@
-import type { Leksjon, OmradeInfo, QuizSporsmal } from "./types";
+import type { FagproveCase, Leksjon, OmradeInfo, QuizSporsmal } from "./types";
+
+import elbilladerCase from "../../content/case/elbillader-garasje.json";
+import badCase from "../../content/case/bad-rehabilitering.json";
 
 import elsikkerhetQuiz from "../../content/quiz/elsikkerhet.json";
 import teoriQuiz from "../../content/quiz/teori.json";
@@ -85,4 +88,10 @@ export function leksjonerForOmrade(omrade: string): Leksjon[] {
 
 export function finnLeksjon(id: string): Leksjon | undefined {
   return ALLE_LEKSJONER.find((l) => l.id === id);
+}
+
+export const ALLE_CASER: FagproveCase[] = [elbilladerCase, badCase] as FagproveCase[];
+
+export function finnCase(id: string): FagproveCase | undefined {
+  return ALLE_CASER.find((c) => c.id === id);
 }

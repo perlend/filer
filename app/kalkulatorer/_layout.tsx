@@ -11,6 +11,7 @@ export default function KalkulatorLayout() {
     >
       <Stack.Screen name="index" options={{ title: "Verktøy" }} />
       <Stack.Screen name="elnummer" options={{ title: "Elnummer" }} />
+      <Stack.Screen name="formler" options={{ title: "Formelsamling" }} />
       <Stack.Screen name="ohm" options={{ title: "Ohms lov og effekt" }} />
       <Stack.Screen name="spenningsfall" options={{ title: "Spenningsfall" }} />
       <Stack.Screen name="kabel" options={{ title: "Kabeltverrsnitt" }} />
