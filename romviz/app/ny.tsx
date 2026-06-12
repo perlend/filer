@@ -12,7 +12,7 @@ import {
   TextInput,
   View,
 } from 'react-native';
-import { generate } from '@/lib/generation';
+import { FurnitureImage, generate } from '@/lib/generation';
 import { colors, spacing, wallColors } from '@/theme';
 
 interface PickedImage {
@@ -21,8 +21,11 @@ interface PickedImage {
   mimeType: string;
 }
 
+const MAX_FURNITURE_IMAGES = 3;
+
 export default function NewSuggestionScreen() {
   const [image, setImage] = useState<PickedImage | null>(null);
+  const [furnitureImages, setFurnitureImages] = useState<FurnitureImage[]>([]);
   const [selectedColor, setSelectedColor] = useState(wallColors[0]);
   const [customHex, setCustomHex] = useState('');
   const [furniture, setFurniture] = useState('');
@@ -47,6 +50,35 @@ export default function NewSuggestionScreen() {
     });
   }
 
+  async function pickFurnitureImages() {
+    const remaining = MAX_FURNITURE_IMAGES - furnitureImages.length;
+    if (remaining <= 0) {
+      Alert.alert('Maks antall', `Du kan legge ved inntil ${MAX_FURNITURE_IMAGES} møbelbilder.`);
+      return;
+    }
+    const result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ['images'],
+      quality: 0.8,
+      base64: true,
+      allowsMultipleSelection: true,
+      selectionLimit: remaining,
+    });
+    if (result.canceled) return;
+    const picked = result.assets
+      .filter((a) => a.base64)
+      .slice(0, remaining)
+      .map((a) => ({
+        uri: a.uri,
+        base64: a.base64 as string,
+        mimeType: a.mimeType ?? 'image/jpeg',
+      }));
+    setFurnitureImages((prev) => [...prev, ...picked]);
+  }
+
+  function removeFurnitureImage(uri: string) {
+    setFurnitureImages((prev) => prev.filter((img) => img.uri !== uri));
+  }
+
   const effectiveColor =
     customHex.trim() !== ''
       ? customHex.trim()
@@ -65,6 +97,7 @@ export default function NewSuggestionScreen() {
         mimeType: image.mimeType,
         wallColor: effectiveColor,
         furniture,
+        furnitureImages,
       });
       router.push({
         pathname: '/resultat',
@@ -73,6 +106,7 @@ export default function NewSuggestionScreen() {
           originalUri: image.uri,
           wallColor: effectiveColor,
           furniture,
+          furnitureImageUris: JSON.stringify(furnitureImages.map((img) => img.uri)),
           provider: result.provider,
         },
       });
@@ -125,6 +159,30 @@ export default function NewSuggestionScreen() {
       />
 
       <Text style={styles.label}>3. Møbler (valgfritt)</Text>
+      <Text style={styles.hint}>
+        Legg ved bilder av møbler dere vurderer (f.eks. fra nettbutikk), beskriv dem med tekst,
+        eller begge deler.
+      </Text>
+      <View style={styles.furnitureRow}>
+        {furnitureImages.map((img) => (
+          <Pressable
+            key={img.uri}
+            onPress={() => removeFurnitureImage(img.uri)}
+            style={styles.furnitureThumbWrapper}
+            accessibilityLabel="Fjern møbelbilde"
+          >
+            <Image source={{ uri: img.uri }} style={styles.furnitureThumb} />
+            <View style={styles.furnitureRemoveBadge}>
+              <Text style={styles.furnitureRemoveBadgeText}>×</Text>
+            </View>
+          </Pressable>
+        ))}
+        {furnitureImages.length < MAX_FURNITURE_IMAGES && (
+          <Pressable style={styles.furnitureAdd} onPress={pickFurnitureImages}>
+            <Text style={styles.furnitureAddText}>+ Bilde</Text>
+          </Pressable>
+        )}
+      </View>
       <TextInput
         style={[styles.input, styles.multiline]}
         placeholder="F.eks. «grønn 3-seter sofa i fløyel, rundt spisebord i eik, stor monstera i krukke»"
@@ -169,6 +227,41 @@ const styles = StyleSheet.create({
   swatch: { width: 44, height: 44, borderRadius: 22, borderWidth: 1, borderColor: colors.border },
   swatchSelected: { borderWidth: 3, borderColor: colors.text },
   colorName: { color: colors.textMuted, marginTop: spacing.sm },
+  hint: { color: colors.textMuted, lineHeight: 20, marginBottom: spacing.sm },
+  furnitureRow: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm, marginBottom: spacing.sm },
+  furnitureThumbWrapper: { position: 'relative' },
+  furnitureThumb: {
+    width: 72,
+    height: 72,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: colors.border,
+    backgroundColor: colors.surface,
+  },
+  furnitureRemoveBadge: {
+    position: 'absolute',
+    top: -6,
+    right: -6,
+    width: 22,
+    height: 22,
+    borderRadius: 11,
+    backgroundColor: colors.danger,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  furnitureRemoveBadgeText: { color: '#fff', fontWeight: '700', lineHeight: 20 },
+  furnitureAdd: {
+    width: 72,
+    height: 72,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderStyle: 'dashed',
+    borderColor: colors.textMuted,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: colors.surface,
+  },
+  furnitureAddText: { color: colors.textMuted, fontWeight: '600' },
   input: {
     borderWidth: 1,
     borderColor: colors.border,

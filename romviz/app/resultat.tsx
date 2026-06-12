@@ -19,8 +19,16 @@ export default function ResultScreen() {
     originalUri: string;
     wallColor: string;
     furniture: string;
+    furnitureImageUris: string;
     provider: string;
   }>();
+
+  let furnitureImageUris: string[] = [];
+  try {
+    furnitureImageUris = params.furnitureImageUris ? JSON.parse(params.furnitureImageUris) : [];
+  } catch {
+    furnitureImageUris = [];
+  }
   const [name, setName] = useState('');
   const [showOriginal, setShowOriginal] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -40,6 +48,7 @@ export default function ResultScreen() {
         furniture: params.furniture ?? '',
         originalUri: params.originalUri,
         resultUri: params.resultUri,
+        furnitureImageUris,
       });
       router.dismissAll();
     } catch (error) {
@@ -72,6 +81,13 @@ export default function ResultScreen() {
 
       <Text style={styles.meta}>Veggfarge: {params.wallColor}</Text>
       {params.furniture ? <Text style={styles.meta}>Møbler: {params.furniture}</Text> : null}
+      {furnitureImageUris.length > 0 && (
+        <View style={styles.furnitureRow}>
+          {furnitureImageUris.map((uri) => (
+            <Image key={uri} source={{ uri }} style={styles.furnitureThumb} />
+          ))}
+        </View>
+      )}
 
       <TextInput
         style={styles.input}
@@ -104,6 +120,15 @@ const styles = StyleSheet.create({
   toggle: { alignItems: 'center', paddingVertical: spacing.md },
   toggleText: { color: colors.textMuted, textDecorationLine: 'underline' },
   meta: { color: colors.text, marginBottom: spacing.xs },
+  furnitureRow: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm, marginTop: spacing.sm },
+  furnitureThumb: {
+    width: 56,
+    height: 56,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: colors.border,
+    backgroundColor: colors.surface,
+  },
   input: {
     borderWidth: 1,
     borderColor: colors.border,

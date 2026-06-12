@@ -2,6 +2,13 @@ import * as FileSystem from 'expo-file-system/legacy';
 import { Platform } from 'react-native';
 import { getGeminiApiKey } from './settings';
 
+export interface FurnitureImage {
+  /** Lokal fil-URI (for visning og lagring). */
+  uri: string;
+  base64: string;
+  mimeType: string;
+}
+
 export interface GenerationInput {
   /** Lokal fil-URI til originalbildet av rommet. */
   imageUri: string;
@@ -12,6 +19,8 @@ export interface GenerationInput {
   wallColor: string;
   /** Fritekstbeskrivelse av møbler, kan være tom. */
   furniture: string;
+  /** Bilder av møbler som skal settes inn i rommet. */
+  furnitureImages: FurnitureImage[];
 }
 
 export interface GenerationResult {
@@ -24,12 +33,28 @@ const GEMINI_MODEL = 'gemini-3-pro-image-preview';
 const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
 function buildPrompt(input: GenerationInput): string {
-  const furniturePart =
-    input.furniture.trim() !== ''
-      ? `Sett inn følgende møbler på en naturlig måte i rommet: ${input.furniture.trim()}.`
-      : 'Behold møblene som de er.';
+  const hasImages = input.furnitureImages.length > 0;
+  const hasText = input.furniture.trim() !== '';
+
+  let furniturePart: string;
+  if (hasImages && hasText) {
+    furniturePart =
+      `Det første bildet viser rommet. De ${input.furnitureImages.length} neste bildene viser møbler ` +
+      `som skal settes inn i rommet på en naturlig måte, med riktig perspektiv, skala og lys. ` +
+      `Ta også hensyn til denne beskrivelsen: ${input.furniture.trim()}.`;
+  } else if (hasImages) {
+    furniturePart =
+      `Det første bildet viser rommet. De ${input.furnitureImages.length} neste bildene viser møbler ` +
+      `som skal settes inn i rommet på en naturlig måte, med riktig perspektiv, skala og lys. ` +
+      `Møblene skal se ut akkurat som på møbelbildene.`;
+  } else if (hasText) {
+    furniturePart = `Sett inn følgende møbler på en naturlig måte i rommet: ${input.furniture.trim()}.`;
+  } else {
+    furniturePart = 'Behold møblene som de er.';
+  }
+
   return (
-    `Rediger dette fotografiet av et rom. Mal alle veggene i fargen ${input.wallColor}. ` +
+    `Rediger fotografiet av rommet. Mal alle veggene i fargen ${input.wallColor}. ` +
     `${furniturePart} ` +
     `Behold rommets geometri nøyaktig: vinduer, dører, tak, gulv, lister og perspektiv skal være uendret. ` +
     `Behold lysforholdene fra originalbildet. Resultatet skal se ut som et ekte foto av det samme rommet.`
@@ -58,6 +83,9 @@ async function generateWithGemini(input: GenerationInput, apiKey: string): Promi
         parts: [
           { text: buildPrompt(input) },
           { inline_data: { mime_type: input.mimeType, data: input.imageBase64 } },
+          ...input.furnitureImages.map((img) => ({
+            inline_data: { mime_type: img.mimeType, data: img.base64 },
+          })),
         ],
       },
     ],

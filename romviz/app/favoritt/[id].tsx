@@ -1,6 +1,6 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { Alert, Image, Pressable, ScrollView, StyleSheet, Text } from 'react-native';
+import { Alert, Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Favorite, getFavorite, removeFavorite } from '@/lib/favorites';
 import { colors, spacing } from '@/theme';
 
@@ -56,6 +56,13 @@ export default function FavoriteDetailScreen() {
 
       <Text style={styles.meta}>Veggfarge: {favorite.wallColor}</Text>
       {favorite.furniture ? <Text style={styles.meta}>Møbler: {favorite.furniture}</Text> : null}
+      {(favorite.furnitureImageUris?.length ?? 0) > 0 && (
+        <View style={styles.furnitureRow}>
+          {favorite.furnitureImageUris!.map((uri) => (
+            <Image key={uri} source={{ uri }} style={styles.furnitureThumb} />
+          ))}
+        </View>
+      )}
 
       <Pressable style={styles.deleteButton} onPress={onDelete}>
         <Text style={styles.deleteButtonText}>Slett favoritt</Text>
@@ -73,6 +80,15 @@ const styles = StyleSheet.create({
   toggle: { alignItems: 'center', paddingVertical: spacing.md },
   toggleText: { color: colors.textMuted, textDecorationLine: 'underline' },
   meta: { color: colors.text, marginBottom: spacing.xs },
+  furnitureRow: { flexDirection: 'row', flexWrap: 'wrap', gap: spacing.sm, marginTop: spacing.sm },
+  furnitureThumb: {
+    width: 56,
+    height: 56,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: colors.border,
+    backgroundColor: colors.surface,
+  },
   deleteButton: { alignItems: 'center', paddingVertical: spacing.lg, marginTop: spacing.lg },
   deleteButtonText: { color: colors.danger, fontWeight: '600' },
 });

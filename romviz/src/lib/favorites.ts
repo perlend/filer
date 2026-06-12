@@ -12,6 +12,8 @@ export interface Favorite {
   originalUri: string;
   /** Lokal kopi av det genererte bildet. */
   resultUri: string;
+  /** Lokale kopier av møbelbildene som ble brukt. */
+  furnitureImageUris?: string[];
 }
 
 const STORAGE_KEY = 'romviz.favorites';
@@ -50,6 +52,9 @@ export async function addFavorite(input: Omit<Favorite, 'id' | 'createdAt'>): Pr
     ...input,
     originalUri: await persistImage(input.originalUri, 'original'),
     resultUri: await persistImage(input.resultUri, 'resultat'),
+    furnitureImageUris: await Promise.all(
+      (input.furnitureImageUris ?? []).map((uri) => persistImage(uri, 'mobel'))
+    ),
     id: `${Date.now()}-${Math.floor(Math.random() * 1e6)}`,
     createdAt: new Date().toISOString(),
   };
@@ -69,7 +74,7 @@ export async function removeFavorite(id: string): Promise<void> {
   const favorite = all.find((f) => f.id === id);
   await writeAll(all.filter((f) => f.id !== id));
   if (favorite) {
-    for (const uri of [favorite.originalUri, favorite.resultUri]) {
+    for (const uri of [favorite.originalUri, favorite.resultUri, ...(favorite.furnitureImageUris ?? [])]) {
       try {
         await FileSystem.deleteAsync(uri, { idempotent: true });
       } catch {
