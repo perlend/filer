@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
-import { Alert, Pressable, ScrollView, StyleSheet, Text, TextInput } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, TextInput } from 'react-native';
 import { getGeminiApiKey, setGeminiApiKey } from '@/lib/settings';
+import { showMessage } from '@/lib/ui';
 import { colors, spacing } from '@/theme';
 
 export default function SettingsScreen() {
@@ -16,7 +17,7 @@ export default function SettingsScreen() {
 
   async function onSave() {
     await setGeminiApiKey(apiKey);
-    Alert.alert('Lagret', apiKey.trim() === '' ? 'Nøkkelen er fjernet – appen kjører i demomodus.' : 'API-nøkkelen er lagret.');
+    showMessage('Lagret', apiKey.trim() === '' ? 'Nøkkelen er fjernet – appen kjører i demomodus.' : 'API-nøkkelen er lagret.');
   }
 
   return (

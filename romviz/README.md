@@ -11,6 +11,21 @@ npm install
 npm start          # åpne i Expo Go på telefonen, eller trykk w for web
 ```
 
+## Som nettside
+
+Appen kjører også rett i nettleseren:
+
+```sh
+npm run web                       # utviklingsserver på http://localhost:8081
+npx expo export --platform web    # bygger statisk nettside til dist/
+```
+
+`dist/`-mappen kan hostes hvor som helst (Netlify Drop, Vercel, GitHub Pages) –
+eller åpnes lokalt med `npx serve dist`. Favoritter lagres i nettleserens
+localStorage, så de er per nettleser inntil fase 2 (Supabase) er på plass.
+Merk: localStorage har ~5 MB-grense, så på web bør dere ikke lagre veldig mange
+favoritter med store bilder.
+
 ## Gemini-nøkkel
 
 Genereringen bruker Google Gemini (bilderedigering). Lag en nøkkel på

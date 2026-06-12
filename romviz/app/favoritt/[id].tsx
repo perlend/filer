@@ -1,7 +1,8 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { Alert, Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Favorite, getFavorite, removeFavorite } from '@/lib/favorites';
+import { confirmDestructive } from '@/lib/ui';
 import { colors, spacing } from '@/theme';
 
 export default function FavoriteDetailScreen() {
@@ -20,17 +21,15 @@ export default function FavoriteDetailScreen() {
   }
 
   function onDelete() {
-    Alert.alert('Slette favoritt?', `«${favorite!.name}» blir borte for godt.`, [
-      { text: 'Avbryt', style: 'cancel' },
-      {
-        text: 'Slett',
-        style: 'destructive',
-        onPress: async () => {
-          await removeFavorite(favorite!.id);
-          router.back();
-        },
-      },
-    ]);
+    confirmDestructive(
+      'Slette favoritt?',
+      `«${favorite!.name}» blir borte for godt.`,
+      'Slett',
+      async () => {
+        await removeFavorite(favorite!.id);
+        router.back();
+      }
+    );
   }
 
   return (

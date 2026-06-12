@@ -1,7 +1,6 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import {
-  Alert,
   Image,
   Pressable,
   ScrollView,
@@ -11,6 +10,7 @@ import {
   View,
 } from 'react-native';
 import { addFavorite } from '@/lib/favorites';
+import { showMessage } from '@/lib/ui';
 import { colors, spacing } from '@/theme';
 
 export default function ResultScreen() {
@@ -37,7 +37,7 @@ export default function ResultScreen() {
 
   async function onSave() {
     if (name.trim() === '') {
-      Alert.alert('Mangler navn', 'Gi favoritten et navn, f.eks. «Stue – salvie + eik».');
+      showMessage('Mangler navn', 'Gi favoritten et navn, f.eks. «Stue – salvie + eik».');
       return;
     }
     setSaving(true);
@@ -50,9 +50,9 @@ export default function ResultScreen() {
         resultUri: params.resultUri,
         furnitureImageUris,
       });
-      router.dismissAll();
+      router.replace('/');
     } catch (error) {
-      Alert.alert('Lagring feilet', error instanceof Error ? error.message : String(error));
+      showMessage('Lagring feilet', error instanceof Error ? error.message : String(error));
       setSaving(false);
     }
   }

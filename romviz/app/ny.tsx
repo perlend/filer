@@ -3,7 +3,6 @@ import { router } from 'expo-router';
 import { useState } from 'react';
 import {
   ActivityIndicator,
-  Alert,
   Image,
   Pressable,
   ScrollView,
@@ -13,6 +12,7 @@ import {
   View,
 } from 'react-native';
 import { FurnitureImage, generate } from '@/lib/generation';
+import { showMessage } from '@/lib/ui';
 import { colors, spacing, wallColors } from '@/theme';
 
 interface PickedImage {
@@ -22,6 +22,23 @@ interface PickedImage {
 }
 
 const MAX_FURNITURE_IMAGES = 3;
+
+/** På web mangler ofte asset.base64 – hent det fra data-URL-en i stedet. */
+function parseDataUrl(uri: string): { base64: string; mimeType: string } | null {
+  const match = /^data:([^;]+);base64,(.+)$/.exec(uri);
+  return match ? { mimeType: match[1], base64: match[2] } : null;
+}
+
+function assetToPicked(asset: ImagePicker.ImagePickerAsset): PickedImage | null {
+  if (asset.base64) {
+    return { uri: asset.uri, base64: asset.base64, mimeType: asset.mimeType ?? 'image/jpeg' };
+  }
+  const parsed = parseDataUrl(asset.uri);
+  if (parsed) {
+    return { uri: asset.uri, base64: parsed.base64, mimeType: parsed.mimeType };
+  }
+  return null;
+}
 
 export default function NewSuggestionScreen() {
   const [image, setImage] = useState<PickedImage | null>(null);
@@ -38,22 +55,18 @@ export default function NewSuggestionScreen() {
       base64: true,
     });
     if (result.canceled || result.assets.length === 0) return;
-    const asset = result.assets[0];
-    if (!asset.base64) {
-      Alert.alert('Feil', 'Kunne ikke lese bildet. Prøv et annet bilde.');
+    const picked = assetToPicked(result.assets[0]);
+    if (!picked) {
+      showMessage('Feil', 'Kunne ikke lese bildet. Prøv et annet bilde.');
       return;
     }
-    setImage({
-      uri: asset.uri,
-      base64: asset.base64,
-      mimeType: asset.mimeType ?? 'image/jpeg',
-    });
+    setImage(picked);
   }
 
   async function pickFurnitureImages() {
     const remaining = MAX_FURNITURE_IMAGES - furnitureImages.length;
     if (remaining <= 0) {
-      Alert.alert('Maks antall', `Du kan legge ved inntil ${MAX_FURNITURE_IMAGES} møbelbilder.`);
+      showMessage('Maks antall', `Du kan legge ved inntil ${MAX_FURNITURE_IMAGES} møbelbilder.`);
       return;
     }
     const result = await ImagePicker.launchImageLibraryAsync({
@@ -65,13 +78,9 @@ export default function NewSuggestionScreen() {
     });
     if (result.canceled) return;
     const picked = result.assets
-      .filter((a) => a.base64)
-      .slice(0, remaining)
-      .map((a) => ({
-        uri: a.uri,
-        base64: a.base64 as string,
-        mimeType: a.mimeType ?? 'image/jpeg',
-      }));
+      .map(assetToPicked)
+      .filter((p): p is PickedImage => p !== null)
+      .slice(0, remaining);
     setFurnitureImages((prev) => [...prev, ...picked]);
   }
 
@@ -86,7 +95,7 @@ export default function NewSuggestionScreen() {
 
   async function onGenerate() {
     if (!image) {
-      Alert.alert('Mangler bilde', 'Velg et bilde av rommet først.');
+      showMessage('Mangler bilde', 'Velg et bilde av rommet først.');
       return;
     }
     setBusy(true);
@@ -111,7 +120,7 @@ export default function NewSuggestionScreen() {
         },
       });
     } catch (error) {
-      Alert.alert('Generering feilet', error instanceof Error ? error.message : String(error));
+      showMessage('Generering feilet', error instanceof Error ? error.message : String(error));
     } finally {
       setBusy(false);
     }
