@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { router, useLocalSearchParams } from "expo-router";
 import { Kort } from "@/components/Kort";
@@ -16,6 +16,7 @@ import {
 import { erNumeriskRiktig, velgSporsmalTilOkt } from "@/lib/okt";
 import { nyttKort, vurderKort, type SrsKort } from "@/lib/srs";
 import { registrerISvarlogg, velgSvakeSporsmal, type Svarlogg } from "@/lib/statistikk";
+import { stokkAlternativer, stokkSantUsant } from "@/lib/stokking";
 import { avstand, farger } from "@/theme";
 
 const MAKS_PER_OKT = 10;
@@ -51,6 +52,21 @@ export default function Quiz() {
       }
     })();
   }, [omrade, modus]);
+
+  const aktivtSporsmal = okt?.[indeks];
+
+  // Stokk alternativene én gang per spørsmål (nøklet på id), ikke per render.
+  const stokketFlervalg = useMemo(() => {
+    if (aktivtSporsmal?.type !== "flervalg") return null;
+    return stokkAlternativer(aktivtSporsmal);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [aktivtSporsmal?.id]);
+
+  const stokketSantUsant = useMemo(() => {
+    if (aktivtSporsmal?.type !== "santusant") return null;
+    return stokkSantUsant();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [aktivtSporsmal?.id]);
 
   // Lagre resultatet når økten er gjennomført
   useEffect(() => {
@@ -129,17 +145,17 @@ export default function Quiz() {
         <Text style={stiler.sporsmal}>{sporsmal.sporsmal}</Text>
       </Kort>
 
-      {sporsmal.type === "flervalg" && (
+      {sporsmal.type === "flervalg" && stokketFlervalg && (
         <View style={stiler.alternativer}>
-          {sporsmal.alternativer.map((alternativ, n) => {
+          {stokketFlervalg.alternativer.map((alternativ, n) => {
             const valgt = svar?.valgtIndeks === n;
-            const visRiktig = svar !== null && n === sporsmal.riktig;
-            const visGalt = svar !== null && valgt && n !== sporsmal.riktig;
+            const visRiktig = svar !== null && n === stokketFlervalg.riktigIndeks;
+            const visGalt = svar !== null && valgt && n !== stokketFlervalg.riktigIndeks;
             return (
               <Pressable
                 key={n}
                 disabled={svar !== null}
-                onPress={() => besvar(n === sporsmal.riktig, { valgtIndeks: n })}
+                onPress={() => besvar(n === stokketFlervalg.riktigIndeks, { valgtIndeks: n })}
                 style={[
                   stiler.alternativ,
                   visRiktig && stiler.alternativRiktig,
@@ -153,9 +169,9 @@ export default function Quiz() {
         </View>
       )}
 
-      {sporsmal.type === "santusant" && (
+      {sporsmal.type === "santusant" && stokketSantUsant && (
         <View style={stiler.alternativer}>
-          {([true, false] as const).map((verdi) => {
+          {stokketSantUsant.map((verdi) => {
             const valgt = svar?.valgtBool === verdi;
             const visRiktig = svar !== null && verdi === sporsmal.riktig;
             const visGalt = svar !== null && valgt && verdi !== sporsmal.riktig;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { router, Stack, useLocalSearchParams } from "expo-router";
 import { Kort } from "@/components/Kort";
@@ -6,6 +6,7 @@ import { Knapp } from "@/components/Knapp";
 import { Inndatafelt, tilTall } from "@/components/Inndatafelt";
 import { finnCase } from "@/content";
 import { erNumeriskRiktig } from "@/lib/okt";
+import { stokkAlternativer, stokkSantUsant } from "@/lib/stokking";
 import { avstand, farger } from "@/theme";
 
 interface Svar {
@@ -24,6 +25,25 @@ export default function CaseSpiller() {
   const [numeriskTekst, setNumeriskTekst] = useState("");
   const [antallRiktige, setAntallRiktige] = useState(0);
   const [totaltBesvart, setTotaltBesvart] = useState(0);
+
+  const aktivtSteg =
+    sak && stegIndeks < sak.steg.length ? sak.steg[stegIndeks] : undefined;
+  const aktivtSporsmal =
+    aktivtSteg && sporsmalIndeks >= 0 ? aktivtSteg.sporsmal[sporsmalIndeks] : undefined;
+  // Unik nøkkel per oppgave slik at stokkingen skjer én gang per spørsmål.
+  const sporsmalNokkel = `${stegIndeks}:${sporsmalIndeks}:${aktivtSporsmal?.id ?? ""}`;
+
+  const stokketFlervalg = useMemo(() => {
+    if (aktivtSporsmal?.type !== "flervalg") return null;
+    return stokkAlternativer(aktivtSporsmal);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sporsmalNokkel]);
+
+  const stokketSantUsant = useMemo(() => {
+    if (aktivtSporsmal?.type !== "santusant") return null;
+    return stokkSantUsant();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [sporsmalNokkel]);
 
   if (!sak) {
     return (
@@ -110,16 +130,17 @@ export default function CaseSpiller() {
           <Text style={stiler.sporsmal}>{sporsmal.sporsmal}</Text>
         </Kort>
 
-        {sporsmal.type === "flervalg" && (
+        {sporsmal.type === "flervalg" && stokketFlervalg && (
           <View style={stiler.alternativer}>
-            {sporsmal.alternativer.map((alternativ, n) => {
-              const visRiktig = svar !== null && n === sporsmal.riktig;
-              const visGalt = svar !== null && svar.valgtIndeks === n && n !== sporsmal.riktig;
+            {stokketFlervalg.alternativer.map((alternativ, n) => {
+              const visRiktig = svar !== null && n === stokketFlervalg.riktigIndeks;
+              const visGalt =
+                svar !== null && svar.valgtIndeks === n && n !== stokketFlervalg.riktigIndeks;
               return (
                 <Pressable
                   key={n}
                   disabled={svar !== null}
-                  onPress={() => besvar(n === sporsmal.riktig, { valgtIndeks: n })}
+                  onPress={() => besvar(n === stokketFlervalg.riktigIndeks, { valgtIndeks: n })}
                   style={[
                     stiler.alternativ,
                     visRiktig && stiler.alternativRiktig,
@@ -133,9 +154,9 @@ export default function CaseSpiller() {
           </View>
         )}
 
-        {sporsmal.type === "santusant" && (
+        {sporsmal.type === "santusant" && stokketSantUsant && (
           <View style={stiler.alternativer}>
-            {([true, false] as const).map((verdi) => {
+            {stokketSantUsant.map((verdi) => {
               const visRiktig = svar !== null && verdi === sporsmal.riktig;
               const visGalt = svar !== null && svar.valgtBool === verdi && verdi !== sporsmal.riktig;
               return (

@@ -8,6 +8,7 @@ import { ALLE_SPORSMAL, OMRADER } from "@/content";
 import type { QuizSporsmal } from "@/content/types";
 import { erNumeriskRiktig } from "@/lib/okt";
 import { karakterestimat, velgProveSporsmal } from "@/lib/statistikk";
+import { stokkAlternativer, stokkSantUsant } from "@/lib/stokking";
 import { avstand, farger } from "@/theme";
 
 const ANTALL = 20;
@@ -35,6 +36,21 @@ export default function Provemodus() {
   }, [startet, ferdig]);
 
   const antallRiktige = useMemo(() => svarListe.filter((s) => s.riktig).length, [svarListe]);
+
+  const aktivtSporsmal = prove[indeks];
+
+  // Stokk alternativene én gang per spørsmål (nøklet på id), ikke per render.
+  const stokketFlervalg = useMemo(() => {
+    if (aktivtSporsmal?.type !== "flervalg") return null;
+    return stokkAlternativer(aktivtSporsmal);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [aktivtSporsmal?.id]);
+
+  const stokketSantUsant = useMemo(() => {
+    if (aktivtSporsmal?.type !== "santusant") return null;
+    return stokkSantUsant();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [aktivtSporsmal?.id]);
 
   function start() {
     setProve(velgProveSporsmal(ALLE_SPORSMAL, ANTALL));
@@ -151,13 +167,13 @@ export default function Provemodus() {
         <Text style={stiler.sporsmal}>{sporsmal.sporsmal}</Text>
       </Kort>
 
-      {sporsmal.type === "flervalg" && (
+      {sporsmal.type === "flervalg" && stokketFlervalg && (
         <View style={stiler.alternativer}>
-          {sporsmal.alternativer.map((alternativ, n) => (
+          {stokketFlervalg.alternativer.map((alternativ, n) => (
             <Pressable
               key={n}
               style={stiler.alternativ}
-              onPress={() => besvar(n === sporsmal.riktig, alternativ)}
+              onPress={() => besvar(n === stokketFlervalg.riktigIndeks, alternativ)}
             >
               <Text style={stiler.alternativTekst}>{alternativ}</Text>
             </Pressable>
@@ -165,9 +181,9 @@ export default function Provemodus() {
         </View>
       )}
 
-      {sporsmal.type === "santusant" && (
+      {sporsmal.type === "santusant" && stokketSantUsant && (
         <View style={stiler.alternativer}>
-          {([true, false] as const).map((verdi) => (
+          {stokketSantUsant.map((verdi) => (
             <Pressable
               key={String(verdi)}
               style={stiler.alternativ}
