@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Romviz – visualiser rommet</title>
+<style>
+  :root {
+    --bg: #FAF7F2;
+    --surface: #FFFFFF;
+    --text: #2B2B2B;
+    --muted: #6E6A64;
+    --accent: #C46A4A;
+    --accent-soft: #F2DED4;
+    --border: #E5E0D8;
+    --danger: #B3422F;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+  }
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  header h1 { font-size: 20px; margin: 0; cursor: pointer; }
+  header .links button {
+    background: none;
+    border: none;
+    color: var(--muted);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  main { max-width: 880px; margin: 0 auto; padding: 20px; }
+  .hidden { display: none !important; }
+
+  button.primary {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 20px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+  }
+  button.primary:disabled { opacity: 0.6; cursor: default; }
+  button.secondary {
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 14px;
+    width: 100%;
+    font-size: 15px;
+  }
+  button.danger {
+    background: none;
+    border: none;
+    color: var(--danger);
+    font-weight: 600;
+    cursor: pointer;
+    padding: 14px;
+  }
+
+  label.section { display: block; font-weight: 700; margin: 24px 0 8px; font-size: 16px; }
+  .hint { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
+
+  .dropzone {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    color: var(--muted);
+  }
+  .dropzone img { width: 100%; display: block; }
+
+  .swatches { display: flex; flex-wrap: wrap; gap: 8px; }
+  .swatch {
+    width: 44px; height: 44px; border-radius: 22px;
+    border: 1px solid var(--border); cursor: pointer;
+  }
+  .swatch.selected { border: 3px solid var(--text); }
+  .color-name { color: var(--muted); margin-top: 8px; }
+
+  input[type="text"], input[type="password"], textarea {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    padding: 12px;
+    color: var(--text);
+    font-size: 15px;
+    font-family: inherit;
+    margin-top: 8px;
+  }
+  textarea { min-height: 90px; resize: vertical; }
+
+  .furniture-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
+  .thumb-wrap { position: relative; }
+  .thumb {
+    width: 72px; height: 72px; border-radius: 10px;
+    border: 1px solid var(--border); object-fit: cover; display: block;
+  }
+  .thumb-remove {
+    position: absolute; top: -6px; right: -6px;
+    width: 22px; height: 22px; border-radius: 11px;
+    background: var(--danger); color: #fff; border: none;
+    cursor: pointer; font-weight: 700; line-height: 1;
+  }
+  .add-thumb {
+    width: 72px; height: 72px; border-radius: 10px;
+    border: 1px dashed var(--muted); background: var(--surface);
+    color: var(--muted); cursor: pointer; font-weight: 600;
+  }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden; cursor: pointer; padding-bottom: 8px;
+  }
+  .card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; background: var(--border); display: block; }
+  .card .title { font-weight: 600; padding: 8px 8px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .card .subtitle { color: var(--muted); font-size: 13px; padding: 0 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .empty { color: var(--muted); }
+
+  .result-img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; background: var(--border); display: block; }
+  .toggle { text-align: center; color: var(--muted); text-decoration: underline; cursor: pointer; padding: 12px; user-select: none; }
+  .meta { margin: 0 0 4px; }
+  .banner { background: var(--accent-soft); border-radius: 10px; padding: 14px; margin-bottom: 16px; }
+  .busy-hint { color: var(--muted); text-align: center; margin-top: 8px; }
+  .detail-thumbs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .detail-thumbs img { width: 56px; height: 56px; border-radius: 8px; object-fit: cover; border: 1px solid var(--border); }
+  h2 { font-size: 20px; }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="home-link">Romviz</h1>
+  <div class="links">
+    <button id="settings-link">Innstillinger</button>
+  </div>
+</header>
+<main id="app"></main>
+
+<!-- skjulte fil-input -->
+<input type="file" id="room-input" accept="image/*" class="hidden" />
+<input type="file" id="furniture-input" accept="image/*" multiple class="hidden" />
+
+<script>
+"use strict";
+
+// ---------- Lagring ----------
+var GEMINI_KEY = "romviz.geminiApiKey";
+var FAV_KEY = "romviz.favorites";
+var GEMINI_MODEL = "gemini-3-pro-image-preview";
+
+function getApiKey() { return localStorage.getItem(GEMINI_KEY) || ""; }
+function setApiKey(v) {
+  if (v.trim() === "") localStorage.removeItem(GEMINI_KEY);
+  else localStorage.setItem(GEMINI_KEY, v.trim());
+}
+function listFavorites() {
+  try {
+    var raw = localStorage.getItem(FAV_KEY);
+    var all = raw ? JSON.parse(raw) : [];
+    return all.sort(function (a, b) { return b.createdAt.localeCompare(a.createdAt); });
+  } catch (e) { return []; }
+}
+function saveFavorites(all) { localStorage.setItem(FAV_KEY, JSON.stringify(all)); }
+function addFavorite(fav) {
+  fav.id = String(Date.now()) + "-" + Math.floor(Math.random() * 1e6);
+  fav.createdAt = new Date().toISOString();
+  var all = listFavorites();
+  all.push(fav);
+  try {
+    saveFavorites(all);
+  } catch (e) {
+    throw new Error("Lagring feilet – nettleseren er full. Slett noen favoritter og prøv igjen.");
+  }
+  return fav;
+}
+function getFavorite(id) { return listFavorites().filter(function (f) { return f.id === id; })[0]; }
+function removeFavorite(id) {
+  saveFavorites(listFavorites().filter(function (f) { return f.id !== id; }));
+}
+
+// ---------- Hjelpere ----------
+function fileToDataUrl(file) {
+  return new Promise(function (resolve, reject) {
+    var reader = new FileReader();
+    reader.onload = function () { resolve(reader.result); };
+    reader.onerror = function () { reject(new Error("Kunne ikke lese bildet.")); };
+    reader.readAsDataURL(file);
+  });
+}
+function splitDataUrl(dataUrl) {
+  var m = /^data:([^;]+);base64,(.+)$/.exec(dataUrl);
+  return m ? { mimeType: m[1], base64: m[2] } : null;
+}
+function el(tag, attrs, children) {
+  var node = document.createElement(tag);
+  if (attrs) Object.keys(attrs).forEach(function (k) {
+    if (k === "class") node.className = attrs[k];
+    else if (k === "text") node.textContent = attrs[k];
+    else if (k.indexOf("on") === 0) node.addEventListener(k.slice(2), attrs[k]);
+    else node.setAttribute(k, attrs[k]);
+  });
+  (children || []).forEach(function (c) { if (c) node.appendChild(c); });
+  return node;
+}
+
+var WALL_COLORS = [
+  { name: "Salviegrønn", hex: "#9CAF88" },
+  { name: "Dempet blå", hex: "#7C93A8" },
+  { name: "Varm hvit", hex: "#F3EFE6" },
+  { name: "Terrakotta", hex: "#C26E4C" },
+  { name: "Sennep", hex: "#C9A24B" },
+  { name: "Dyp grønn", hex: "#3E5C4B" },
+  { name: "Burgunder", hex: "#6E3B3F" },
+  { name: "Lys grå", hex: "#D8D6D1" },
+  { name: "Mørk blå", hex: "#33465C" },
+  { name: "Pudderrosa", hex: "#D9B8AE" },
+];
+
+// ---------- Generering ----------
+function buildPrompt(wallColor, furniture, imageCount) {
+  var hasImages = imageCount > 0;
+  var hasText = furniture.trim() !== "";
+  var part;
+  if (hasImages && hasText) {
+    part = "Det første bildet viser rommet. De " + imageCount + " neste bildene viser møbler som skal settes inn i rommet på en naturlig måte, med riktig perspektiv, skala og lys. Ta også hensyn til denne beskrivelsen: " + furniture.trim() + ".";
+  } else if (hasImages) {
+    part = "Det første bildet viser rommet. De " + imageCount + " neste bildene viser møbler som skal settes inn i rommet på en naturlig måte, med riktig perspektiv, skala og lys. Møblene skal se ut akkurat som på møbelbildene.";
+  } else if (hasText) {
+    part = "Sett inn følgende møbler på en naturlig måte i rommet: " + furniture.trim() + ".";
+  } else {
+    part = "Behold møblene som de er.";
+  }
+  return "Rediger fotografiet av rommet. Mal alle veggene i fargen " + wallColor + ". " + part +
+    " Behold rommets geometri nøyaktig: vinduer, dører, tak, gulv, lister og perspektiv skal være uendret." +
+    " Behold lysforholdene fra originalbildet. Resultatet skal se ut som et ekte foto av det samme rommet.";
+}
+
+// roomImage og furnitureImages er data-URL-er
+function generate(roomImage, furnitureImages, wallColor, furniture) {
+  var apiKey = getApiKey();
+  if (!apiKey) {
+    // demomodus: returner originalbildet etter kort pause
+    return new Promise(function (resolve) {
+      setTimeout(function () { resolve({ resultUri: roomImage, provider: "mock" }); }, 1200);
+    });
+  }
+  var room = splitDataUrl(roomImage);
+  var parts = [{ text: buildPrompt(wallColor, furniture, furnitureImages.length) }];
+  parts.push({ inline_data: { mime_type: room.mimeType, data: room.base64 } });
+  furnitureImages.forEach(function (img) {
+    var s = splitDataUrl(img);
+    if (s) parts.push({ inline_data: { mime_type: s.mimeType, data: s.base64 } });
+  });
+  var body = {
+    contents: [{ role: "user", parts: parts }],
+    generationConfig: { responseModalities: ["IMAGE", "TEXT"] },
+  };
+  var url = "https://generativelanguage.googleapis.com/v1beta/models/" + GEMINI_MODEL +
+    ":generateContent?key=" + encodeURIComponent(apiKey);
+  return fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  }).then(function (res) {
+    if (!res.ok) {
+      return res.text().then(function (t) {
+        var msg = "Gemini-API svarte " + res.status;
+        try { var p = JSON.parse(t); if (p && p.error && p.error.message) msg = p.error.message; } catch (e) {}
+        throw new Error(msg);
+      });
+    }
+    return res.json();
+  }).then(function (json) {
+    var cand = json.candidates && json.candidates[0];
+    var ps = (cand && cand.content && cand.content.parts) || [];
+    var imgPart = ps.filter(function (p) { return (p.inlineData && p.inlineData.data) || (p.inline_data && p.inline_data.data); })[0];
+    if (!imgPart) throw new Error("Gemini returnerte ikke noe bilde. Prøv igjen eller juster beskrivelsen.");
+    var data = imgPart.inlineData ? imgPart.inlineData.data : imgPart.inline_data.data;
+    var mime = (imgPart.inlineData && imgPart.inlineData.mimeType) || (imgPart.inline_data && imgPart.inline_data.mime_type) || "image/png";
+    return { resultUri: "data:" + mime + ";base64," + data, provider: "gemini" };
+  });
+}
+
+// ---------- Ruting ----------
+var app = document.getElementById("app");
+function clearApp() { while (app.firstChild) app.removeChild(app.firstChild); }
+
+function route() {
+  var hash = location.hash.slice(1) || "/";
+  if (hash === "/ny") return renderNew();
+  if (hash === "/resultat") return renderResult();
+  if (hash === "/innstillinger") return renderSettings();
+  if (hash.indexOf("/favoritt/") === 0) return renderDetail(hash.slice("/favoritt/".length));
+  return renderHome();
+}
+window.addEventListener("hashchange", route);
+document.getElementById("home-link").addEventListener("click", function () { location.hash = "/"; });
+document.getElementById("settings-link").addEventListener("click", function () { location.hash = "/innstillinger"; });
+
+// ---------- Hjem ----------
+function renderHome() {
+  clearApp();
+  app.appendChild(el("button", { class: "primary", text: "+ Nytt forslag", onclick: function () { location.hash = "/ny"; } }));
+  app.appendChild(el("h2", { text: "Favoritter" }));
+  var favs = listFavorites();
+  if (favs.length === 0) {
+    app.appendChild(el("p", { class: "empty", text: "Ingen favoritter ennå. Lag et forslag og lagre det, så finner dere det igjen her." }));
+    return;
+  }
+  var grid = el("div", { class: "grid" });
+  favs.forEach(function (f) {
+    var card = el("div", { class: "card", onclick: function () { location.hash = "/favoritt/" + f.id; } }, [
+      el("img", { src: f.resultUri, alt: f.name }),
+      el("div", { class: "title", text: f.name }),
+      el("div", { class: "subtitle", text: f.wallColor }),
+    ]);
+    grid.appendChild(card);
+  });
+  app.appendChild(grid);
+}
+
+// ---------- Nytt forslag ----------
+var pendingRoomResolve = null;
+var pendingFurnitureResolve = null;
+document.getElementById("room-input").addEventListener("change", function (e) {
+  var f = e.target.files[0];
+  e.target.value = "";
+  if (f && pendingRoomResolve) pendingRoomResolve(f);
+});
+document.getElementById("furniture-input").addEventListener("change", function (e) {
+  var files = Array.prototype.slice.call(e.target.files);
+  e.target.value = "";
+  if (pendingFurnitureResolve) pendingFurnitureResolve(files);
+});
+function pickRoom() {
+  return new Promise(function (resolve) { pendingRoomResolve = resolve; document.getElementById("room-input").click(); });
+}
+function pickFurniture() {
+  return new Promise(function (resolve) { pendingFurnitureResolve = resolve; document.getElementById("furniture-input").click(); });
+}
+
+function renderNew() {
+  clearApp();
+  var state = { room: null, furniture: [], color: WALL_COLORS[0], customHex: "", text: "", busy: false };
+  var MAX = 3;
+
+  // 1. Rombilde
+  app.appendChild(el("label", { class: "section", text: "1. Bilde av rommet" }));
+  var dz = el("div", { class: "dropzone", text: "Trykk for å velge bilde" });
+  dz.addEventListener("click", function () {
+    pickRoom().then(fileToDataUrl).then(function (url) {
+      state.room = url;
+      dz.textContent = "";
+      dz.appendChild(el("img", { src: url, alt: "Rom" }));
+    }).catch(function (err) { window.alert(err.message); });
+  });
+  app.appendChild(dz);
+
+  // 2. Veggfarge
+  app.appendChild(el("label", { class: "section", text: "2. Veggfarge" }));
+  var swatches = el("div", { class: "swatches" });
+  var nameLabel = el("div", { class: "color-name" });
+  var customInput = el("input", { type: "text", placeholder: "…eller egen farge (hex eller NCS-kode)" });
+  function refreshColorName() {
+    nameLabel.textContent = state.customHex.trim() !== ""
+      ? state.customHex.trim()
+      : state.color.name + " (" + state.color.hex + ")";
+  }
+  WALL_COLORS.forEach(function (c) {
+    var sw = el("div", { class: "swatch", title: c.name });
+    sw.style.background = c.hex;
+    if (c.hex === state.color.hex && state.customHex === "") sw.classList.add("selected");
+    sw.addEventListener("click", function () {
+      state.color = c; state.customHex = ""; customInput.value = "";
+      Array.prototype.forEach.call(swatches.children, function (n) { n.classList.remove("selected"); });
+      sw.classList.add("selected");
+      refreshColorName();
+    });
+    swatches.appendChild(sw);
+  });
+  customInput.addEventListener("input", function () {
+    state.customHex = customInput.value;
+    if (customInput.value.trim() !== "") {
+      Array.prototype.forEach.call(swatches.children, function (n) { n.classList.remove("selected"); });
+    }
+    refreshColorName();
+  });
+  app.appendChild(swatches);
+  app.appendChild(nameLabel);
+  app.appendChild(customInput);
+  refreshColorName();
+
+  // 3. Møbler
+  app.appendChild(el("label", { class: "section", text: "3. Møbler (valgfritt)" }));
+  app.appendChild(el("p", { class: "hint", text: "Legg ved bilder av møbler dere vurderer (f.eks. fra nettbutikk), beskriv dem med tekst, eller begge deler." }));
+  var furnitureRow = el("div", { class: "furniture-row" });
+  function refreshFurniture() {
+    while (furnitureRow.firstChild) furnitureRow.removeChild(furnitureRow.firstChild);
+    state.furniture.forEach(function (url) {
+      var wrap = el("div", { class: "thumb-wrap" }, [
+        el("img", { class: "thumb", src: url, alt: "Møbel" }),
+        el("button", { class: "thumb-remove", text: "×", onclick: function () {
+          state.furniture = state.furniture.filter(function (u) { return u !== url; });
+          refreshFurniture();
+        } }),
+      ]);
+      furnitureRow.appendChild(wrap);
+    });
+    if (state.furniture.length < MAX) {
+      var add = el("button", { class: "add-thumb", text: "+ Bilde", onclick: function () {
+        var remaining = MAX - state.furniture.length;
+        pickFurniture().then(function (files) {
+          return Promise.all(files.slice(0, remaining).map(fileToDataUrl));
+        }).then(function (urls) {
+          state.furniture = state.furniture.concat(urls).slice(0, MAX);
+          refreshFurniture();
+        }).catch(function (err) { window.alert(err.message); });
+      } });
+      furnitureRow.appendChild(add);
+    }
+  }
+  refreshFurniture();
+  app.appendChild(furnitureRow);
+  var textArea = el("textarea", { placeholder: "F.eks. «grønn 3-seter sofa i fløyel, rundt spisebord i eik, stor monstera i krukke»" });
+  textArea.addEventListener("input", function () { state.text = textArea.value; });
+  app.appendChild(textArea);
+
+  // Generer
+  var genBtn = el("button", { class: "primary", text: "Generer forslag" });
+  genBtn.style.marginTop = "24px";
+  var hint = el("p", { class: "busy-hint hidden", text: "Genererer – dette kan ta opptil et minutt…" });
+  genBtn.addEventListener("click", function () {
+    if (!state.room) { window.alert("Velg et bilde av rommet først."); return; }
+    var effectiveColor = state.customHex.trim() !== "" ? state.customHex.trim() : state.color.name + " (" + state.color.hex + ")";
+    genBtn.disabled = true; genBtn.textContent = "Genererer…"; hint.classList.remove("hidden");
+    generate(state.room, state.furniture, effectiveColor, state.text).then(function (result) {
+      sessionStorage.setItem("romviz.pending", JSON.stringify({
+        resultUri: result.resultUri, originalUri: state.room,
+        wallColor: effectiveColor, furniture: state.text,
+        furnitureImageUris: state.furniture, provider: result.provider,
+      }));
+      location.hash = "/resultat";
+    }).catch(function (err) {
+      window.alert("Generering feilet\n\n" + err.message);
+      genBtn.disabled = false; genBtn.textContent = "Generer forslag"; hint.classList.add("hidden");
+    });
+  });
+  app.appendChild(genBtn);
+  app.appendChild(hint);
+}
+
+// ---------- Resultat ----------
+function renderResult() {
+  clearApp();
+  var raw = sessionStorage.getItem("romviz.pending");
+  if (!raw) { location.hash = "/"; return; }
+  var p = JSON.parse(raw);
+  var showOriginal = false;
+
+  if (p.provider === "mock") {
+    app.appendChild(el("div", { class: "banner", text: "Demomodus: ingen API-nøkkel lagt inn, så dette er originalbildet. Legg inn Gemini-nøkkel under Innstillinger for ekte generering." }));
+  }
+  var img = el("img", { class: "result-img", src: p.resultUri, alt: "Resultat" });
+  app.appendChild(img);
+  var toggle = el("div", { class: "toggle", text: "Hold inne for å se originalen" });
+  function setImg() { img.src = showOriginal ? p.originalUri : p.resultUri; toggle.textContent = showOriginal ? "Originalen vises" : "Hold inne for å se originalen"; }
+  toggle.addEventListener("mousedown", function () { showOriginal = true; setImg(); });
+  toggle.addEventListener("touchstart", function () { showOriginal = true; setImg(); });
+  ["mouseup", "mouseleave", "touchend"].forEach(function (ev) {
+    toggle.addEventListener(ev, function () { showOriginal = false; setImg(); });
+  });
+  app.appendChild(toggle);
+
+  app.appendChild(el("p", { class: "meta", text: "Veggfarge: " + p.wallColor }));
+  if (p.furniture) app.appendChild(el("p", { class: "meta", text: "Møbler: " + p.furniture }));
+  if (p.furnitureImageUris && p.furnitureImageUris.length) {
+    var row = el("div", { class: "detail-thumbs" });
+    p.furnitureImageUris.forEach(function (u) { row.appendChild(el("img", { src: u, alt: "Møbel" })); });
+    app.appendChild(row);
+  }
+
+  var nameInput = el("input", { type: "text", placeholder: "Navn på favoritten, f.eks. «Stue – salvie + eik»" });
+  app.appendChild(nameInput);
+  var saveBtn = el("button", { class: "primary", text: "Lagre som favoritt" });
+  saveBtn.style.marginTop = "12px";
+  saveBtn.addEventListener("click", function () {
+    if (nameInput.value.trim() === "") { window.alert("Gi favoritten et navn, f.eks. «Stue – salvie + eik»."); return; }
+    try {
+      addFavorite({
+        name: nameInput.value.trim(), wallColor: p.wallColor, furniture: p.furniture,
+        originalUri: p.originalUri, resultUri: p.resultUri, furnitureImageUris: p.furnitureImageUris || [],
+      });
+      sessionStorage.removeItem("romviz.pending");
+      location.hash = "/";
+    } catch (err) { window.alert(err.message); }
+  });
+  app.appendChild(saveBtn);
+  app.appendChild(el("button", { class: "secondary", text: "Prøv igjen med andre valg", onclick: function () { location.hash = "/ny"; } }));
+}
+
+// ---------- Favoritt-detalj ----------
+function renderDetail(id) {
+  clearApp();
+  var f = getFavorite(id);
+  if (!f) { app.appendChild(el("p", { class: "empty", text: "Fant ikke favoritten." })); return; }
+  var showOriginal = false;
+  app.appendChild(el("h2", { text: f.name }));
+  app.appendChild(el("p", { class: "meta", text: "Lagret " + new Date(f.createdAt).toLocaleDateString("nb-NO") }));
+  var img = el("img", { class: "result-img", src: f.resultUri, alt: f.name });
+  app.appendChild(img);
+  var toggle = el("div", { class: "toggle", text: "Hold inne for å se originalen" });
+  function setImg() { img.src = showOriginal ? f.originalUri : f.resultUri; toggle.textContent = showOriginal ? "Originalen vises" : "Hold inne for å se originalen"; }
+  toggle.addEventListener("mousedown", function () { showOriginal = true; setImg(); });
+  toggle.addEventListener("touchstart", function () { showOriginal = true; setImg(); });
+  ["mouseup", "mouseleave", "touchend"].forEach(function (ev) {
+    toggle.addEventListener(ev, function () { showOriginal = false; setImg(); });
+  });
+  app.appendChild(toggle);
+  app.appendChild(el("p", { class: "meta", text: "Veggfarge: " + f.wallColor }));
+  if (f.furniture) app.appendChild(el("p", { class: "meta", text: "Møbler: " + f.furniture }));
+  if (f.furnitureImageUris && f.furnitureImageUris.length) {
+    var row = el("div", { class: "detail-thumbs" });
+    f.furnitureImageUris.forEach(function (u) { row.appendChild(el("img", { src: u, alt: "Møbel" })); });
+    app.appendChild(row);
+  }
+  app.appendChild(el("button", { class: "danger", text: "Slett favoritt", onclick: function () {
+    if (window.confirm("Slette «" + f.name + "»? Den blir borte for godt.")) {
+      removeFavorite(f.id); location.hash = "/";
+    }
+  } }));
+}
+
+// ---------- Innstillinger ----------
+function renderSettings() {
+  clearApp();
+  app.appendChild(el("h2", { text: "Gemini API-nøkkel" }));
+  app.appendChild(el("p", { class: "hint", text: "Genereringen bruker Google Gemini. Lag en gratis nøkkel på aistudio.google.com og lim den inn her. Nøkkelen lagres kun lokalt i denne nettleseren. Uten nøkkel kjører appen i demomodus (viser originalbildet uendret)." }));
+  var input = el("input", { type: "password", placeholder: "AIza…" });
+  input.value = getApiKey();
+  app.appendChild(input);
+  var btn = el("button", { class: "primary", text: "Lagre" });
+  btn.style.marginTop = "12px";
+  btn.addEventListener("click", function () {
+    setApiKey(input.value);
+    window.alert(input.value.trim() === "" ? "Nøkkelen er fjernet – appen kjører i demomodus." : "API-nøkkelen er lagret.");
+  });
+  app.appendChild(btn);
+}
+
+// start
+route();
+</script>
+</body>
+</html>
