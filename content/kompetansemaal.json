@@ -1,0 +1,92 @@
+{
+  "_om": "Kanonisk kart over kompetansemålene i Vg3 elektrikerfaget. Titlene er egne, korte formuleringer justert mot gjeldende læreplan ELE03-04 (avløste ELE03-03 01.01.2026) og skal kvalitetssikres mot udir.no av fagperson før publisering. «kart» knytter fritekst-kompetansemålene i quiz/leksjoner/case til stabile mål-ID-er, slik at progresjon kan telles. Alle strenger som brukes i content/ må finnes i «kart» – npm run valider feiler ellers.",
+  "maal": [
+    {
+      "id": "k01",
+      "tittel": "Planlegge, gjennomføre og dokumentere arbeid",
+      "omrade": "regelverk",
+      "beskrivelse": "Planlegge oppdrag etter regelverk og internkontroll, dokumentere og begrunne valgene som er gjort."
+    },
+    {
+      "id": "k02",
+      "tittel": "Risikovurdere anlegg og utstyr",
+      "omrade": "elsikkerhet",
+      "beskrivelse": "Vurdere beskyttelse mot elektrisk sjokk, overstrøm, overspenning, brann, EMC og ytre påvirkning."
+    },
+    {
+      "id": "k03",
+      "tittel": "Arbeide sikkert (FSE) og gi førstehjelp",
+      "omrade": "elsikkerhet",
+      "beskrivelse": "Arbeide sikkert i og ved elektriske anlegg, gi livreddende førstehjelp og bruke verneutstyr."
+    },
+    {
+      "id": "k04",
+      "tittel": "Velge verktøy og verneutstyr",
+      "omrade": "elsikkerhet",
+      "beskrivelse": "Velge egnet verktøy og verneutstyr for oppdraget og kjenne vedlikeholdsrutiner."
+    },
+    {
+      "id": "k05",
+      "tittel": "Fordelingssystemer, jordfeilvern og jording",
+      "omrade": "installasjon",
+      "beskrivelse": "Installere og sette i drift fordelinger fra inntak til belastning med målearrangement, jordfeilvern og jording."
+    },
+    {
+      "id": "k06",
+      "tittel": "Kabel, forlegning og koblinger",
+      "omrade": "installasjon",
+      "beskrivelse": "Velge kabel- og forlegningsmetode og utføre koblinger og tilkoblinger riktig."
+    },
+    {
+      "id": "k07",
+      "tittel": "Installasjoner i bygg: lys, varme og styring",
+      "omrade": "installasjon",
+      "beskrivelse": "Installere brukertilpassede, energieffektive anlegg for belysning, varme og styring med sensorer."
+    },
+    {
+      "id": "k08",
+      "tittel": "Ekom og nettverkstilkoblet utstyr",
+      "omrade": "installasjon",
+      "beskrivelse": "Installere elektronisk kommunikasjonsnett og nettverkstilkoblet utstyr trygt."
+    },
+    {
+      "id": "k09",
+      "tittel": "Styring av elektriske maskiner og motorer",
+      "omrade": "installasjon",
+      "beskrivelse": "Installere og konfigurere styringssystemer for motorer med regulatorer og sensordata."
+    },
+    {
+      "id": "k10",
+      "tittel": "Sluttkontroll, måling og feilsøking",
+      "omrade": "maaling",
+      "beskrivelse": "Utføre sluttkontroll med måling og funksjonstesting og systematisk feilsøking."
+    }
+  ],
+  "kart": {
+    "planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til gjeldende regelverk": "k01",
+    "planlegge, gjennomføre og dokumentere arbeidsoppdrag og begrunne valgene som er gjort": "k01",
+    "planlegge, gjennomføre og dokumentere arbeidsoppdrag i henhold til bedriftens internkontrollsystem": "k01",
+    "risikovurdere anlegg og utstyr med hensyn til beskyttelse mot elektrisk sjokk": "k02",
+    "risikovurdere anlegg og utstyr med hensyn til beskyttelse mot overstrøm": "k02",
+    "risikovurdere arbeidsoppdrag og velge arbeidsmetode": "k02",
+    "arbeide med hensyn til sikkerhet ved arbeid i og drift av elektriske anlegg": "k03",
+    "gi livreddende førstehjelp": "k03",
+    "velge egnet verktøy og verneutstyr for arbeidsoppdragene": "k04",
+    "installere og sette i drift ulike fordelingssystemer": "k05",
+    "installere og sette i drift fordelingssystemer fra inntak til belastning": "k05",
+    "installere og sette i drift fordelingssystemer med tilhørende jordfeilvern": "k05",
+    "installere og sette i drift fordelingssystemer med tilhørende jordingssystemer": "k05",
+    "bygge og koble fordelinger": "k05",
+    "velge kabeltyper og ledningstyper": "k06",
+    "velge forlegningsmetoder og forlegge kabel": "k06",
+    "utføre koblinger og tilkoblinger": "k06",
+    "installere belysningsanlegg og styringssystemer": "k07",
+    "installere varmeanlegg i bygninger": "k07",
+    "installere elektriske installasjoner i ulike typer bygninger": "k07",
+    "installere og sette i drift lavspenningsinstallasjoner med tilhørende utstyr": "k07",
+    "installere elektronisk kommunikasjonsnett": "k08",
+    "utføre arbeid på elektriske maskiner": "k09",
+    "utføre sluttkontroll med måling og funksjonstesting": "k10",
+    "utføre feilsøking og måling med relevante instrumenter": "k10"
+  }
+}

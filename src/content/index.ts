@@ -1,4 +1,5 @@
 import type { FagproveCase, Leksjon, OmradeInfo, QuizSporsmal } from "./types";
+import { normaliserKompetansemaal } from "./kompetansemaal";
 
 import elbilladerCase from "../../content/case/elbillader-garasje.json";
 import badCase from "../../content/case/bad-rehabilitering.json";
@@ -84,6 +85,13 @@ export function sporsmalForOmrade(omrade: string): QuizSporsmal[] {
 
 export function leksjonerForOmrade(omrade: string): Leksjon[] {
   return ALLE_LEKSJONER.filter((l) => l.omrade === omrade);
+}
+
+/** Spørsmålene som er knyttet til et kompetansemål (via det kanoniske kartet). */
+export function sporsmalForMaal(maalId: string): QuizSporsmal[] {
+  return ALLE_SPORSMAL.filter((s) =>
+    s.kompetansemaal.some((k) => normaliserKompetansemaal(k) === maalId)
+  );
 }
 
 export function finnLeksjon(id: string): Leksjon | undefined {

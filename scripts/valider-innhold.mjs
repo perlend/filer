@@ -9,6 +9,13 @@ const ids = new Set();
 
 const GYLDIGE_OMRADER = ["elsikkerhet", "teori", "maaling", "installasjon", "regelverk"];
 
+// Kanonisk kompetansemål-kart – hvert kompetansemål i innholdet må finnes her,
+// ellers kan ikke progresjonen mot læreplanen telles (se src/content/kompetansemaal.ts).
+const kompetansemaalKart = JSON.parse(
+  readFileSync(join(rot, "content/kompetansemaal.json"), "utf8")
+);
+const KJENTE_KOMPETANSEMAAL = new Set(Object.keys(kompetansemaalKart.kart));
+
 function sjekkFelles(fil, e) {
   if (!e.id) feil.push(`${fil}: mangler id`);
   else if (ids.has(e.id)) feil.push(`${fil}: duplisert id «${e.id}»`);
@@ -16,6 +23,12 @@ function sjekkFelles(fil, e) {
   if (!GYLDIGE_OMRADER.includes(e.omrade)) feil.push(`${fil}: ukjent område «${e.omrade}» (${e.id})`);
   if (!Array.isArray(e.kompetansemaal) || e.kompetansemaal.length === 0)
     feil.push(`${fil}: ${e.id} mangler kompetansemål`);
+  else
+    for (const km of e.kompetansemaal)
+      if (!KJENTE_KOMPETANSEMAAL.has(km))
+        feil.push(
+          `${fil}: ${e.id} har ukjent kompetansemål «${km}» – legg det til i content/kompetansemaal.json`
+        );
 }
 
 for (const fil of readdirSync(join(rot, "content/quiz"))) {

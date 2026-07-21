@@ -43,6 +43,15 @@ export default function OvelseOversikt() {
         </Kort>
       </Pressable>
 
+      <Pressable onPress={() => router.push("/ovelse/laereplan")}>
+        <Kort style={stiler.valg}>
+          <Text style={stiler.valgTittel}>🗺️ Læreplan</Text>
+          <Text style={stiler.valgTekst}>
+            Se hvor mange kompetansemål du har mestret – og øv målrettet på dem du mangler
+          </Text>
+        </Kort>
+      </Pressable>
+
       {OMRADER.map((omrade) => (
         <Pressable
           key={omrade.id}

@@ -4,7 +4,7 @@ import { router, useLocalSearchParams } from "expo-router";
 import { Kort } from "@/components/Kort";
 import { Knapp } from "@/components/Knapp";
 import { Inndatafelt, tilTall } from "@/components/Inndatafelt";
-import { ALLE_SPORSMAL, sporsmalForOmrade } from "@/content";
+import { ALLE_SPORSMAL, sporsmalForMaal, sporsmalForOmrade } from "@/content";
 import type { QuizSporsmal } from "@/content/types";
 import {
   hentSrsKort,
@@ -28,7 +28,11 @@ interface Svar {
 }
 
 export default function Quiz() {
-  const { omrade, modus } = useLocalSearchParams<{ omrade?: string; modus?: string }>();
+  const { omrade, modus, maal } = useLocalSearchParams<{
+    omrade?: string;
+    modus?: string;
+    maal?: string;
+  }>();
 
   const [okt, setOkt] = useState<QuizSporsmal[] | null>(null);
   const [kortMap, setKortMap] = useState<Record<string, SrsKort>>({});
@@ -47,11 +51,15 @@ export default function Quiz() {
       if (modus === "svake") {
         setOkt(velgSvakeSporsmal(ALLE_SPORSMAL, logg, MAKS_PER_OKT));
       } else {
-        const utvalg = omrade ? sporsmalForOmrade(omrade) : ALLE_SPORSMAL;
+        const utvalg = maal
+          ? sporsmalForMaal(maal)
+          : omrade
+            ? sporsmalForOmrade(omrade)
+            : ALLE_SPORSMAL;
         setOkt(velgSporsmalTilOkt(utvalg, kort, MAKS_PER_OKT));
       }
     })();
-  }, [omrade, modus]);
+  }, [omrade, modus, maal]);
 
   const aktivtSporsmal = okt?.[indeks];
 
