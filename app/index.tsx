@@ -1,23 +1,41 @@
 import { useCallback, useState } from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { router, useFocusEffect } from "expo-router";
 import { Kort } from "@/components/Kort";
 import { Knapp } from "@/components/Knapp";
 import { OMRADER, ALLE_SPORSMAL, sporsmalForOmrade } from "@/content";
-import { hentSrsKort, hentStatistikk, TOM_STATISTIKK, type Statistikk } from "@/lib/lagring";
+import {
+  hentSrsKort,
+  hentStatistikk,
+  hentSvarlogg,
+  TOM_STATISTIKK,
+  type Statistikk,
+} from "@/lib/lagring";
 import { forfalteKort } from "@/lib/srs";
+import {
+  laereplanProgresjon,
+  laereplanSammendrag,
+  type LaereplanSammendrag,
+} from "@/lib/laereplan";
 import { avstand, farger } from "@/theme";
+
+const TOM_LAEREPLAN: LaereplanSammendrag = { maalMedInnhold: 0, paabegynte: 0, mestrede: 0 };
 
 export default function Hjem() {
   const [statistikk, setStatistikk] = useState<Statistikk>(TOM_STATISTIKK);
   const [antallForfalte, setAntallForfalte] = useState(0);
   const [besvartPerOmrade, setBesvartPerOmrade] = useState<Record<string, number>>({});
+  const [laereplan, setLaereplan] = useState<LaereplanSammendrag>(TOM_LAEREPLAN);
 
   useFocusEffect(
     useCallback(() => {
       let aktiv = true;
       (async () => {
-        const [stat, kort] = await Promise.all([hentStatistikk(), hentSrsKort()]);
+        const [stat, kort, logg] = await Promise.all([
+          hentStatistikk(),
+          hentSrsKort(),
+          hentSvarlogg(),
+        ]);
         if (!aktiv) return;
         setStatistikk(stat);
         setAntallForfalte(forfalteKort(Object.values(kort)).length);
@@ -26,12 +44,16 @@ export default function Hjem() {
           if (s.id in kort) perOmrade[s.omrade] = (perOmrade[s.omrade] ?? 0) + 1;
         }
         setBesvartPerOmrade(perOmrade);
+        setLaereplan(laereplanSammendrag(laereplanProgresjon(ALLE_SPORSMAL, kort, logg)));
       })();
       return () => {
         aktiv = false;
       };
     }, [])
   );
+
+  const laereplanAndel =
+    laereplan.maalMedInnhold > 0 ? laereplan.mestrede / laereplan.maalMedInnhold : 0;
 
   const treffprosent =
     statistikk.totaltBesvart > 0
@@ -65,6 +87,24 @@ export default function Hjem() {
         </Text>
         <Knapp tittel="Start økt" onPress={() => router.push("/ovelse/quiz")} />
       </Kort>
+
+      <Pressable onPress={() => router.push("/ovelse/laereplan")}>
+        <Kort style={stiler.seksjon}>
+          <Text style={stiler.tittel}>🗺️ Læreplan</Text>
+          <View style={stiler.stolpeBakgrunn}>
+            <View
+              style={[
+                stiler.stolpe,
+                { width: `${Math.round(laereplanAndel * 100)}%`, backgroundColor: farger.riktig },
+              ]}
+            />
+          </View>
+          <Text style={stiler.statTekst}>
+            Mestret {laereplan.mestrede} av {laereplan.maalMedInnhold} kompetansemål ·{" "}
+            {laereplan.paabegynte} påbegynt
+          </Text>
+        </Kort>
+      </Pressable>
 
       <Text style={stiler.tittel}>Fremdrift</Text>
       {OMRADER.map((omrade) => {
